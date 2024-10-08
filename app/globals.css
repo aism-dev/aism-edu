@@ -1,23 +1,58 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+@import url('https://fonts.googleapis.com/css2?family=Cormorant:ital,wght@0,300..700;1,300..700&display=swap');
 
 :root {
   --background: #ffffff;
   --foreground: #171717;
 }
 
+*.alt-font {
+  font-family: "Cormorant", serif;
+  font-optical-sizing: auto;
+  font-style: normal;
+}
+
+a {
+  position: relative;
+}
+
+a:hover::after {
+  width: 100%;
+}
+
+a::after {
+  position: absolute;
+  content: "";
+  width: 0%;
+  transition: width 0.25s ease;
+  height: 2px;
+  transition-delay: 0.25s;
+  background-color: #1563d8;
+  bottom: -5px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+a:active {
+  transform: scale(0.95);
+}
+
+* {
+  transition: all .15s ease;
+}
+
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+    --background: #292929;
+    --foreground: #fff;
   }
 }
 
 body {
   color: var(--foreground);
   background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
 }
 
 @layer utilities {

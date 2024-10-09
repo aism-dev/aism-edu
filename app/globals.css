@@ -58,6 +58,30 @@
   transform: scale(0.95);
 }
 
+.btn:has(.mark-1:hover):not(:active):hover {
+  transform: skewY(-0.25deg);
+}
+
+.btn:has(.mark-4:hover):not(:active):hover {
+  transform: skewY(0.25deg);
+}
+
+.btn:has(.mark-3:hover):not(:active):hover {
+  transform: skewY(0.25deg);
+}
+
+.btn:has(.mark-6:hover):not(:active):hover {
+  transform: skewY(-0.25deg);
+}
+
+.btn:has(.mark-2:hover):not(:active):hover {
+  transform: skewX(0.25deg);
+}
+
+.btn:has(.mark-5:hover):not(:active):hover {
+  transform: skewX(-0.25deg);
+}
+
 .btn:hover::after {
   height: 100%;
   width: 100%;

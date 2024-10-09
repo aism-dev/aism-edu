@@ -1,24 +1,6 @@
+import { TABS } from "@/lib/Variables/Navigation";
 import { motion, useAnimation, Variants } from "framer-motion";
 import { Dispatch, SetStateAction, useEffect, useRef, useState } from "react";
-
-const TABS = [
-    {
-        title: "Hello world",
-        Conponent: () => <>Hello world</>
-    },
-    {
-        title: "Hello world 01",
-        Conponent: () => <>Hello world 01</>
-    },
-    {
-        title: "Hello world 03",
-        Conponent: () => <>Hello world 03</>
-    },
-    {
-        title: "Hello world 04",
-        Conponent: () => <>Hello world 04</>
-    },
-].map((n, idx) => ({ ...n, id: idx }))
 
 export default function NavTab({ currentlyHovered, lastHovered, closeFunc, centerRect }: { centerRect: number, currentlyHovered: number | null, lastHovered: number | null, closeFunc: Dispatch<SetStateAction<number | null>> }) {
     const controls = useAnimation();
@@ -88,8 +70,7 @@ export default function NavTab({ currentlyHovered, lastHovered, closeFunc, cente
                                     animate={{ opacity: 1, x: 0 }}
                                     transition={{ duration: 0.25, ease: "easeInOut" }}
                                 >
-                                    <tab.Conponent />
-                                    {dir}
+                                    {tab.Component}
                                 </motion.div>
                             )}
                         </div>

@@ -14,11 +14,71 @@
   font-style: normal;
 }
 
+.btn:has(.mark-1:hover) {
+  transform-origin: top right;
+}
+
+.btn:has(.mark-4:hover) {
+  transform-origin: bottom right;
+}
+
+.btn:has(.mark-2:hover) {
+  transform-origin: bottom center;
+}
+
+.btn:has(.mark-5:hover) {
+  transform-origin: top center;
+}
+
+.btn:has(.mark-3:hover) {
+  transform-origin: bottom left;
+}
+
+.btn:has(.mark-6:hover) {
+  transform-origin: top left;
+}
+
+.btn:has(.mark-1:hover):active {
+  transform: scale(0.95) skewY(-2deg);
+}
+
+.btn:has(.mark-4:hover):active {
+  transform: scale(0.95) skewY(2deg);
+}
+
+.btn:has(.mark-3:hover):active {
+  transform: scale(0.95) skewY(2deg);
+}
+
+.btn:has(.mark-6:hover):active {
+  transform: scale(0.95) skewY(-2deg);
+}
+
+.btn:has(.mark-2:hover):active, .btn:has(.mark-5:hover):active {
+  transform: scale(0.95);
+}
+
+.btn:hover::after {
+  height: 100%;
+  width: 100%;
+}
+
+.btn::after {
+  position: absolute;
+  content: "";
+  height: 0%;
+  width: 0%;
+  transition: height .15s ease, width .15s ease;
+  top: 0;
+  left: 0;
+  z-index: -1;
+}
+
 a {
   position: relative;
 }
 
-a:hover::after {
+a:not(.no-underline):hover::after {
   width: 100%;
 }
 
@@ -28,11 +88,10 @@ a::after {
   width: 0%;
   transition: width 0.25s ease;
   height: 2px;
-  transition-delay: 0.25s;
+  transition-delay: 0.15s;
   background-color: #1563d8;
   bottom: -5px;
-  left: 50%;
-  transform: translateX(-50%);
+  left: 0%;
 }
 
 a:active {
@@ -42,13 +101,13 @@ a:active {
 * {
   transition: all .15s ease;
 }
-
+/* 
 @media (prefers-color-scheme: dark) {
   :root {
     --background: #292929;
     --foreground: #fff;
   }
-}
+} */
 
 body {
   color: var(--foreground);

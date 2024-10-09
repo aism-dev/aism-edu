@@ -37,11 +37,11 @@ export default function Navigation() {
                 </div>
             </div>
             <div className="flex justify-between items-center py-3">
-                <div>
-                    <span>About</span>
-                    <span>Admission</span>
-                    <span>Academic Programs</span>
-                    <span>Student Sucess</span>
+                <div className="flex items-center gap-7">
+                    <span className="py-3 cursor-pointer">About</span>
+                    <span className="py-3 cursor-pointer">Admission</span>
+                    <span className="py-3 cursor-pointer">Academic Programs</span>
+                    <span className="py-3 cursor-pointer">Student Sucess</span>
                 </div>
                 <Button>
                     <span>Apply for Admission</span>

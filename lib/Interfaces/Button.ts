@@ -1,5 +1,12 @@
-import { WithChildren } from "../Types";
+import React from "react";
 
-export interface ButtonInterface extends WithChildren { 
-    btnType?: "submit" | "button" | "reset"
+type size = "XL" |  "L" | "M" | "S";
+type colorVariations = "light" | "dark";
+
+type btnVariation = `${colorVariations}-${size}`
+export interface ButtonInterface extends React.ButtonHTMLAttributes<HTMLButtonElement> {
+    btnType?: "submit" | "button" | "reset",
+    onBlack?:  boolean,
+    sizeVariation?: size,
+    colorVariation?: colorVariations,
 }

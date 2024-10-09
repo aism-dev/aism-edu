@@ -6,6 +6,7 @@ export default function Home() {
         <div className="">
             <Navigation />
             <HeroSection />
+            <div className="h-44"></div>
         </div>
     );
 }

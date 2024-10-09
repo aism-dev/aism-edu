@@ -2,7 +2,7 @@ import Image from "next/image";
 
 export default function HeroSection() {
     return (
-        <div className="grid place-items-center mt-10">
+        <div className="grid place-items-center mt-36">
             <div className="heroImg">
                 <Image
                     src={"https://aism-edu.sirv.com/pexels-rdne-7683745.jpg"}

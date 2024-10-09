@@ -24,7 +24,7 @@ export default function Navigation() {
     const [currentlyHovered, setCurrentlyHovered] = useState<null | number>(null);
     const [lastHovered, setLastHovered] = useState<null | number>(null);
 
-    const shouldHide = useMemo(() => scrollPosition >= 200, [scrollPosition]);
+    const shouldHide = useMemo(() => scrollPosition >= 100, [scrollPosition]);
     const controls = useAnimation();
 
     const topVariants: Variants = {

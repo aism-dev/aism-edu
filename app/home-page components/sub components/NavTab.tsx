@@ -48,7 +48,7 @@ export default function NavTab({ currentlyHovered, lastHovered, closeFunc, cente
         setContainerRect(containerRef.current.getBoundingClientRect().left);
     }, [containerRef]);
 
-    const dir = currentlyHovered !== null && lastHovered !== null && currentlyHovered < lastHovered ? "l" : "r";
+    const dir = currentlyHovered !== null && lastHovered !== null ? (currentlyHovered < lastHovered ? "l" : currentlyHovered > lastHovered ? "r" : "") : "";
 
     return (
         <>
@@ -72,9 +72,6 @@ export default function NavTab({ currentlyHovered, lastHovered, closeFunc, cente
                     style={{
                         clipPath: "polygon(0 0, 100% 0, 50% 50%, 0% 100%)",
                     }}
-                    initial={{
-                        left: 13
-                    }}
                     animate={{ left: (centerRect) - (containerRect * 1.15) }}
                     transition={{ duration: 0.25, ease: "easeInOut" }}
                     className="absolute left-1/2 top-[1px] h-4 w-4 -translate-x-1/2 -translate-y-1/2 rotate-45 rounded-tl border-2 border-themelight bg-themelight"
@@ -86,12 +83,13 @@ export default function NavTab({ currentlyHovered, lastHovered, closeFunc, cente
                                 <motion.div
                                     initial={{
                                         opacity: 0,
-                                        x: dir === "l" ? 100 : dir === "r" ? -100 : 0,
+                                        x: dir === "l" ? -100 : dir === "r" ? 100 : 0,
                                     }}
                                     animate={{ opacity: 1, x: 0 }}
                                     transition={{ duration: 0.25, ease: "easeInOut" }}
                                 >
                                     <tab.Conponent />
+                                    {dir}
                                 </motion.div>
                             )}
                         </div>

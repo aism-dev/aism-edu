@@ -143,3 +143,17 @@ body {
     text-wrap: balance;
   }
 }
+
+.heroImg::after {
+  position: absolute;
+  content: "";
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background: linear-gradient(to top, rgba(0,0,0,0.9) 10%, rgba(240,240,240,0) 100%);
+}
+
+.heroImg {
+  position: relative;
+}

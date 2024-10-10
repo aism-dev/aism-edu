@@ -145,7 +145,7 @@ body {
   }
 }
 
-.heroImg::after {
+.heroImg::after, .withGradient::after {
   position: absolute;
   content: "";
   width: 100%;

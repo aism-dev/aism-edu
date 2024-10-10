@@ -25,10 +25,10 @@ export default function HeroSection() {
                             transition={{ duration: 1, delay: 1 }}
                             className="absolute bottom-32 left-32 text-white z-10 max-w-[40rem]"
                         >
-                            <p className="text-6xl leading-[1.15]">{slideContent.title}</p>
-                            <p>{slideContent.content}</p>
+                            <p className="text-5xl leading-[1.15] mb-2">{slideContent.title}</p>
+                            <p className="opacity-75">{slideContent.content}</p>
                             <br />
-                            <Button colorVariation="dark" sizeVariation="L">
+                            <Button colorVariation="dark" sizeVariation="L" tabIndex={-1}>
                                 {slideContent.ctaText}
                             </Button>
                         </motion.div>

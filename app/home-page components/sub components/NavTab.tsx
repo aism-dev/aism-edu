@@ -1,8 +1,8 @@
 import { TABS } from "@/lib/Variables/Navigation";
-import { motion, useAnimation, Variants } from "framer-motion";
-import { Dispatch, SetStateAction, useEffect, useRef, useState } from "react";
+import { motion, useAnimation } from "framer-motion";
+import { Dispatch, SetStateAction, useEffect, useMemo, useRef, useState } from "react";
 
-export default function NavTab({ currentlyHovered, lastHovered, closeFunc, centerRect }: { centerRect: number, currentlyHovered: number | null, lastHovered: number | null, closeFunc: Dispatch<SetStateAction<number | null>> }) {
+export default function NavTab({ currentlyHovered, lastHovered, closeFunc, centerRect, containerSize }: { containerSize: number, centerRect: number, currentlyHovered: number | null, lastHovered: number | null, closeFunc: Dispatch<SetStateAction<number | null>> }) {
     const controls = useAnimation();
     const mountRef = useRef(0);
     const containerRef = useRef<HTMLDivElement>(null);
@@ -20,7 +20,6 @@ export default function NavTab({ currentlyHovered, lastHovered, closeFunc, cente
                 mountRef.current = 1
                 return
             }
-            console.log("Unmounted")
             closeFunc(currentlyHovered);
         }
     }, [currentlyHovered, controls]);
@@ -30,12 +29,17 @@ export default function NavTab({ currentlyHovered, lastHovered, closeFunc, cente
         setContainerRect(containerRef.current.getBoundingClientRect().left);
     }, [containerRef]);
 
-    const dir = currentlyHovered !== null && lastHovered !== null ? (currentlyHovered < lastHovered ? "l" : currentlyHovered > lastHovered ? "r" : "") : "";
+    const dir = useMemo(()=>{
+        if(currentlyHovered === null || lastHovered === null) return ""
+        if (currentlyHovered < lastHovered) return "r";
+        if (currentlyHovered > lastHovered) return "l";
+        return "";
+    }, [currentlyHovered, lastHovered]);
 
     return (
         <>
             <motion.section
-                className="absolute top-[4.5rem] text-white left-0 w-full p-4 bg-themelight"
+                className="absolute top-[4.5rem] text-black left-0 w-full bg-white/60 backdrop-blur-sm rounded-b-xl overflow-hidden"
                 initial={{
                     opacity: 0,
                     y: -5,
@@ -51,12 +55,12 @@ export default function NavTab({ currentlyHovered, lastHovered, closeFunc, cente
                 ref={containerRef}
             >
                 <motion.span
-                    style={{
-                        clipPath: "polygon(0 0, 100% 0, 50% 50%, 0% 100%)",
-                    }}
-                    animate={{ left: (centerRect) - (containerRect * 1.15) }}
+                    animate={{ left: (centerRect) - (containerRect * 1.30) }}
                     transition={{ duration: 0.25, ease: "easeInOut" }}
-                    className="absolute left-1/2 top-[1px] h-4 w-4 -translate-x-1/2 -translate-y-1/2 rotate-45 rounded-tl border-2 border-themelight bg-themelight"
+                    style={{
+                        width: `${containerSize}px`
+                    }}
+                    className="absolute left-1/2 top-[1px] rounded-tl border-2 border-theme bg-theme"
                 />
                 {TABS.map((tab) => {
                     return (

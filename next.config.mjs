@@ -7,7 +7,13 @@ const nextConfig = {
                 hostname: "aism-edu.sirv.com",
                 pathname: "/**",
                 port: "",
-            }
+            },
+            {
+                protocol: "https",
+                hostname: "unsplash.it",
+                pathname: "/**",
+                port: "",
+            },
         ]
     }
 };

@@ -19,6 +19,7 @@ export default function Navigation() {
 
     const [scrollDirection, setScrollDirection] = useState<null | "up" | "down">(null);
     const [rectBoundHover, setRectBoundHover] = useState(0);
+    const [rectBoundWidth, setRectBoundWidth] = useState(0);
 
 
     const [currentlyHovered, setCurrentlyHovered] = useState<null | number>(null);
@@ -130,28 +131,29 @@ export default function Navigation() {
                         setCurrentlyHovered(0);
                         const rect = tabRef01.current!
                         const val = rect.getBoundingClientRect();
-                        setRectBoundHover(val.left + (val.width/2));
+                        setRectBoundHover((val.left) + (val.width/2));
+                        setRectBoundWidth(val.width - 14);
                     }} ref={tabRef01}>About</span>
                     <span className="py-3 px-7 cursor-pointer" onMouseEnter={() => {
                         setCurrentlyHovered(1);
                         const rect = tabRef02.current!
                         const val = rect.getBoundingClientRect();
-                        setRectBoundHover(val.left + (val.width/2));
+                        setRectBoundHover((val.left + 10) + (val.width / 2));
+                        setRectBoundWidth(val.width - 56);
                     }} ref={tabRef02}>Admission</span>
                     <span className="py-3 px-7 cursor-pointer" onMouseEnter={() => {
                         setCurrentlyHovered(2);
                         const rect = tabRef03.current!
                         const val = rect.getBoundingClientRect();
-                        setRectBoundHover(val.left + (val.width/2));
+                        setRectBoundHover((val.left - 20) + (val.width / 2));
+                        setRectBoundWidth(val.width - 56);
                     }} ref={tabRef03}>Academic Programs</span>
                     <span className="py-3 px-7 cursor-pointer" onMouseEnter={() => {
-                        setCurrentlyHovered(3);
-                        const rect = tabRef04.current!
-                        const val = rect.getBoundingClientRect();
-                        setRectBoundHover(val.left + (val.width/2));
+                        setLastHovered(3);
+                        setCurrentlyHovered(null);
                     }} ref={tabRef04}>Student Sucess</span>
                     <AnimatePresence>
-                        {currentlyHovered !== null && <NavTab centerRect={rectBoundHover} closeFunc={setLastHovered} currentlyHovered={currentlyHovered} lastHovered={lastHovered} />}
+                        {currentlyHovered !== null && <NavTab containerSize={rectBoundWidth} centerRect={rectBoundHover} closeFunc={setLastHovered} currentlyHovered={currentlyHovered} lastHovered={lastHovered} />}
                     </AnimatePresence>
                 </motion.div>
                 <Button>

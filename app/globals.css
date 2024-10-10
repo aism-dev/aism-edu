@@ -158,3 +158,16 @@ body {
 .heroImg {
   position: relative;
 }
+
+a:visited::after{
+  content: "Hello";
+  position: absolute;
+}
+
+a:visited .isVisited {
+  display: block;
+}
+
+a .isVisited {
+  display: none;
+}

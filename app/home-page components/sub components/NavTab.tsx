@@ -39,7 +39,7 @@ export default function NavTab({ currentlyHovered, lastHovered, closeFunc, cente
     return (
         <>
             <motion.section
-                className="absolute top-[4.5rem] text-black left-0 w-full bg-white/60 backdrop-blur-sm rounded-b-xl overflow-hidden"
+                className="absolute top-[4.5rem] text-black left-0 w-full bg-white/60 backdrop-blur-sm border border-t-transparent border-black/25 overflow-hidden"
                 initial={{
                     opacity: 0,
                     y: -5,

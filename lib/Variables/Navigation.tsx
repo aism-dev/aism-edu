@@ -142,6 +142,15 @@ function TabComponent({ content }: { content: TabContent[] }) {
                     className="w-full h-full object-cover opacity-20 pointer-events-none select-none"
                 />
             </div>
+            <div className="overflow-hidden absolute bottom-4 right-4">
+                <Image
+                    src={"https://aism-edu.sirv.com/icons/AISM-light.png"}
+                    alt="AISM logo"
+                    height={100}
+                    width={100}
+                    className="object-cover opacity-35 pointer-events-none select-none"
+                />
+            </div>
             <div className="flex-1 z-10 relative p-6 grid grid-cols-2 gap-2">
                 {content.map((item)=>(
                     <Link href={item.url} key={item.id} className="flex items-start hover:shadow-lg gap-4 overflow-hidden relative hover:bg-white bg-white/50 cursor-pointer border group border-theme/50 hover:border-theme hover:-translate-y-1 hover:translate-x-1 active:translate-x-0 active:translate-y-0 p-4 rounded-md">

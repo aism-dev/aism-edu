@@ -73,7 +73,7 @@ export default function Navigation() {
 
     return (
         <motion.nav 
-            className="w-full bg-white sm:px-40 px-6 fixed top-0 left-0 z-50"
+            className="w-full bg-white md:px-40 sm:px-10 px-6 fixed top-0 left-0 z-50"
             variants={topVariants}
             initial="hidden"
             animate={controls}

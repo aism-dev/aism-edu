@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import localFont from "next/font/local";
 import "./globals.css";
-import "./debugger.css";
+// import "./debugger.css";
 import { aismMetadata } from "@/lib/Metadata";
 
 const geistSans = localFont({

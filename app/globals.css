@@ -122,8 +122,15 @@ a:active {
   transform: scale(0.95);
 }
 
-* {
+*.duration-500-alt {
+  transition: all 0.5s cubic-bezier(0.785, 0.135, 0.15, 0.86);
+}
+
+*:not(.duration-500-alt) {
   transition: all .15s ease;
+}
+
+* {
   font-size: 2.15vmin;
 }
 /* 
@@ -143,6 +150,21 @@ body {
   .text-balance {
     text-wrap: balance;
   }
+}
+
+.withoutGradient:hover::after {
+  background: rgba(0, 0, 0, 0.5);
+}
+
+.withoutGradient::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.35);
+  mix-blend-mode: darken;
 }
 
 .heroImg::after, .withGradient::after {

@@ -29,17 +29,17 @@ export default function Navigation() {
     const controls = useAnimation();
 
     const topVariants: Variants = {
-        hidden: { y: -104 },
+        hidden: { y: "-54px" },
         visible: { y: 0, transition: { duration: 0.25 } },
     };
 
     const logoPositionVariants: Variants = {
-        hidden: { y: 90, scale: 0.9 },
+        hidden: { y: 46, scale: 0.9 },
         visible: { y: 0, scale: 1, transition: { duration: 0.25 } },
     };
 
     const bottomLinksVariants: Variants = {
-        hidden: { marginLeft: 70, },
+        hidden: { marginLeft: 40, },
         visible: { marginLeft: 0, transition: { duration: 0.25 } },
     };
 

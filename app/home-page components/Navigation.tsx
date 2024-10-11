@@ -5,6 +5,7 @@ import Button from "../general components/Button";
 import { useEffect, useMemo, useRef, useState } from "react";
 import { AnimatePresence, motion, useAnimation, Variants } from  "framer-motion";
 import NavTab from "./sub components/NavTab";
+import { FaAngleUp } from "react-icons/fa6";
 
 
 
@@ -127,27 +128,27 @@ export default function Navigation() {
                         setCurrentlyHovered(null)
                     }}
                 >
-                    <span className="py-3 pr-7 cursor-pointer" onMouseEnter={() => {
+                    <span className="py-3 flex items-center gap-2 group pr-7 cursor-pointer" onMouseEnter={() => {
                         setCurrentlyHovered(0);
                         const rect = tabRef01.current!
                         const val = rect.getBoundingClientRect();
                         setRectBoundHover((val.left) + (val.width/2));
                         setRectBoundWidth(val.width - 14);
-                    }} ref={tabRef01}>About</span>
-                    <span className="py-3 px-7 cursor-pointer" onMouseEnter={() => {
+                    }} ref={tabRef01}>About <FaAngleUp className="group-hover:rotate-180" /></span>
+                    <span className="py-3 flex items-center gap-2 group px-7 cursor-pointer" onMouseEnter={() => {
                         setCurrentlyHovered(1);
                         const rect = tabRef02.current!
                         const val = rect.getBoundingClientRect();
                         setRectBoundHover((val.left + 10) + (val.width / 2));
                         setRectBoundWidth(val.width - 56);
-                    }} ref={tabRef02}>Admission</span>
-                    <span className="py-3 px-7 cursor-pointer" onMouseEnter={() => {
+                    }} ref={tabRef02}>Admission <FaAngleUp className="group-hover:rotate-180" /></span>
+                    <span className="py-3 flex items-center gap-2 group px-7 cursor-pointer" onMouseEnter={() => {
                         setCurrentlyHovered(2);
                         const rect = tabRef03.current!
                         const val = rect.getBoundingClientRect();
                         setRectBoundHover((val.left - 20) + (val.width / 2));
                         setRectBoundWidth(val.width - 56);
-                    }} ref={tabRef03}>Academic Programs</span>
+                    }} ref={tabRef03}>Academic Programs <FaAngleUp className="group-hover:rotate-180" /></span>
                     <span className="py-3 px-7 cursor-pointer" onMouseEnter={() => {
                         setLastHovered(3);
                         setCurrentlyHovered(null);

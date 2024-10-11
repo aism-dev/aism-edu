@@ -32,7 +32,7 @@ export default function FindYourProgram() {
     return (
         <div className="py-20">
             <div className="text-center flex flex-col items-center gap-4">
-                <BubbleText formatClass="text-4xl text-theme" text="Find your Course" />
+                <h2 className="text-4xl font-medium text-theme">Find your Course</h2>
                 <p className="max-w-[30rem] leading-6 text-black/70">
                     Explore a range of programs tailored to your career goals. Choose the path that best suits your aspirations and start your journey in healthcare today.
                 </p>

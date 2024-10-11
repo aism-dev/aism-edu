@@ -27,7 +27,7 @@ export default function YourJourneyOurPromise() {
                     </p>
                 </div>
             </div>
-            <div className="w-[clamp(30rem,40vw,20rem)] h-96 -mt-[22rem] mr-20 z-40 bg-white border-4 border-white">
+            <div className="w-[clamp(30rem,40vw,20rem)] h-96 -mt-[23rem] mr-20 z-40 bg-white border-[15px] border-white">
                 <div className="relative w-full h-full grid place-items-center group bg-theme">
                 <div className={clsx(
                         "h-full w-full absolute top-0 left-0 pointer-events-none z-10",
@@ -47,7 +47,7 @@ export default function YourJourneyOurPromise() {
                         <FaPlay className="text-7xl ml-3 text-white group-active:rotate-12" />
                     </div>
                 </div>
-                <div className="grid gap-3 pt-3 pb-10">
+                <div className="grid gap-3 pt-3">
                     <h3 className="text-2xl text-theme font-medium">Message from the President</h3>
                     <p className="opacity-80">Watch our President address AISM&apos;s mission and vision, sharing how we are committed to shaping the future of medicine and empowering the next generation of healthcare professionals.</p>
                 </div>

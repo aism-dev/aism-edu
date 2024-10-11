@@ -1,5 +1,5 @@
 export default function Testimonials() {
     return (
-        <div>Testimonials</div>
+        <div className="p-10">Testimonials</div>
     )
 }

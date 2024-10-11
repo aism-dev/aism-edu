@@ -1,0 +1,11 @@
+/* Debugger */
+.app * {
+    outline: 1px solid green;
+  }
+  .app * > * {
+    outline: 1px solid blue;
+  }
+  
+  .app * > * > * {
+    outline: 1px solid red;
+  }

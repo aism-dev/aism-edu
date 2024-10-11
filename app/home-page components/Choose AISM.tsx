@@ -30,7 +30,7 @@ export default function ChooseAISM() {
 
     return (
         <section className="p-20 bg-theme text-white grid sm:grid-cols-[auto_1fr] gap-20">
-            <div className="max-w-[clamp(25rem,30vw,20rem)] flex flex-col gap-4">
+            <div className="max-w-[clamp(25rem,30vw,20rem)] flex flex-col justify-between gap-4">
                 <h3 className="text-5xl alt-font capitalize">
                     What we do at <span title="American International School of Medicine" className="text-5xl">AISM</span>
                 </h3>
@@ -73,9 +73,9 @@ export default function ChooseAISM() {
                                 className="select-none pointer-events-none h-full w-full object-contain absolute -top-10 -right-20 -rotate-45 opacity-10"
                             />
 
-                            <div className="p-4 relative z-10">
-                                <h4 className="text-lg font-bold text-theme mt-12">{item.title}</h4>
-                                <p className="">
+                            <div className="p-4 relative z-10 grid gap-2">
+                                <h4 className="leading-5 text-xl font-medium text-theme mt-12">{item.title}</h4>
+                                <p className="leading-5">
                                     {item.description}
                                 </p>
                             </div>

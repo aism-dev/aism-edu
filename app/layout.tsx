@@ -3,8 +3,8 @@ import localFont from "next/font/local";
 import "./globals.css";
 // import "./debugger.css";
 import { aismMetadata } from "@/lib/Metadata";
-import Navigation from "./home-page components/Navigation";
-import Footer from "./home-page components/Footer";
+import Navigation from "./general components/Navigation";
+import Footer from "./general components/Footer";
 
 const geistSans = localFont({
     src: "./fonts/Nunito-VariableFont_wght.woff",

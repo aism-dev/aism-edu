@@ -1,10 +1,10 @@
 "use client"
 import Image from "next/image";
 import Link from "next/link";
-import Button from "../general components/Button";
+import Button from "./Button";
 import { useEffect, useMemo, useRef, useState } from "react";
 import { AnimatePresence, motion, useAnimation, Variants } from "framer-motion";
-import NavTab from "./sub components/NavTab";
+import NavTab from "../home-page components/sub components/NavTab";
 import { FaAngleUp, FaArrowUp } from "react-icons/fa6";
 import clsx from "clsx";
 

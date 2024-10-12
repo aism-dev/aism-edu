@@ -102,6 +102,23 @@ const academicProgramsTab: TabContent[] = [
     },
 ];
 
+const applicationsTab: TabContent[] = [
+    {
+        "id": 1,
+        "title": "Application Form MD",
+        "description": "Start your journey towards becoming a medical doctor by completing our application form. Join AISM's MD program and take the first step toward a rewarding medical career.",
+        "icon": "https://aism-edu.sirv.com/icons/download%20(18).png",
+        "url": ""
+    },
+    {
+        "id": 2,
+        "title": "Community Medicine Course",
+        "description": "Explore public health and community care in this popular course, designed to equip you with the skills to tackle healthcare challenges on both local and global levels.",
+        "icon": "https://aism-edu.sirv.com/icons/download%20(19).png",
+        "popular": true,
+        "url": ""
+    }      
+]
 
 export const TABS: {
     id: number,
@@ -120,13 +137,13 @@ export const TABS: {
     },
     {
         id: 3,
-        title: 'Academic Programs',
+        title: 'Applications',
         Component: <TabComponent content={academicProgramsTab} />,
     },
     {
         id: 4,
         title: 'Student Success',
-        Component: <TabComponent content={aboutTab} />,
+        Component: <TabComponent content={applicationsTab} />,
     },
 ].map((n, idx) => ({ ...n, id: idx }));
 

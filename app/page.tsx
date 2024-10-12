@@ -9,7 +9,7 @@ import YourjourneyOurpromise from "./home-page components/YourjourneyOurpromise"
 
 export default function Home() {
     return (
-        <div className="app">
+        <>
             <HeroSection />
             <MiniInfo />
             <ChooseAISM />
@@ -17,6 +17,6 @@ export default function Home() {
             <MiniInfoTwo />
             <YourjourneyOurpromise />
             <Testimonials />
-        </div>
+        </>
     );
 }

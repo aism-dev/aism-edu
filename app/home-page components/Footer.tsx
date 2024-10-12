@@ -5,7 +5,7 @@ import { FaAt, FaFacebook, FaInstagram, FaLink, FaLinkedin, FaMapLocation, FaPho
 
 export default function Footer() {
     return (
-        <div className="grid bg-theme text-white relative">
+        <div className="grid bg-theme text-white relative overflow-hidden">
             <Image
                 src={"https://aism-edu.sirv.com/icons/AISM-white.png"}
                 alt="logo"

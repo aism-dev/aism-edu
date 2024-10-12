@@ -25,7 +25,6 @@ export default function RootLayout({
                 className={`${geistSans.variable} antialiased`}
             >
                 <Navigation />
-
                 {children}
                 <Footer />
             </body>

@@ -78,7 +78,7 @@ export default function Navigation() {
     return (
         <>
             <motion.nav
-                className="w-full bg-white md:px-40 sm:px-10 px-6 fixed top-0 left-0 z-50 shadow-lg shadow-black/5"
+                className="w-full bg-white xl:px-40 lg:px-20 md:px-10 sm:px-10 px-6 fixed top-0 left-0 z-50 shadow-lg shadow-black/5"
                 variants={topVariants}
                 initial="hidden"
                 animate={controls}
@@ -143,20 +143,27 @@ export default function Navigation() {
                             setCurrentlyHovered(1);
                             const rect = tabRef02.current!
                             const val = rect.getBoundingClientRect();
-                            setRectBoundHover((val.left + 10) + (val.width / 2));
+                            setRectBoundHover((val.left) + (val.width / 2));
                             setRectBoundWidth(val.width - 56);
                         }} ref={tabRef02}>Admission <FaAngleUp className="group-hover:rotate-180" /></span>
                         <span className="py-3 flex items-center gap-2 group px-7 cursor-pointer" onMouseEnter={() => {
                             setCurrentlyHovered(2);
                             const rect = tabRef03.current!
                             const val = rect.getBoundingClientRect();
-                            setRectBoundHover((val.left - 20) + (val.width / 2));
+                            setRectBoundHover((val.left - 37) + (val.width / 2));
                             setRectBoundWidth(val.width - 56);
                         }} ref={tabRef03}>Academic Programs <FaAngleUp className="group-hover:rotate-180" /></span>
-                        <span className="py-3 px-7 cursor-pointer" onMouseEnter={() => {
-                            setLastHovered(3);
+                        <Link href={"#"} className="py-3 px-7 cursor-pointer" onMouseEnter={() => {
+                            setLastHovered(2.5);
                             setCurrentlyHovered(null);
-                        }} ref={tabRef04}>Student Sucess</span>
+                        }} >Student Sucess</Link>
+                        <span className="py-3 flex items-center gap-2 group px-7 cursor-pointer" onMouseEnter={() => {
+                            setCurrentlyHovered(3);
+                            const rect = tabRef04.current!
+                            const val = rect.getBoundingClientRect();
+                            setRectBoundHover((val.left - 10) + (val.width / 2));
+                            setRectBoundWidth(val.width - 56);
+                        }} ref={tabRef04}>Applications<FaAngleUp className="group-hover:rotate-180" /></span>
                         <AnimatePresence>
                             {currentlyHovered !== null && <NavTab containerSize={rectBoundWidth} centerRect={rectBoundHover} closeFunc={setLastHovered} currentlyHovered={currentlyHovered} lastHovered={lastHovered} />}
                         </AnimatePresence>

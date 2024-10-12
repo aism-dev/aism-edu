@@ -7,12 +7,42 @@ import { AnimatePresence, motion, useAnimation, Variants } from "framer-motion";
 import NavTab from "../home-page components/sub components/NavTab";
 import { FaAngleUp, FaArrowUp } from "react-icons/fa6";
 import clsx from "clsx";
+import {useLocation} from 'react-use';
 
 
 
 export default function Navigation() {
     const [scrollPosition, setScrollPosition] = useState(0);
     const scrollPositionRef = useRef(0);
+    const [activeTab, setActiveTab] = useState(0);
+
+    const state = useLocation();
+
+    useEffect(() => {
+        if (!state.pathname) return;
+        const currentTab = state.pathname.split("/")[1];
+
+        switch(currentTab){
+            case "about":
+                setActiveTab(1);
+                break;
+            case "adminssion":
+                setActiveTab(2);
+                break;
+            case "acedemic-programs":
+                setActiveTab(3);
+                break;
+            case "student-success":
+                setActiveTab(4);
+                break;
+            case "application":
+                setActiveTab(5);
+                break;
+            default:
+                setActiveTab(0);
+                break;
+        }
+    }, [state]);
 
     const tabRef01 = useRef<HTMLDivElement>(null);
     const tabRef02 = useRef<HTMLDivElement>(null);
@@ -133,45 +163,78 @@ export default function Navigation() {
                             setCurrentlyHovered(null)
                         }}
                     >
-                        <span className="py-3 flex items-center gap-2 group pr-7 cursor-pointer hover:text-theme" onMouseEnter={() => {
+                        <span className={clsx(
+                            "py-3 flex items-center gap-2 group pr-7 cursor-pointer hover:text-theme",
+                            activeTab === 1 ? "text-theme font-semibold underline underline-offset-4" : "",
+
+                        )} onMouseEnter={() => {
                             setCurrentlyHovered(0);
                             const rect = tabRef01.current!
                             const val = rect.getBoundingClientRect();
                             setRectBoundHover((val.left) + (val.width / 2));
                             setRectBoundWidth(val.width - 14);
-                        }} ref={tabRef01}>About <FaAngleUp className="group-hover:rotate-180" /></span>
-                        <span className="py-3 min-[960px]:flex hidden items-center gap-2 group px-7 cursor-pointer hover:text-theme" onMouseEnter={() => {
+                        }} ref={tabRef01}>About <FaAngleUp className={clsx(
+                            "group-hover:rotate-180", 
+                            activeTab === 1 ? "rotate-90" : "",
+
+                        )} /></span>
+                        <span className={clsx(
+                            "py-3 min-[960px]:flex hidden items-center gap-2 group px-7 cursor-pointer hover:text-theme",
+                            activeTab === 2 ? "text-theme font-semibold underline underline-offset-4" : "",
+                        )} onMouseEnter={() => {
                             setCurrentlyHovered(1);
                             const rect = tabRef02.current!
                             const val = rect.getBoundingClientRect();
                             setRectBoundHover((val.left) + (val.width / 2));
                             setRectBoundWidth(val.width - 56);
-                        }} ref={tabRef02}>Admission <FaAngleUp className="group-hover:rotate-180" /></span>
-                        <span className="py-3 flex items-center gap-2 group px-7 cursor-pointer hover:text-theme" onMouseEnter={() => {
+                        }} ref={tabRef02}>Admission <FaAngleUp className={clsx(
+                            "group-hover:rotate-180",
+                            activeTab === 2 ? "rotate-90" : "",
+                            )} /></span>
+                        <span className={clsx(
+                            "py-3 flex items-center gap-2 group px-7 cursor-pointer hover:text-theme",
+                            activeTab === 3 ? "text-theme font-semibold underline underline-offset-4" : "",
+                        )} onMouseEnter={() => {
                             setCurrentlyHovered(2);
                             const rect = tabRef03.current!
                             const val = rect.getBoundingClientRect();
                             setRectBoundHover((val.left - 37) + (val.width / 2));
                             setRectBoundWidth(val.width - 56);
-                        }} ref={tabRef03}>Academic Programs <FaAngleUp className="group-hover:rotate-180" /></span>
-                        <Link href={"#"} className="py-3 px-7 cursor-pointer hover:text-theme" onMouseEnter={() => {
+                        }} ref={tabRef03}>Academic Programs <FaAngleUp className={clsx(
+                            "group-hover:rotate-180",
+                            activeTab === 3 ? "rotate-90" : "",
+                            )} /></span>
+                        <Link href={"#"} className={clsx(
+                            "py-3 px-7 cursor-pointer hover:text-theme",
+                            activeTab === 4 ? "text-theme font-semibold underline underline-offset-4" : "",
+                        )} onMouseEnter={() => {
                             setLastHovered(2.5);
                             setCurrentlyHovered(null);
                         }} >Student Sucess</Link>
-                        <span className="py-3  min-[960px]:flex hidden items-center gap-2 group px-7 cursor-pointer hover:text-theme" onMouseEnter={() => {
+                        <span className={clsx(
+                            "py-3  min-[960px]:flex hidden items-center gap-2 group px-7 cursor-pointer hover:text-theme",
+                            activeTab === 5 ? "text-theme font-semibold underline underline-offset-4" : "",
+                        )} onMouseEnter={() => {
                             setCurrentlyHovered(3);
                             const rect = tabRef04.current!
                             const val = rect.getBoundingClientRect();
                             setRectBoundHover((val.left - 10) + (val.width / 2));
                             setRectBoundWidth(val.width - 56);
-                        }} ref={tabRef04}>Applications<FaAngleUp className="group-hover:rotate-180" /></span>
-                        <span className="py-3 min-[960px]:hidden flex items-center gap-2 group px-7 cursor-pointer hover:text-theme" onMouseEnter={() => {
+                        }} ref={tabRef04}>Applications<FaAngleUp className={clsx(
+                            "group-hover:rotate-180",
+                            activeTab === 5 ? "rotate-90" : "",
+                            )} /></span>
+                        <span className={clsx(
+                            "py-3 min-[960px]:hidden flex items-center gap-2 group px-7 cursor-pointer hover:text-theme",
+                        )} onMouseEnter={() => {
                             setCurrentlyHovered(4);
                             const rect = tabRef05.current!
                             const val = rect.getBoundingClientRect();
                             setRectBoundHover((val.left - 10) + (val.width / 2));
                             setRectBoundWidth(val.width - 56);
-                        }} ref={tabRef05}>More<FaAngleUp className="group-hover:rotate-180" /></span>
+                        }} ref={tabRef05}>More<FaAngleUp className={clsx(
+                            "group-hover:rotate-180",
+                            )} /></span>
                         <AnimatePresence>
                             {currentlyHovered !== null && <NavTab containerSize={rectBoundWidth} centerRect={rectBoundHover} closeFunc={setLastHovered} currentlyHovered={currentlyHovered} lastHovered={lastHovered} />}
                         </AnimatePresence>

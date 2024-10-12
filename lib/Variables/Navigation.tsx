@@ -20,7 +20,7 @@ const aboutTab: TabContent[] = [
         title: "Our Vision, Mission & Values",
         description: "Learn about AISM's guiding principles, our mission to transform medical education, and the values that drive our commitment to shaping compassionate, skilled healthcare professionals.",
         icon: "https://aism-edu.sirv.com/icons/download%20(2).png",
-        url: ""
+        url: "/about"
     },
     {
         id: 2,

@@ -7,11 +7,11 @@ export default function Button({ btnType = "button", children, sizeVariation = "
             <button 
             type={btnType} 
             className={clsx(
-                "relative btn hover:text-white text-base border",
+                "relative btn text-base border",
                 colorVariation === "dark" ? 
-                    "text-white border-themelight after:bg-themelight" : 
+                    "text-white border-themelight after:bg-themelight hover:text-white" : 
                 colorVariation === "footer" ? "border-white after:bg-white hover:text-theme" :
-                    "text-theme border-theme after:bg-theme",
+                    "text-theme border-theme after:bg-theme hover:text-white",
                 sizeVariation === "L" ? "text-xl py-4 px-10" : "",
                 sizeVariation === "M" ? "px-6 py-3" : "",
                 sizeVariation === "W" ? "w-full py-5" : "",

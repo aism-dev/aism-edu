@@ -118,8 +118,24 @@ a::after {
   left: 0%;
 }
 
+a.alt-link::after {
+  background-color: #fff;
+}
+
 a:active {
-  transform: scale(0.95);
+  transform: scale(0.90);
+}
+
+body:has(a:hover) a:hover {
+  opacity: 1;
+}
+
+body:has(a:hover) a:not(:hover).no-underline {
+  opacity: 1;
+}
+
+body:has(a:hover) a:not(:hover) {
+  opacity: 0.6;
 }
 
 *.duration-500-alt {
@@ -130,8 +146,19 @@ a:active {
   transition: all .15s ease;
 }
 
+@media screen and (max-width: 760px) {
+  * {
+    font-size: 13px;
+  }
+}
+
+@media screen and (min-width: 760px) {
+  * {
+    font-size: 2.15vmin;
+  }
+}
+
 * {
-  font-size: 2.15vmin;
   scroll-behavior: smooth;
 }
 /* 

@@ -14,6 +14,7 @@ const config: Config = {
         foreground: "var(--foreground)",
         theme: "#183d74",
         themelight: "#1563d8",
+        themeDark: "#132e57",
       },
     },
   },

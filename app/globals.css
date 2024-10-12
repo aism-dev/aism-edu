@@ -247,3 +247,68 @@ a .isVisited {
 .hoverText:has(+ .hoverText + .hoverText:hover) {
   font-weight: 300;
 }
+
+.hamburger {
+  position: relative;
+  display: grid;
+  gap: 6px;
+  place-items: center;
+  height: 28px;
+  min-width: 2rem;
+  cursor: pointer;
+}
+
+.hamburger div:nth-child(1) {
+  position: absolute;
+  top: 0px;
+  transform-origin: top left;
+}
+
+.hamburger div:nth-child(2) {
+  position: absolute;
+  transform-origin: right;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+
+.hamburger div:nth-child(3) {
+  position: absolute;
+  bottom: 0px;
+  transform-origin: bottom left;
+}
+
+.hamburger div {
+  height: 4px;
+  right: 0;
+  width: 2rem;
+  background-color: #1563d8;
+}
+
+.hamburger:active div:nth-child(1), .hamburger.active div:nth-child(1) {
+  transform: translateY(2px) rotate(30deg) translateX(5px);
+}
+
+.hamburger:active div:nth-child(2), .hamburger.active div:nth-child(2) {
+  width: 0;
+}
+
+.hamburger:not(:active):hover div:nth-child(2) {
+  width: 50%;
+}
+
+.hamburger:active div:nth-child(3), .hamburger.active div:nth-child(3) {
+  transform: translateY(-2px) rotate(-30deg) translateX(5px);
+}
+
+.hamburger.active:active div:nth-child(1) {
+  transform: translateY(2px) rotate(35deg) translateX(5px);
+}
+
+.hamburger.active:hover div:nth-child(2) {
+  width: 0;
+}
+
+.hamburger.active:active div:nth-child(3) {
+  transform: translateY(-2px) rotate(-35deg) translateX(5px);
+}

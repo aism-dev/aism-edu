@@ -120,6 +120,11 @@ const applicationsTab: TabContent[] = [
     }      
 ]
 
+const moreTab: TabContent[] = [
+    ...admissionTab,
+    ...applicationsTab
+]
+
 export const TABS: {
     id: number,
     title: string,
@@ -144,6 +149,11 @@ export const TABS: {
         id: 4,
         title: 'Student Success',
         Component: <TabComponent content={applicationsTab} />,
+    },
+    {
+        id: 4,
+        title: 'More',
+        Component: <TabComponent content={moreTab} />,
     },
 ].map((n, idx) => ({ ...n, id: idx }));
 

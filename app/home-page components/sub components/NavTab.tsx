@@ -29,8 +29,8 @@ export default function NavTab({ currentlyHovered, lastHovered, closeFunc, cente
         setContainerRect(containerRef.current.getBoundingClientRect().left);
     }, [containerRef]);
 
-    const dir = useMemo(()=>{
-        if(currentlyHovered === null || lastHovered === null) return ""
+    const dir = useMemo(() => {
+        if (currentlyHovered === null || lastHovered === null) return ""
         if (currentlyHovered < lastHovered) return "r";
         if (currentlyHovered > lastHovered) return "l";
         return "";
@@ -54,14 +54,6 @@ export default function NavTab({ currentlyHovered, lastHovered, closeFunc, cente
                 }}
                 ref={containerRef}
             >
-                <motion.span
-                    animate={{ left: (centerRect) - (containerRect * 1.30) }}
-                    transition={{ duration: 0.25, ease: "easeInOut" }}
-                    style={{
-                        width: `${containerSize}px`
-                    }}
-                    className="absolute left-1/2 top-[1px] rounded-tl border-2 border-theme bg-theme"
-                />
                 {TABS.map((tab) => {
                     return (
                         <div className="overflow-hidden" key={tab.id}>

@@ -1,5 +1,6 @@
 import Image from "next/image"
 import Carousel from "./sub components/Carousel"
+import TestimonialsList, { TestimonialInterface } from "@/lib/Variables/Testimonials"
 
 export default function Testimonials() {
     return (
@@ -12,17 +13,22 @@ export default function Testimonials() {
             </div>
             <div className="px-10 mt-10">
                 <Carousel>
-                    <Testimonial />
-                    <Testimonial />
-                    <Testimonial />
-                    <Testimonial />
+                    {TestimonialsList.map((testimonial)=>(
+                        <Testimonial 
+                            key={testimonial.id} 
+                            name={testimonial.name}
+                            role={testimonial.role}
+                            avatar={testimonial.avatar}
+                            testimonial ={testimonial.testimonial}
+                        />
+                    ))}
                 </Carousel>
             </div>
         </div>
     )
 }
 
-function Testimonial() {
+function Testimonial({ avatar, name, role, testimonial }: Omit<TestimonialInterface, "id">) {
   return (
     <div className="p-8 bg-white max-w-[95%] max-sm:max-w-full cursor-grab active:cursor-grabbing">
         <Image
@@ -30,24 +36,24 @@ function Testimonial() {
             alt="Quotes"
             height={50}
             width={50}
-            className="opacity-50 pt-8"
+            className="opacity-80 pt-8"
         />
         <p className="mt-3 mb-5">
-            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Minima asperiores praesentium qui neque fugit accusantium?
+            {testimonial}
         </p>
         <div className="flex items-center border-t-2 border-t-black/5 py-3 gap-3">
             <div className="h-full rounded-full aspect-square border overflow-hidden">
                   <Image
-                      src={"https://aism-edu.sirv.com/Dr.Peraline.jpeg"}
-                      alt="Quotes"
+                      src={avatar}
+                      alt={name}
                       height={50}
                       width={50}
                       className="max-sm:h-16 max-sm:w-16"
                   />
             </div>
             <div>
-                <h3 className="font-semibold text-theme">Jeffrey Dahmer</h3>
-                <p className="opacity-70">Mauwakee Butcher</p>
+                <h3 className="font-semibold text-theme">{name}</h3>
+                <p className="opacity-70">{role}</p>
             </div>
         </div>
     </div>

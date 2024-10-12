@@ -18,6 +18,7 @@ export default function Carousel({ children }: WithChildren) {
         slidesToScroll: 1,
         swipeToSlide: true,
         nextArrow: <SampleNextArrow />,
+        focusOnSelect: true,
         prevArrow: <SamplePrevArrow />,
         responsive: [
           {
@@ -29,7 +30,7 @@ export default function Carousel({ children }: WithChildren) {
             }
           },
           {
-            breakpoint: 900,
+            breakpoint: 1000,
             settings: {
               slidesToShow: 3,
               slidesToScroll: 3,
@@ -37,7 +38,7 @@ export default function Carousel({ children }: WithChildren) {
             }
           },
           {
-            breakpoint: 800,
+            breakpoint: 850,
             settings: {
               slidesToShow: 2,
               slidesToScroll: 2,

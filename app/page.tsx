@@ -1,5 +1,6 @@
 import ChooseAISM from "./home-page components/Choose AISM";
 import FindYourProgram from "./home-page components/FindYourProgram";
+import Footer from "./home-page components/Footer";
 import HeroSection from "./home-page components/HeroSection";
 import MiniInfo from "./home-page components/MiniInfo";
 import MiniInfoTwo from "./home-page components/MiniInfoTwo";
@@ -19,6 +20,7 @@ export default function Home() {
             <MiniInfoTwo />
             <YourjourneyOurpromise />
             <Testimonials />
+            <Footer />
         </div>
     );
 }

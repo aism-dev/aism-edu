@@ -8,7 +8,7 @@ import clsx from "clsx";
 
 export default function HeroSection() {
     return (
-        <div className="grid place-items-center mt-36">
+        <div className="grid place-items-center mt-36" id="TopOfPage">
             <HeroSlider>
                 {HeroSliderSlide.map((slideContent)=>(
                     <div className="heroImg" key={slideContent.id}>

@@ -49,7 +49,7 @@ export default function FindYourProgram() {
                         )}>
                             <Image
                                 src={program.img}
-                                alt=""
+                                alt={program.title}
                                 height={10800}
                                 width={7200}
                                 priority

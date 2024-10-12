@@ -16,6 +16,9 @@ const config: Config = {
         themelight: "#1563d8",
         themeDark: "#132e57",
       },
+      cursor: {
+        'education': 'url(https://aism-edu.sirv.com/icons/download%20(20).png), auto',
+      }
     },
   },
   plugins: [],

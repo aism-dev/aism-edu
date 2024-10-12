@@ -56,7 +56,7 @@ export default function ChooseAISM() {
                             )}>
                             <Image
                                 src={item.image}
-                                alt=""
+                                alt={item.title}
                                 height={6000}
                                 width={4000}
                                 priority

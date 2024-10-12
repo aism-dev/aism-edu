@@ -1,12 +1,12 @@
 "use client"
 import clsx from "clsx";
 import { useEffect, useRef, useState } from "react";
-import { FaPause, FaPlay, FaVolumeHigh } from "react-icons/fa6";
+import { FaPause, FaPlay } from "react-icons/fa6";
 import spinnerLoader from "../assets/spinner.svg";
 import Image from "next/image";
 import { useClickAway } from "react-use";
 import { motion } from "framer-motion";
-import { FaVolumeMute } from "react-icons/fa";
+import { FaVolumeMute, FaVolumeUp } from "react-icons/fa";
 
 export default function VideoPlayer(videoProps: { src: string, closePlayer: () => void }) {
     const videoRef = useRef<HTMLVideoElement>(null);
@@ -117,15 +117,15 @@ export default function VideoPlayer(videoProps: { src: string, closePlayer: () =
 
                     <div className={clsx(
                         "h-full w-full absolute top-0 left-0 z-10 pointer-events-none",
-                        (isPlaying || isBuffering) ? "group-hover:bg-black/35 bg-transparent" : "bg-black/35",
+                        (isPlaying || !isBuffering) ? "group-hover:bg-black/35 bg-transparent" : "bg-black/35",
                     )}></div>
 
                     <div className="absolute bottom-10 right-10 z-30 text-3xl text-white drop-shadow-md">
                         {formatTime(remainingTime)}
                     </div>
                     
-                    <div className="absolute bottom-10 left-10 z-30 cursor-pointer text-white drop-shadow-md" onClick={handleMute}>
-                        {isMuted ? <FaVolumeMute className="text-3xl active:scale-95" /> : <FaVolumeHigh className="text-3xl active:scale-95" />}
+                    <div className="absolute bottom-10 left-10 z-30 cursor-pointer text-white drop-shadow-md active:scale-75 active:opacity-50 active:rotate-12" onClick={handleMute}>
+                        {isMuted ? <FaVolumeMute className="text-3xl" /> : <FaVolumeUp className="text-3xl" />}
                     </div>
 
                     {!isBuffering ? <div title={ isPlaying ? "Pause the Video" : "Play the Video"} className={clsx(

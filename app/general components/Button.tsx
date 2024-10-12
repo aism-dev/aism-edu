@@ -8,9 +8,13 @@ export default function Button({ btnType = "button", children, sizeVariation = "
             type={btnType} 
             className={clsx(
                 "relative btn hover:text-white text-base border",
-                colorVariation === "dark" ? "text-white border-themelight after:bg-themelight" : "text-theme border-theme after:bg-theme",
+                colorVariation === "dark" ? 
+                    "text-white border-themelight after:bg-themelight" : 
+                colorVariation === "footer" ? "border-white after:bg-white hover:text-theme" :
+                    "text-theme border-theme after:bg-theme",
                 sizeVariation === "L" ? "text-xl py-4 px-10" : "",
                 sizeVariation === "M" ? "px-6 py-3" : "",
+                sizeVariation === "W" ? "w-full py-5" : "",
                 sizeVariation === "XL" ? "text-2xl py-5 px-16" : "",
             )}
         >

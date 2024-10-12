@@ -3,6 +3,8 @@ import localFont from "next/font/local";
 import "./globals.css";
 // import "./debugger.css";
 import { aismMetadata } from "@/lib/Metadata";
+import Navigation from "./home-page components/Navigation";
+import Footer from "./home-page components/Footer";
 
 const geistSans = localFont({
     src: "./fonts/Nunito-VariableFont_wght.woff",
@@ -22,7 +24,10 @@ export default function RootLayout({
             <body
                 className={`${geistSans.variable} antialiased`}
             >
+                <Navigation />
+
                 {children}
+                <Footer />
             </body>
         </html>
     );

@@ -3,7 +3,7 @@ import { FaDotCircle } from "react-icons/fa";
 
 export default function OurMission() {
     return (
-        <div className="grid grid-cols-2 w-full px-40 py-8 items-center gap-5 border-y my-8 bg-black/5">
+        <div className="grid grid-cols-2 w-full px-40 py-16 items-center gap-5 bg-black/5">
             <div>
                 <BubbleText formatClass="text-5xl" text="What is AISM's Mission?" />
             </div>

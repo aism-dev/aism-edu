@@ -8,7 +8,7 @@ export default function OurVision() {
             <div className="grid gap-14 grid-cols-[auto_1fr_auto] w-full px-20 py-10 items-center">
                 <div className="w-fit">
                     <Button sizeVariation="XL">
-                        Join Us
+                        Apply Now
                     </Button>
                 </div>
                 <p className=" grid gap-4">

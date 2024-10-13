@@ -1,6 +1,7 @@
 import WhatWeCanDoForYou from "./Components/WhatWeCanDoForYou";
 import OurMission from "./Components/OurMission";
 import OurVision from "./Components/OurVision";
+import WhyChooseUs from "./Components/WhyChooseUs";
 
 export default function AboutPage() {
     return (
@@ -8,6 +9,7 @@ export default function AboutPage() {
             <WhatWeCanDoForYou />
             <OurMission />
             <OurVision />
+            <WhyChooseUs />
         </div>
     )
 }

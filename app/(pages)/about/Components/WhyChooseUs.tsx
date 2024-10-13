@@ -59,8 +59,8 @@ export default function WhyChooseUs() {
                     />
                 </div>
                 <div className="min-w-[20rem] flex-1 py-10 px-16">
-                    <BubbleText formatClass="text-4xl text-theme" text="Why Choose AISM" />
-                    <p className="max-w-[85%] mt-3">
+                    <h3 className="text-4xl font-semibold">Why Choose AISM</h3>
+                    <p className="max-w-[85%] mt-5 text-themeDark">
                         We are dedicated to educating future physicians and empowering them to drive innovation in medicine. Our curriculum provides extensive clinical practice opportunities to help you become an exceptional physician.
                     </p>
                     <div className="grid gap-3 my-6">
@@ -77,22 +77,22 @@ export default function WhyChooseUs() {
                             State-of-the-Art Campus in Guyana with Full Wireless Access
                         </span>
                     </div>
-                    <div className="grid grid-cols-3">
+                    <div className="grid grid-cols-3 mt-10">
                         <div className="flex flex-col items-center gap-2 text-center text-balance" ref={counter01Ref}>
                             <span className="text-6xl text-themeDark font-bold">
-                            {counter01InView && <CountUp end={100} className="text-6xl" duration={2} />}+
+                            {!counter01InView ? "0" : <CountUp end={100} className="text-6xl" duration={2} />}+
                             </span>
                             <span className="opacity-70">Graduates practicing in USA, India, UK, Guyana</span>
                         </div>
                         <div className="flex flex-col items-center gap-2 text-center text-balance" ref={counter02Ref}>
                             <span className="text-6xl text-themeDark font-bold">
-                            {counter02InView && <CountUp end={85} className="text-6xl" duration={2} />}%
+                            {!counter02InView ? "0" : <CountUp end={85} className="text-6xl" duration={2} />}%
                             </span>
                             <span className="opacity-70">USMLE Pass Rate</span>
                         </div>
                         <div className="flex flex-col items-center gap-2 text-center text-balance" ref={counter03Ref}>
                             <span className="text-6xl text-themeDark font-bold">
-                            {counter03InView && <CountUp end={95} className="text-6xl" duration={2} />}%
+                            {!counter03InView ? "0" : <CountUp end={95} className="text-6xl" duration={2} />}%
                             </span>
                             <span className="opacity-70">PLAB Pass Rate</span>
                         </div>

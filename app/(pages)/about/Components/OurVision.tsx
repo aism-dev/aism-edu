@@ -21,7 +21,7 @@ export default function OurVision() {
                 </div>
             </div>
             <div className="flex flex-wrap border-y-2">
-                <div className="min-w-[20rem] max-w-[30rem]">
+                <div className="w-[35rem]">
                     <Image
                         src={"https://aism-edu.sirv.com/pexels-hawk-i-i-75310404-19547594.jpg"}
                         alt=""

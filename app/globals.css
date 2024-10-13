@@ -163,6 +163,11 @@ body:has(a:hover) a:not(:hover) {
   color: #fff;
 }
 
+* img {
+  pointer-events: none;
+  user-select: none;
+}
+
 * {
   scroll-behavior: smooth;
 }

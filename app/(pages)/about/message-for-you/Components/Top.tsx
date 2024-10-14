@@ -13,7 +13,7 @@ export default function TopSection() {
         <div className="bg-theme h-screen relative grid grid-cols-[1fr_1.25fr]" id="TopOfPage">
             <div className="flex items-center">
                 <h1 className="text-8xl font-normal text-white p-20">
-                    Message <span className="text-3xl">from</span> <br /> <span className="text-3xl">the</span> President
+                    <span className="text-8xl font-thin opacity-80">Message</span> <span className="text-3xl opacity-80">from</span> <br /> <span className="text-3xl opacity-80">the</span> President
                 </h1>
             </div>
             <div className="rounded-bl-full h-full bg-white overflow-hidden relative">

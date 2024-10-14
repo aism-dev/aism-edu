@@ -242,7 +242,7 @@ export default function Navigation() {
                     <Button>
                         <span>Apply for Admission</span>
                     </Button>
-                    <div className="hamburger active">
+                    <div className="hamburger active text-theme">
                         <div></div>
                         <div></div>
                         <div></div>

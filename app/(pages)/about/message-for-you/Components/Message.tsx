@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { FaFacebookF, FaInstagram, FaLinkedinIn } from "react-icons/fa6";
 
 export default function MessageSection() {
     return (
@@ -20,6 +21,17 @@ export default function MessageSection() {
 
             <p className="font-medium sign-font mt-10 text-3xl text-theme underline underline-offset-8">Dr. Colin A. Wilkinson</p>
             <p className="font-bold text-lg uppercase text-themeDark -mt-3">Founder & Chairman</p>
+            <div className="flex items-center gap-3 justify-between w-fit">
+                        <Link href={""} className="alt-link h-12 w-12 rounded-lg grid place-items-center text-theme border-2 border-theme">
+                            <FaFacebookF className="text-2xl"/>
+                        </Link>
+                        <Link href={""} className="alt-link h-12 w-12 rounded-lg grid place-items-center text-theme border-2 border-theme">
+                            <FaInstagram className="text-2xl"/>
+                        </Link>
+                        <Link href={""} className="alt-link h-12 w-12 rounded-lg grid place-items-center text-theme border-2 border-theme">
+                            <FaLinkedinIn className="text-2xl"/>
+                        </Link>
+                    </div>
         </div>
     )
 }

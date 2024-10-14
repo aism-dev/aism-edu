@@ -13,7 +13,6 @@ interface TabContent {
 
 }
 
-
 const aboutTab: TabContent[] = [
     {
         id: 1,
@@ -27,7 +26,7 @@ const aboutTab: TabContent[] = [
         title: "A Message for You",
         description: "Read a personal message from our leadership, sharing AISM's dedication to your success and the global impact of our medical community.",
         icon: "https://aism-edu.sirv.com/icons/download%20(3).png",
-        url: ""
+        url: "/about/message-for-you"
     },
     {
         id: 3,

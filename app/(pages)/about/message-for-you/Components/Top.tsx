@@ -10,7 +10,7 @@ export default function TopSection() {
     const [playVideo, setPlayVideo] = useState(false);
 
     return (
-        <div className="bg-theme h-screen relative grid grid-cols-[1fr_1.25fr]" id="Up">
+        <div className="bg-theme h-screen relative grid grid-cols-[1fr_1.25fr]" id="TopOfPage">
             <div className="flex items-center">
                 <h1 className="text-8xl font-normal text-white p-20">
                     Message <span className="text-3xl">from</span> <br /> <span className="text-3xl">the</span> President

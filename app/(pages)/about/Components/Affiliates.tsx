@@ -1,25 +1,25 @@
 import Image from "next/image";
-import TestimonialsList, { TestimonialInterface } from "@/lib/Variables/Testimonials";
+import AffiliatesList, { AffiliateInterface } from "@/lib/Variables/Affiliates";
 import Carousel from "@/app/home-page components/sub components/Carousel";
 
 export default function Affiliates() {
     return (
         <div className="pt-24 pb-20 bg-black/5">
             <div className="text-center flex flex-col items-center gap-4">
-                <h2 className="text-4xl font-medium text-theme">What Others Are Saying</h2>
+                <h2 className="text-4xl font-medium text-theme">Organisations Affiliated with AISM</h2>
                 <p className="max-w-[40rem] leading-6 text-black/70">
-                    Hear from students, faculty, and professionals as they share their experiences and how AISM has impacted their careers in the medical field.
+                Partnering with top organizations to provide students with enhanced clinical training, research opportunities, and career development pathways.
                 </p>
             </div>
             <div className="px-10 mt-10">
                 <Carousel>
-                    {TestimonialsList.map((testimonial)=>(
+                    {AffiliatesList.map((affiliate)=>(
                         <Affiliate 
-                            key={testimonial.id} 
-                            name={testimonial.name}
-                            role={testimonial.role}
-                            avatar={testimonial.avatar}
-                            testimonial ={testimonial.testimonial}
+                            key={affiliate.id} 
+                            name={affiliate.name}
+                            relationship={affiliate.relationship}
+                            avatar={affiliate.avatar}
+                            affiliation ={affiliate.affiliation}
                         />
                     ))}
                 </Carousel>
@@ -28,32 +28,30 @@ export default function Affiliates() {
     )
 }
 
-function Affiliate({ avatar, name, role, testimonial }: Omit<TestimonialInterface, "id">) {
+function Affiliate({ avatar, name, relationship, affiliation }: Omit<AffiliateInterface, "id">) {
   return (
-    <div className="p-8 bg-white max-w-[95%] max-sm:max-w-full cursor-grab active:cursor-grabbing">
+    <div className="p-8 bg-white max-w-[95%] max-sm:max-w-full cursor-grab active:cursor-grabbing relative">
         <Image
-            src={"https://aism-edu.sirv.com/icons/quote-left-svgrepo-com%20(1).svg"}
+            src={avatar}
             alt="Quotes"
-            height={50}
-            width={50}
-            className="opacity-80 pt-8"
+            height={500}
+            width={500}
+            className="opacity-80 pt-8 h-32 w-auto object-contain"
+        />
+        <Image
+            src={avatar}
+            alt="Quotes"
+            height={500}
+            width={500}
+            className="h-32 w-full object-cover absolute top-0 right-0 opacity-5 saturate-0"
         />
         <p className="mt-3 mb-5">
-            {testimonial}
+            {affiliation}
         </p>
         <div className="flex items-center border-t-2 border-t-black/5 py-3 gap-3">
-            <div className="h-full rounded-full aspect-square border overflow-hidden">
-                  <Image
-                      src={avatar}
-                      alt={name}
-                      height={50}
-                      width={50}
-                      className="max-sm:h-16 max-sm:w-16"
-                  />
-            </div>
             <div>
                 <h3 className="font-semibold text-theme">{name}</h3>
-                <p className="opacity-70">{role}</p>
+                <p className="opacity-70 text-sm">{relationship}</p>
             </div>
         </div>
     </div>

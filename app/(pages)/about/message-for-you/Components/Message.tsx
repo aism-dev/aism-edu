@@ -14,7 +14,7 @@ export default function MessageSection() {
 
             <p>At AISM, we offer a very dynamic and culturally diverse learning environment.</p>
 
-            <p>As President, I wish to personally extend the key to gateway of acquiring an excellent career in Medical and Health Care sciences. I am confident that your choice to be associated with AISM will be an experience you will always cherish. I wish you a memorable and earnest journey towards success. <Link href={"https://inspirery.com/colin-wilkinson/"} className="text-themelight">Read more</Link></p>
+            <p>As President, I wish to personally extend the key to gateway of acquiring an excellent career in Medical and Health Care sciences. I am confident that your choice to be associated with AISM will be an experience you will always cherish. I wish you a memorable and earnest journey towards success. <Link href={"https://inspirery.com/colin-wilkinson/"} target="_blank" className="text-themelight">Read more</Link></p>
 
             <p>Welcome to the American International School of Medicine &mdash; AISM</p>
 

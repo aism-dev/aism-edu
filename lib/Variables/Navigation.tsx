@@ -33,7 +33,7 @@ const aboutTab: TabContent[] = [
         title: "Meet Our Administration",
         description: "Get to know the dedicated leadership team at AISM, committed to fostering excellence in medical education and supporting your journey toward a successful healthcare career.",
         icon: "https://aism-edu.sirv.com/icons/download%20(4).png",
-        url: ""
+        url: "/about/meet-our-administration"
     },
 ];
 

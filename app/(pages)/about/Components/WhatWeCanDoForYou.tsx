@@ -4,7 +4,7 @@ import Image from "next/image";
 export default function WhatWeCanDoForYou() {
     return (
         <>
-            <div className="grid grid-cols-2 w-full px-40 pb-10 items-center gap-5">
+            <div className="grid grid-cols-2 w-full px-40 pb-10 items-center gap-5" id="Up">
                 <div>
                     <BubbleText formatClass="text-5xl" text="What AISM can do for you?" />
                 </div>

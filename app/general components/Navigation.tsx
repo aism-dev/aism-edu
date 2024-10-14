@@ -140,13 +140,13 @@ export default function Navigation() {
                     </div>
                     <div className="flex flex-col justify-between items-end">
                         <div className="inline-flex gap-6">
-                            <Link className="text-sm hover:opacity-100 opacity-50" href={""}>
+                            <Link className="text-sm hover:opacity-100 opacity-80" href={""}>
                                 FaQ
                             </Link>
-                            <Link className="text-sm hover:opacity-100 opacity-50" href={""}>
+                            <Link className="text-sm hover:opacity-100 opacity-80" href={""}>
                                 Blog
                             </Link>
-                            <Link className="text-sm hover:opacity-100 opacity-50" href={""}>
+                            <Link className="text-sm hover:opacity-100 opacity-80" href={""}>
                                 Contact Us
                             </Link>
                         </div>

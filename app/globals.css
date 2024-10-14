@@ -293,7 +293,7 @@ a .isVisited {
   height: 4px;
   right: 0;
   width: 2rem;
-  background-color: #1563d8;
+  background-color: currentColor;
 }
 
 .hamburger:active div:nth-child(1), .hamburger.active div:nth-child(1) {

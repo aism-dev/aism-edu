@@ -12,7 +12,7 @@ export default function Top() {
             />
             <div className="absolute mt-20 z-20 text-center text-white">
                 <h1 className="text-6xl uppercase font-semibold">Administration</h1>
-                <p className="pt-3 text-xl">Providing world-class education and training to shape the future leaders in healthcare and medical research</p>
+                <p className="pt-3 text-xl w-[30rem]">Providing world-class education and training to shape the future leaders in healthcare and medical research</p>
             </div>
         </div>
     )

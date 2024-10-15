@@ -1,5 +1,4 @@
 "use client"
-import BubbleText from "../general components/BubbleText";
 import { useEffect, useState } from "react";
 import clsx from "clsx";
 import { Programs } from "@/lib/Variables/Programs";

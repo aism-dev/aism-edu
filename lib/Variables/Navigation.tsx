@@ -1,7 +1,9 @@
-import Image from "next/image"
+"use client"
+import Image from "next/image";
 import Link from "next/link";
 import { FaArrowRight } from "react-icons/fa"
 import { FaStar } from "react-icons/fa6";
+import { useLocation } from "react-use";
 
 interface TabContent {
     id: number,
@@ -157,6 +159,8 @@ export const TABS: {
 ].map((n, idx) => ({ ...n, id: idx }));
 
 function TabComponent({ content }: { content: TabContent[] }) {
+    const { pathname } = useLocation();
+
     return (
         <div className="flex justify-between w-full relative">
             <div className="w-full h-[inherit] overflow-hidden absolute">
@@ -196,7 +200,13 @@ function TabComponent({ content }: { content: TabContent[] }) {
                                     </span>}
                                     <span className="text-black opacity-30 select-none pointer-events-none text-sm isVisited">visited</span>
                                 </span>
-                                <FaArrowRight className="group-hover:opacity-100 group-active:rotate-45 group-hover:translate-x-0 -translate-x-5 origin-left opacity-0 text-themelight" />
+                                <span className="flex items-center gap-2">
+                                    {pathname === item.url ? 
+                                        <span className="text-green-700">You're currently Here</span>
+                                        :
+                                        <FaArrowRight className="group-hover:opacity-100 group-active:rotate-45 group-hover:translate-x-0 -translate-x-5 origin-left opacity-0 text-themelight" />
+                                    }
+                                </span>
                             </h3>
                             <p className="text-sm">{item.description}</p>
                         </div>

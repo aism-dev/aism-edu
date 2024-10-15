@@ -165,9 +165,14 @@ body:has(a:hover) a:not(:hover) {
   }
 }
 
-*::selection {
+*:not(.on-black)::selection {
   background-color: #183d74;
   color: #fff;
+}
+
+*.on-black::selection {
+  background-color: #fff;
+  color: #183d74;
 }
 
 * img {

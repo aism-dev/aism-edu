@@ -6,6 +6,7 @@ import { aismMetadata } from "@/lib/Metadata";
 import Navigation from "./general components/Navigation";
 import Footer from "./general components/Footer";
 import NextTopLoader from "nextjs-toploader";
+import AddClassToElements from "./general components/DetectTextOnDark";
 
 const geistSans = localFont({
     src: "./fonts/Nunito-VariableFont_wght.woff",
@@ -25,6 +26,7 @@ export default function RootLayout({
             <body
                 className={`${geistSans.variable} antialiased`}
             >
+                <AddClassToElements />
                 <NextTopLoader 
                     color="#1563d8"
                     crawlSpeed={200}

@@ -1,7 +1,7 @@
 import { ButtonInterface } from "@/lib/Interfaces/Button";
 import clsx from "clsx";
 
-export default function Button({ btnType = "button", children, sizeVariation = "M", colorVariation, className:  customClass, ...props }: ButtonInterface) {
+export default function Button({ btnType = "button", children, sizeVariation = "M", colorVariation, className: customClass, hovered }: ButtonInterface) {
     return (
         <div className={customClass}>
             <button 
@@ -10,12 +10,14 @@ export default function Button({ btnType = "button", children, sizeVariation = "
                 "relative btn text-base border",
                 colorVariation === "dark" ? 
                     "text-white border-themelight after:bg-themelight hover:text-white" : 
-                colorVariation === "footer" ? "border-white after:bg-white hover:text-theme" :
-                    "text-theme border-theme after:bg-theme hover:text-white",
-                sizeVariation === "L" ? "text-xl py-4 px-10" : "",
+                colorVariation === "footer" ? 
+                    hovered ? "after:bg-white after:h-full after:w-full text-theme" : "border-white after:bg-white hover:text-theme" 
+                    :
+                    hovered ? "after:bg-theme after:h-full after:w-full text-white" : "text-theme border-theme after:bg-theme hover:text-white",
+                sizeVariation === "L" ? "py-4 px-10" : "",
                 sizeVariation === "M" ? "px-6 py-3" : "",
                 sizeVariation === "W" ? "w-full py-5" : "",
-                sizeVariation === "XL" ? "text-2xl py-5 px-16" : "",
+                sizeVariation === "XL" ? "py-5 px-16" : "",
             )}
         >
             {children}

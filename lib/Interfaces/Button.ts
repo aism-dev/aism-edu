@@ -7,4 +7,5 @@ export interface ButtonInterface extends React.ButtonHTMLAttributes<HTMLButtonEl
     btnType?: "submit" | "button" | "reset",
     sizeVariation?: size,
     colorVariation?: colorVariations,
+    hovered?: boolean,
 }

@@ -70,7 +70,7 @@ const academicProgramsTab: TabContent[] = [
         title: "Pre-Health (Pre-Medical) Sciences",
         description: "Prepare for your medical education with our comprehensive Pre-Health Sciences program, designed to build a strong foundation in the essential sciences before advancing to medical studies.",
         icon: "https://aism-edu.sirv.com/icons/download%20(12).png",
-        url: ""
+        url: "/acedemic-programs/pre-med-course"
     },
     {
         id: 2,

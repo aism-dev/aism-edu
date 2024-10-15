@@ -1,12 +1,11 @@
 import { TABS } from "@/lib/Variables/Navigation";
 import { motion, useAnimation } from "framer-motion";
-import { Dispatch, SetStateAction, useEffect, useMemo, useRef, useState } from "react";
+import { Dispatch, SetStateAction, useEffect, useMemo, useRef } from "react";
 
-export default function NavTab({ currentlyHovered, lastHovered, closeFunc, centerRect, containerSize }: { containerSize: number, centerRect: number, currentlyHovered: number | null, lastHovered: number | null, closeFunc: Dispatch<SetStateAction<number | null>> }) {
+export default function NavTab({ currentlyHovered, lastHovered, closeFunc }: { containerSize: number, centerRect: number, currentlyHovered: number | null, lastHovered: number | null, closeFunc: Dispatch<SetStateAction<number | null>> }) {
     const controls = useAnimation();
     const mountRef = useRef(0);
     const containerRef = useRef<HTMLDivElement>(null);
-    const [containerRect, setContainerRect] = useState(0);
 
     useEffect(() => {
         if (currentlyHovered !== null) {
@@ -23,11 +22,6 @@ export default function NavTab({ currentlyHovered, lastHovered, closeFunc, cente
             closeFunc(currentlyHovered);
         }
     }, [currentlyHovered, controls]);
-
-    useEffect(() => {
-        if (!containerRef.current) return;
-        setContainerRect(containerRef.current.getBoundingClientRect().left);
-    }, [containerRef]);
 
     const dir = useMemo(() => {
         if (currentlyHovered === null || lastHovered === null) return ""

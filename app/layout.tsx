@@ -5,6 +5,7 @@ import "./globals.css";
 import { aismMetadata } from "@/lib/Metadata";
 import Navigation from "./general components/Navigation";
 import Footer from "./general components/Footer";
+import NextTopLoader from "nextjs-toploader";
 
 const geistSans = localFont({
     src: "./fonts/Nunito-VariableFont_wght.woff",
@@ -24,6 +25,15 @@ export default function RootLayout({
             <body
                 className={`${geistSans.variable} antialiased`}
             >
+                <NextTopLoader 
+                    color="#1563d8"
+                    crawlSpeed={200}
+                    initialPosition={0.25}
+                    showSpinner={true}
+                    easing="ease"
+                    speed={200}
+                    zIndex={1600}
+                />
                 <Navigation />
                 {children}
                 <Footer />

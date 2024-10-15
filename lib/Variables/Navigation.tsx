@@ -179,7 +179,7 @@ function TabComponent({ content }: { content: TabContent[] }) {
             </div>
             <div className="flex-1 z-10 relative p-6 grid grid-cols-2 gap-2">
                 {content.map((item)=>(
-                    <Link href={item.url} key={item.id} className="flex items-start hover:shadow-lg gap-4 overflow-hidden relative hover:bg-white bg-white/50 cursor-pointer border group border-theme/50 hover:border-theme hover:-translate-y-1 hover:translate-x-1 active:translate-x-0 active:translate-y-0 p-4 rounded-md">
+                    <Link href={item.url} key={item.id} className="flex items-start hover:shadow-lg gap-4 overflow-hidden relative hover:bg-white bg-white/90 cursor-pointer border group border-theme/50 hover:border-theme hover:-translate-y-1 hover:translate-x-1 active:translate-x-0 active:translate-y-0 p-4 rounded-md">
                         <Image
                             src={item.icon}
                             alt={item.title}

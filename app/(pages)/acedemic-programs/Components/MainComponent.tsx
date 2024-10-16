@@ -23,7 +23,7 @@ export default function MainComponent({
         <div>
             <div className="relative">
                 {video ? <>
-                    <div className="h-[30rem] overflow-hidden bg-black/5 mt-4 relative group grid place-items-center border border-black/5">
+                    <div className="h-[30rem] overflow-hidden bg-black/5 relative group grid place-items-center border border-black/5">
                         <Image
                             src={video.thumbnailSrc}
                             alt="Thumbnail"
@@ -74,7 +74,7 @@ export default function MainComponent({
                         </div>
                     ))}
                 </div>
-                <Button btnType="link" href={applyLink.href} className="px-5 mt-4" sizeVariation="XL">
+                <Button href={applyLink.href} className="px-5 mt-4" sizeVariation="XL">
                     {applyLink.label}
                 </Button>
             </div>

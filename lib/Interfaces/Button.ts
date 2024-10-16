@@ -2,21 +2,12 @@ import React from "react";
 
 type size = "XL" | "L" | "M" | "S" | "W";
 type colorVariations = "light" | "dark" | "footer";
-type ButtonType  = "submit" | "button" | "reset" | "link" | undefined
+type ButtonType  = "submit" | "button" | "reset" | undefined
 
-interface ButtonInterface extends React.ButtonHTMLAttributes<HTMLButtonElement> {
+export interface ButtonInterface extends React.ButtonHTMLAttributes<HTMLButtonElement> {
     btnType?: ButtonType,
     sizeVariation?: size,
     colorVariation?: colorVariations,
     hovered?: boolean,
-    href: ""
+    href: string
 }
-
-interface LinkInterface extends React.AnchorHTMLAttributes<HTMLAnchorElement> {
-    btnType?: "link",
-    sizeVariation?: size,
-    colorVariation?: colorVariations,
-    hovered?: boolean,
-}
-
-export type CustomButtonInterface = ButtonInterface | LinkInterface

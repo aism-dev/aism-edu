@@ -134,10 +134,10 @@ export default function Navigation() {
                                 />
                             </Link>
                         </motion.div>
-                        <div className="grid">
+                        <Link href={"/"} className="grid">
                             <span className="alt-font text-2xl opacity-70 font-medium leading-4">American International</span>
                             <span className="alt-font text-3xl text-theme">School of Medicine</span>
-                        </div>
+                        </Link>
                     </div>
                     <div className="flex flex-col justify-between items-end">
                         <div className="inline-flex gap-6">

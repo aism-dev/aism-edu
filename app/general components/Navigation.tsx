@@ -122,6 +122,7 @@ export default function Navigation() {
                             variants={logoPositionVariants}
                             initial="hidden"
                             animate={controls}
+                            className="cursor-pointer relative z-20"
                         >
                             <Link href={"/"} className="no-underline">
                                 <Image

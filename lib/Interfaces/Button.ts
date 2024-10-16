@@ -9,5 +9,5 @@ export interface ButtonInterface extends React.ButtonHTMLAttributes<HTMLButtonEl
     sizeVariation?: size,
     colorVariation?: colorVariations,
     hovered?: boolean,
-    href: string
+    href?: string
 }

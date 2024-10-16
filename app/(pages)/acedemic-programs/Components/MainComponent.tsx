@@ -22,13 +22,36 @@ export default function MainComponent({
     return (
         <div>
             <div className="relative">
-                <Image
-                    src={mainImage.src}
-                    alt={mainImage.alt}
-                    height={mainImage.height}
-                    width={mainImage.width}
-                    className="w-full object-cover object-top h-[30rem]"
-                />
+                {video ? <>
+                    <div className="h-[30rem] overflow-hidden bg-black/5 mt-4 relative group grid place-items-center border border-black/5">
+                        <Image
+                            src={video.thumbnailSrc}
+                            alt="Thumbnail"
+                            width={6139}
+                            height={3453}
+                            className="object-top object-cover"
+                        />
+                        <div className={clsx(
+                            "absolute w-32 grid place-content-center cursor-pointer active:scale-95 group rounded-full bg-white/10 aspect-square z-20",
+                            "after:w-[120%] after:aspect-square after:bg-white/10 after:rounded-full after:absolute after:top-1/2 after:left-1/2 after:-translate-x-1/2 after:-translate-y-1/2"
+                        )} onClick={() => setPlayVideo(true)}>
+                            <FaPlay className="text-7xl ml-3 text-white group-active:rotate-12" />
+                        </div>
+                    </div>
+                    <AnimatePresence>
+                        {playVideo && <VideoPlayer closePlayer={() => setPlayVideo(false)} src={video.videoSrc} />}
+                    </AnimatePresence>
+                </> 
+                    :
+                    <Image
+                        src={mainImage.src}
+                        alt={mainImage.alt}
+                        height={mainImage.height}
+                        width={mainImage.width}
+                        className="w-full object-cover object-top h-[30rem]"
+                    />
+                }
+
                 <h3 className="text-2xl p-4 px-8 bg-white text-center mx-auto shadow-lg text-theme font-medium -mt-8 relative z-10 w-fit">{title}</h3>
             </div>
             <div className="grid grid-cols-[repeat(auto-fill,minmax(15rem,1fr))] px-5 mt-5">
@@ -55,26 +78,6 @@ export default function MainComponent({
                     {applyLink.label}
                 </Button>
             </div>
-            {video && <>
-                <div className="h-[30rem] overflow-hidden bg-black/5 mt-4 relative group grid place-items-center border border-black/5">
-                    <Image
-                        src={video.thumbnailSrc}
-                        alt="Thumbnail"
-                        width={6139}
-                        height={3453}
-                        className="object-top object-cover"
-                    />
-                    <div className={clsx(
-                        "absolute w-32 grid place-content-center cursor-pointer active:scale-95 group rounded-full bg-white/10 aspect-square z-20",
-                        "after:w-[120%] after:aspect-square after:bg-white/10 after:rounded-full after:absolute after:top-1/2 after:left-1/2 after:-translate-x-1/2 after:-translate-y-1/2"
-                    )} onClick={() => setPlayVideo(true)}>
-                        <FaPlay className="text-7xl ml-3 text-white group-active:rotate-12" />
-                    </div>
-                </div>
-                <AnimatePresence>
-                    {playVideo && <VideoPlayer closePlayer={() => setPlayVideo(false)} src={video.videoSrc} />}
-                </AnimatePresence>
-            </>}
         </div>
     )
 }

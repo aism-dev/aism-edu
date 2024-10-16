@@ -18,7 +18,7 @@ export interface MainComponentProps {
         label: string;
         date: string;
     }[];
-    video: {
+    video?: {
         thumbnailSrc: string;
         videoSrc: string;
     };

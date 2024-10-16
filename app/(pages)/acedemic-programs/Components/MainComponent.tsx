@@ -55,24 +55,26 @@ export default function MainComponent({
                     ))}
                 </div>
             </div>
-            <div className="h-[30rem] overflow-hidden bg-black/5 mt-4 relative group grid place-items-center border border-black/5">
-                <Image
-                    src={video.thumbnailSrc}
-                    alt="Thumbnail"
-                    width={6139}
-                    height={3453}
-                    className="object-top object-cover"
-                />
-                <div className={clsx(
-                    "absolute w-32 grid place-content-center cursor-pointer active:scale-95 group rounded-full bg-white/10 aspect-square z-20",
-                    "after:w-[120%] after:aspect-square after:bg-white/10 after:rounded-full after:absolute after:top-1/2 after:left-1/2 after:-translate-x-1/2 after:-translate-y-1/2"
-                )} onClick={() => setPlayVideo(true)}>
-                    <FaPlay className="text-7xl ml-3 text-white group-active:rotate-12" />
+            {video && <>
+                <div className="h-[30rem] overflow-hidden bg-black/5 mt-4 relative group grid place-items-center border border-black/5">
+                    <Image
+                        src={video.thumbnailSrc}
+                        alt="Thumbnail"
+                        width={6139}
+                        height={3453}
+                        className="object-top object-cover"
+                    />
+                    <div className={clsx(
+                        "absolute w-32 grid place-content-center cursor-pointer active:scale-95 group rounded-full bg-white/10 aspect-square z-20",
+                        "after:w-[120%] after:aspect-square after:bg-white/10 after:rounded-full after:absolute after:top-1/2 after:left-1/2 after:-translate-x-1/2 after:-translate-y-1/2"
+                    )} onClick={() => setPlayVideo(true)}>
+                        <FaPlay className="text-7xl ml-3 text-white group-active:rotate-12" />
+                    </div>
                 </div>
-            </div>
-            <AnimatePresence>
-                {playVideo && <VideoPlayer closePlayer={() => setPlayVideo(false)} src={video.videoSrc} />}
-            </AnimatePresence>
+                <AnimatePresence>
+                    {playVideo && <VideoPlayer closePlayer={() => setPlayVideo(false)} src={video.videoSrc} />}
+                </AnimatePresence>
+            </>}
         </div>
     )
 }

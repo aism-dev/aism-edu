@@ -77,7 +77,7 @@ const academicProgramsTab: TabContent[] = [
         title: "Basic Science Program",
         description: "Delve into the core scientific principles of medicine with our Basic Science Program, focusing on the foundational knowledge necessary for clinical practice.",
         icon: "https://aism-edu.sirv.com/icons/download%20(8).png",
-        url: ""
+        url: "/acedemic-programs/basic-science-program"
     },
     {
         id: 3,

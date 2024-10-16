@@ -79,7 +79,7 @@ export default function FindYourProgram() {
                                 transition={currentItem === (program.id - 1) ? { duration: 0.5 } : { duration: 0.1}}
                                 exit={{ height: 0 }}
                             >
-                                <Button colorVariation="dark">
+                                <Button href={program.url} colorVariation="dark">
                                     Explore {program.title}
                                 </Button>
                             </motion.div>

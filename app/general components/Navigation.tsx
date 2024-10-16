@@ -166,7 +166,7 @@ export default function Navigation() {
                     >
                         <span className={clsx(
                             "py-3 flex items-center gap-2 group pr-7 cursor-pointer hover:text-theme",
-                            activeTab === 1 ? "text-theme font-semibold underline underline-offset-4" : "",
+                            activeTab === 1 ? "text-theme font-semibold underline underline-offset-8" : "",
 
                         )} onMouseEnter={() => {
                             setCurrentlyHovered(0);
@@ -181,7 +181,7 @@ export default function Navigation() {
                         )} /></span>
                         <span className={clsx(
                             "py-3 min-[960px]:flex hidden items-center gap-2 group px-7 cursor-pointer hover:text-theme",
-                            activeTab === 2 ? "text-theme font-semibold underline underline-offset-4" : "",
+                            activeTab === 2 ? "text-theme font-semibold underline underline-offset-8" : "",
                         )} onMouseEnter={() => {
                             setCurrentlyHovered(1);
                             const rect = tabRef02.current!
@@ -194,7 +194,7 @@ export default function Navigation() {
                             )} /></span>
                         <span className={clsx(
                             "py-3 flex items-center gap-2 group px-7 cursor-pointer hover:text-theme",
-                            activeTab === 3 ? "text-theme font-semibold underline underline-offset-4" : "",
+                            activeTab === 3 ? "text-theme font-semibold underline underline-offset-8" : "",
                         )} onMouseEnter={() => {
                             setCurrentlyHovered(2);
                             const rect = tabRef03.current!
@@ -207,14 +207,14 @@ export default function Navigation() {
                             )} /></span>
                         <Link href={"#"} className={clsx(
                             "py-3 px-7 cursor-pointer hover:text-theme",
-                            activeTab === 4 ? "text-theme font-semibold underline underline-offset-4" : "",
+                            activeTab === 4 ? "text-theme font-semibold underline underline-offset-8" : "",
                         )} onMouseEnter={() => {
                             setLastHovered(2.5);
                             setCurrentlyHovered(null);
                         }} >Student Sucess</Link>
                         <span className={clsx(
                             "py-3  min-[960px]:flex hidden items-center gap-2 group px-7 cursor-pointer hover:text-theme",
-                            activeTab === 5 ? "text-theme font-semibold underline underline-offset-4" : "",
+                            activeTab === 5 ? "text-theme font-semibold underline underline-offset-8" : "",
                         )} onMouseEnter={() => {
                             setCurrentlyHovered(3);
                             const rect = tabRef04.current!

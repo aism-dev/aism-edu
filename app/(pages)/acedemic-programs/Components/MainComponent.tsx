@@ -42,10 +42,7 @@ export default function MainComponent({
 
             <p className="p-5">{description}</p>
             
-            <div className="my-8">
-                <Button btnType="link" href={applyLink.href} className="px-5 mt-8 mb-5" sizeVariation="XL">
-                    {applyLink.label}
-                </Button>
+            <div className="mt-8 mb-16">
                 <div className="flex gap-10">
                     {applicationInfo.map((info, index) => (
                         <div key={index} className="p-5">
@@ -54,6 +51,9 @@ export default function MainComponent({
                         </div>
                     ))}
                 </div>
+                <Button btnType="link" href={applyLink.href} className="px-5 mt-4" sizeVariation="XL">
+                    {applyLink.label}
+                </Button>
             </div>
             {video && <>
                 <div className="h-[30rem] overflow-hidden bg-black/5 mt-4 relative group grid place-items-center border border-black/5">

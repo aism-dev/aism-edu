@@ -18,7 +18,17 @@ const config: Config = {
       },
       cursor: {
         'education': 'url(https://aism-edu.sirv.com/icons/download%20(20).png), auto',
-      }
+      },
+      keyframes: {
+        shake: {
+          '0%, 100%': { transform: 'translateX(0)' },
+          '20%, 60%': { transform: 'translateX(-1px)' },
+          '40%, 80%': { transform: 'translateX(1px)' },
+        },
+      },
+      animation: {
+        'stutter-shake': 'shake 0.4s ease-in-out infinite',
+      },
     },
   },
   plugins: [],

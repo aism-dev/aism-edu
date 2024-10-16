@@ -1,8 +1,8 @@
 "use client"
 import Image from "next/image";
 import Link from "next/link";
-import { FaArrowRight } from "react-icons/fa"
-import { FaStar } from "react-icons/fa6";
+import { FaArrowRight, FaHistory } from "react-icons/fa"
+import { FaFire, FaHourglass, FaStar } from "react-icons/fa6";
 import { useLocation } from "react-use";
 
 interface TabContent {
@@ -12,7 +12,7 @@ interface TabContent {
     icon: string,
     url: string;
     popular?:  boolean,
-
+    isComingSoon?: boolean
 }
 
 const aboutTab: TabContent[] = [
@@ -70,6 +70,7 @@ const academicProgramsTab: TabContent[] = [
         title: "Pre-Health (Pre-Medical) Sciences",
         description: "Prepare for your medical education with our comprehensive Pre-Health Sciences program, designed to build a strong foundation in the essential sciences before advancing to medical studies.",
         icon: "https://aism-edu.sirv.com/icons/download%20(12).png",
+        popular:  true,
         url: "/acedemic-programs/pre-med-course"
     },
     {
@@ -84,8 +85,8 @@ const academicProgramsTab: TabContent[] = [
         title: "Clinical Science Program",
         description: "Gain hands-on experience in patient care and medical procedures through our Clinical Science Program, designed to bridge theoretical knowledge with real-world clinical practice.",
         icon: "https://aism-edu.sirv.com/icons/download%20(9).png",
-        popular:  true,
-        url: ""
+        url: "",
+        isComingSoon: true
     },
     {
         id: 4,
@@ -99,7 +100,8 @@ const academicProgramsTab: TabContent[] = [
         title: "Biomedical Science",
         description: "Explore the intricate science behind human biology and disease with our Biomedical Science program, laying the groundwork for innovative research and clinical applications.",
         icon: "https://aism-edu.sirv.com/icons/download%20(11).png",
-        url: ""
+        url: "",
+        isComingSoon: true
     },
 ];
 
@@ -195,8 +197,11 @@ function TabComponent({ content }: { content: TabContent[] }) {
                             <h3 className="text-lg font-medium text-theme flex justify-between items-center">
                                 <span className="flex gap-2 items-center">
                                     {item.title}
-                                    {item.popular && <span className="text-xs text-yellow-500">
-                                        <FaStar />
+                                    {item.popular && <span className="text-xs text-red-500 flex group-hover:animate-stutter-shake">
+                                        <FaFire className="text-xs translate-y-[1px] scale-90  group-hover:animate-none animate-pulse" /> Popular
+                                    </span>}
+                                    {item.isComingSoon && <span className="text-xs text-gray-500 flex">
+                                        <FaHourglass className="text-xs translate-y-[1px] scale-90" /> Coming Soon
                                     </span>}
                                     <span className="text-black opacity-30 select-none pointer-events-none text-sm isVisited">visited</span>
                                 </span>

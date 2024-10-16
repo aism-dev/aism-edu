@@ -237,7 +237,7 @@ export default function Navigation() {
                             "group-hover:rotate-180",
                             )} /></span>
                         <AnimatePresence>
-                            {currentlyHovered !== null && <NavTab containerSize={rectBoundWidth} centerRect={rectBoundHover} closeFunc={setLastHovered} currentlyHovered={currentlyHovered} lastHovered={lastHovered} />}
+                            {currentlyHovered !== null && <NavTab containerSize={rectBoundWidth} centerRect={rectBoundHover} closeFunc={()=>setCurrentlyHovered(null)} unMountFunc={setLastHovered} currentlyHovered={currentlyHovered} lastHovered={lastHovered} />}
                         </AnimatePresence>
                     </motion.div>
                     <Button>

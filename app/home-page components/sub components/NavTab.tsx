@@ -1,8 +1,14 @@
 import { TABS } from "@/lib/Variables/Navigation";
 import { motion, useAnimation } from "framer-motion";
 import { Dispatch, SetStateAction, useEffect, useMemo, useRef } from "react";
+import { createContext, useState } from "react";
 
-export default function NavTab({ currentlyHovered, lastHovered, closeFunc }: { containerSize: number, centerRect: number, currentlyHovered: number | null, lastHovered: number | null, closeFunc: Dispatch<SetStateAction<number | null>> }) {
+
+export const NavTabContext = createContext({
+    closeFunc: ()=> {}
+});
+
+export default function NavTab({ currentlyHovered, lastHovered, unMountFunc, closeFunc }: { containerSize: number, centerRect: number, currentlyHovered: number | null, lastHovered: number | null, unMountFunc: Dispatch<SetStateAction<number | null>>, closeFunc: () => void }) {
     const controls = useAnimation();
     const mountRef = useRef(0);
     const containerRef = useRef<HTMLDivElement>(null);
@@ -19,7 +25,7 @@ export default function NavTab({ currentlyHovered, lastHovered, closeFunc }: { c
                 mountRef.current = 1
                 return
             }
-            closeFunc(currentlyHovered);
+            unMountFunc(currentlyHovered);
         }
     }, [currentlyHovered, controls]);
 
@@ -31,7 +37,9 @@ export default function NavTab({ currentlyHovered, lastHovered, closeFunc }: { c
     }, [currentlyHovered, lastHovered]);
 
     return (
-        <>
+        <NavTabContext.Provider value={{
+            closeFunc
+        }}>
             <motion.section
                 className="absolute top-[4.5rem] text-black left-0 w-full bg-white/60 backdrop-blur-sm border border-t-transparent border-black/25 overflow-hidden"
                 initial={{
@@ -79,6 +87,6 @@ export default function NavTab({ currentlyHovered, lastHovered, closeFunc }: { c
                 <div>{lastHovered}</div>
             </motion.div> */}
             </motion.section>
-        </>
+        </NavTabContext.Provider>
     );
 }

@@ -92,7 +92,7 @@ const academicProgramsTab: TabContent[] = [
         title: "Community Medicine Course",
         description: "Engage with public health and community-based medical care through our Community Medicine Course, preparing you to address health challenges on a local and global scale.",
         icon: "https://aism-edu.sirv.com/icons/download%20(10).png",
-        url: ""
+        url: "/acedemic-programs/community-medicine-course"
     },
     {
         id: 5,

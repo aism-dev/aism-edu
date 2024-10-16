@@ -27,11 +27,11 @@ export default function MainComponent({
                     alt={mainImage.alt}
                     height={mainImage.height}
                     width={mainImage.width}
-                    className="w-full object-cover h-96"
+                    className="w-full object-cover object-top h-[30rem]"
                 />
                 <h3 className="text-2xl p-4 px-8 bg-white text-center mx-auto shadow-lg text-theme font-medium -mt-8 relative z-10 w-fit">{title}</h3>
             </div>
-            <div className="grid grid-cols-[repeat(auto-fill,minmax(15rem,1fr))] px-8">
+            <div className="grid grid-cols-[repeat(auto-fill,minmax(15rem,1fr))] px-5 mt-5">
                 {features.map((feature, index) => (
                     <div key={index} className="p-5 hover:bg-theme/5">
                         <FaCheck className="text-2xl text-green-600" />
@@ -42,16 +42,18 @@ export default function MainComponent({
 
             <p className="p-5">{description}</p>
             
-            <Button btnType="link" href={applyLink.href} className="px-5 mt-8 mb-5" sizeVariation="XL">
-                {applyLink.label}
-            </Button>
-            <div className="flex gap-10">
-                {applicationInfo.map((info, index) => (
-                    <div key={index} className="p-5">
-                        <h5 className="text-lg text-themeDark font-semibold">{info.label}:</h5>
-                        <p className="text-3xl text-themelight">{info.date}</p>
-                    </div>
-                ))}
+            <div className="my-8">
+                <Button btnType="link" href={applyLink.href} className="px-5 mt-8 mb-5" sizeVariation="XL">
+                    {applyLink.label}
+                </Button>
+                <div className="flex gap-10">
+                    {applicationInfo.map((info, index) => (
+                        <div key={index} className="p-5">
+                            <h5 className="text-lg text-themeDark font-semibold">{info.label}:</h5>
+                            <p className="text-3xl text-themelight">{info.date}</p>
+                        </div>
+                    ))}
+                </div>
             </div>
             <div className="h-[30rem] overflow-hidden bg-black/5 mt-4 relative group grid place-items-center border border-black/5">
                 <Image

@@ -2,7 +2,7 @@ import BubbleText from "@/app/general components/BubbleText";
 
 export default function MiniInfo() {
     return (
-        <div className="grid grid-cols-2 w-full px-40 py-10 items-center gap-5">
+        <div className="grid grid-cols-2 w-full px-40 py-20 items-center gap-5">
             <div>
                 <BubbleText formatClass="text-5xl" text="Student Success Stories" />
             </div>

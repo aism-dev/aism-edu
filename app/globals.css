@@ -258,13 +258,13 @@ a .isVisited {
 
 .hoverText:hover {
   font-weight: 900;
-  color: rgb(30, 31, 33);
+  color: #183d74;
 }
 
 /* To the right */
 .hoverText:hover + .hoverText {
   font-weight: 500;
-  color: rgb(50, 51, 55);
+  color: #132e57;
 }
 
 .hoverText:hover + .hoverText + .hoverText {
@@ -274,7 +274,7 @@ a .isVisited {
 /* To the left */
 .hoverText:has(+ .hoverText:hover) {
   font-weight: 500;
-  color: rgb(50, 51, 55);
+  color: #132e57;
 }
 
 .hoverText:has(+ .hoverText + .hoverText:hover) {

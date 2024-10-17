@@ -20,11 +20,11 @@ export default function Button({ btnType = "button", children, sizeVariation = "
                 className={clsx(
                     "relative btn text-base border",
                     colorVariation === "dark" ?
-                        "text-white border-themelight after:bg-themelight hover:text-white" :
+                        "text-white border-themelight after:bg-themelight hover:text-white focus:text-white" :
                         colorVariation === "footer" ?
-                            hovered ? "after:bg-white after:h-full after:w-full text-theme" : "border-white after:bg-white hover:text-theme"
+                            hovered ? "after:bg-white after:h-full after:w-full text-theme" : "border-white after:bg-white hover:text-theme focus:text-theme rotate-0"
                             :
-                            hovered ? "after:bg-theme after:h-full after:w-full text-white" : "text-theme border-theme after:bg-theme hover:text-white",
+                            hovered ? "after:bg-theme after:h-full after:w-full text-white" : "text-theme border-theme after:bg-theme hover:text-white focus:text-white",
                     sizeVariation === "L" ? "py-4 px-10" : "",
                     sizeVariation === "M" ? "px-6 py-3" : "",
                     sizeVariation === "W" ? "w-full py-5" : "",

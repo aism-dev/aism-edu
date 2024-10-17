@@ -89,7 +89,11 @@
   transform: skewX(-0.25deg);
 }
 
-.btn:hover::after {
+.btn:focus {
+  color: #fff;
+}
+
+.btn:hover::after, .btn:focus::after {
   height: 100%;
   width: 100%;
 }
@@ -253,12 +257,26 @@ a .isVisited {
 .hoverText {
   transition:
     0.35s font-weight,
-    0.35s color;
+    0.35s color,
+    0.05s filter
+    ;
 }
 
 .hoverText:hover {
   font-weight: 900;
   color: #183d74;
+}
+
+.hoverText.text-white:hover {
+  filter: saturate(0) brightness(0) invert(1);
+}
+
+.hoverText.text-white:hover + .hoverText.text-white {
+  filter: saturate(0) brightness(0.2) invert(1);
+}
+
+.hoverText.text-white:has(+ .hoverText.text-white:hover) {
+  filter: saturate(0) brightness(0.2) invert(1);
 }
 
 /* To the right */

@@ -12,18 +12,6 @@ export const HeroSliderSlide: {
 }[] = [
     {
         id: 1,
-        title: "Empowering the feature at AISM.",
-        content: "Start your journey towards a rewarding medical career today. Our flexible admission process allows you to apply from anywhere in the world. Scholarships and financial aid options available.",
-        image: "https://aism-edu.sirv.com/pexels-rdne-7683745.jpg",
-        cta: "#",
-        ctaText: "Apply Now",
-        size: {
-            h: 3360,
-            w: 5040,
-        }
-    },
-    {
-        id: 2,
         title: "Global Medical Education at Your Fingertips",
         content: "Learn from top-tier faculty and gain hands-on experience through our international partnerships. At AISM, we bridge academic excellence with real-world medical practice.",
         image: "https://aism-edu.sirv.com/pexels-tima-miroshnichenko-9572688.jpg",
@@ -32,6 +20,18 @@ export const HeroSliderSlide: {
         size: {
             h: 3875,
             w: 5812,
+        }
+    },
+    {
+        id: 2,
+        title: "Empowering the feature at AISM.",
+        content: "Start your journey towards a rewarding medical career today. Our flexible admission process allows you to apply from anywhere in the world. Scholarships and financial aid options available.",
+        image: "https://aism-edu.sirv.com/pexels-rdne-7683745.jpg",
+        cta: "#",
+        ctaText: "Apply Now",
+        size: {
+            h: 3360,
+            w: 5040,
         }
     },
     {

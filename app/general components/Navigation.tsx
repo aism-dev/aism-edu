@@ -250,7 +250,7 @@ export default function Navigation() {
                         <div onClick={() => setHamburgerOpen(!hamburgerOpen)} className={clsx(
                             "hamburger text-theme",
                             hamburgerOpen ? "active z-[1000]" : "",
-                            // "min-[960px]:hidden"
+                            "min-[960px]:hidden"
 
                         )}>
                             <div></div>

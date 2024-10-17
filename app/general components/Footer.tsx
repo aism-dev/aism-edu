@@ -21,6 +21,7 @@ export default function Footer() {
                                 src={"https://aism-edu.sirv.com/icons/AISM-white.png"}
                                 alt="logo"
                                 height={500}
+                                priority
                                 width={500}
                                 className="h-16 w-auto object-contain"
                             />

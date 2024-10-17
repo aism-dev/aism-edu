@@ -130,6 +130,7 @@ export default function Navigation() {
                                     alt="logo"
                                     height={500}
                                     width={500}
+                                    priority
                                     className="h-16 w-auto"
                                 />
                             </Link>
@@ -205,13 +206,13 @@ export default function Navigation() {
                             "group-hover:rotate-180",
                             activeTab === 3 ? "rotate-90" : "",
                             )} /></span>
-                        <Link href={"#"} className={clsx(
+                        <Link href={"student-success"} className={clsx(
                             "py-3 px-7 cursor-pointer hover:text-theme",
                             activeTab === 4 ? "text-theme font-semibold underline underline-offset-8" : "",
                         )} onMouseEnter={() => {
                             setLastHovered(2.5);
                             setCurrentlyHovered(null);
-                        }} >Student Sucess</Link>
+                        }} >Student Success</Link>
                         <span className={clsx(
                             "py-3  min-[960px]:flex hidden items-center gap-2 group px-7 cursor-pointer hover:text-theme",
                             activeTab === 5 ? "text-theme font-semibold underline underline-offset-8" : "",

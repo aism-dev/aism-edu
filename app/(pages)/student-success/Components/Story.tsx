@@ -16,7 +16,7 @@ const Story: FC<StoryPropsWithIsOdd> = ({ name, title, description, imageSrc, ra
 
     return (
         <div className={clsx(
-            "border flex items-center px-20",
+            "flex items-center px-20 py-10",
             isOdd ?  "" : "bg-black/5",
 
         )}>

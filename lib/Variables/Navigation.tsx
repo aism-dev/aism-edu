@@ -113,7 +113,7 @@ const applicationsTab: TabContent[] = [
         "title": "Application Form MD",
         "description": "Start your journey towards becoming a medical doctor by completing our application form. Join AISM's MD program and take the first step toward a rewarding medical career.",
         "icon": "https://aism-edu.sirv.com/icons/download%20(18).png",
-        "url": ""
+        "url": "/application-form"
     },
     {
         "id": 2,

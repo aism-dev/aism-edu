@@ -35,7 +35,7 @@ export default function Navigation() {
             case "student-success":
                 setActiveTab(4);
                 break;
-            case "application":
+            case "application-form":
                 setActiveTab(5);
                 break;
             default:

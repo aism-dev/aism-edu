@@ -209,7 +209,7 @@ export default function Navigation() {
                             activeTab === 3 ? "rotate-90" : "",
                             )} /></span>
                         <Link href={"/student-success"} className={clsx(
-                            "py-3 px-7 cursor-pointer hover:text-theme",
+                            "py-3 px-7 min-[960px]:flex hidden  cursor-pointer hover:text-theme",
                             activeTab === 4 ? "text-theme font-semibold underline underline-offset-8" : "",
                         )} onMouseEnter={() => {
                             setLastHovered(2.5);

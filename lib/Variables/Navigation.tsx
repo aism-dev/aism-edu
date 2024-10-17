@@ -127,8 +127,15 @@ const applicationsTab: TabContent[] = [
 
 const moreTab: TabContent[] = [
     ...admissionTab,
-    ...applicationsTab
-]
+    ...applicationsTab,
+    {
+        "id": 2,
+        "title": "Student Success",
+        "description": "Explore the inspiring stories of our students' journeys to success, equipping you with motivation to tackle your own healthcare challenges on both local and global levels.",
+        "icon": "https://aism-edu.sirv.com/icons/download%20(19).png",
+        "url": "/student-success"
+    }      
+].map((n, idx) => ({ ...n, id: idx }));
 
 export const TABS: {
     id: number,

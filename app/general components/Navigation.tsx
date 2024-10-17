@@ -15,6 +15,8 @@ export default function Navigation() {
     const [scrollPosition, setScrollPosition] = useState(0);
     const scrollPositionRef = useRef(0);
     const [activeTab, setActiveTab] = useState(0);
+    const [hamburgerOpen,  setHamburgerOpen] = useState(false);
+
 
     const state = useLocation();
 
@@ -241,13 +243,20 @@ export default function Navigation() {
                             {currentlyHovered !== null && <NavTab containerSize={rectBoundWidth} centerRect={rectBoundHover} closeFunc={()=>setCurrentlyHovered(null)} unMountFunc={setLastHovered} currentlyHovered={currentlyHovered} lastHovered={lastHovered} />}
                         </AnimatePresence>
                     </motion.div>
-                    <Button>
-                        <span>Apply for Admission</span>
-                    </Button>
-                    <div className="hamburger active text-theme">
-                        <div></div>
-                        <div></div>
-                        <div></div>
+                    <div className="flex gap-3 items-center">
+                        <Button>
+                            <span>Apply for Admission</span>
+                        </Button>
+                        <div onClick={() => setHamburgerOpen(!hamburgerOpen)} className={clsx(
+                            "hamburger text-theme",
+                            hamburgerOpen ? "active z-[1000]" : "",
+                            // "min-[960px]:hidden"
+
+                        )}>
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                        </div>
                     </div>
                 </div>
             </motion.nav>

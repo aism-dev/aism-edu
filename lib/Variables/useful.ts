@@ -1,0 +1,1 @@
+export const myAPi = process.env.NEXT_PUBLIC_MAP_API!

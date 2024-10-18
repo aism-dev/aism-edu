@@ -40,6 +40,9 @@ export default function Navigation() {
             case "application-form":
                 setActiveTab(5);
                 break;
+            case "contact-us":
+                setActiveTab(6);
+                break;
             default:
                 setActiveTab(0);
                 break;
@@ -150,7 +153,10 @@ export default function Navigation() {
                             <Link className="text-sm hover:opacity-100 opacity-80" href={""}>
                                 Blog
                             </Link>
-                            <Link className="text-sm hover:opacity-100 opacity-80" href={"/contact-us"}>
+                            <Link className={clsx(
+                                "text-sm hover:opacity-100",
+                                activeTab ? "opacity-100 underline underline-offset-4 text-theme font-medium" : "opacity-80",
+                            )} href={"/contact-us"}>
                                 Contact Us
                             </Link>
                         </div>

@@ -43,6 +43,9 @@ export default function Navigation() {
             case "contact-us":
                 setActiveTab(6);
                 break;
+            case "faqs":
+                setActiveTab(7);
+                break;
             default:
                 setActiveTab(0);
                 break;
@@ -147,7 +150,10 @@ export default function Navigation() {
                     </div>
                     <div className="flex flex-col justify-between items-end">
                         <div className="inline-flex gap-6">
-                            <Link className="text-sm hover:opacity-100 opacity-80" href={""}>
+                            <Link className={clsx(
+                                "text-sm hover:opacity-100",
+                                activeTab === 7 ? "opacity-100 underline underline-offset-4 text-theme font-medium" : "opacity-80",
+                            )} href={"/faqs"}>
                                 FaQ
                             </Link>
                             <Link className="text-sm hover:opacity-100 opacity-80" href={""}>
@@ -155,7 +161,7 @@ export default function Navigation() {
                             </Link>
                             <Link className={clsx(
                                 "text-sm hover:opacity-100",
-                                activeTab ? "opacity-100 underline underline-offset-4 text-theme font-medium" : "opacity-80",
+                                activeTab === 6 ? "opacity-100 underline underline-offset-4 text-theme font-medium" : "opacity-80",
                             )} href={"/contact-us"}>
                                 Contact Us
                             </Link>

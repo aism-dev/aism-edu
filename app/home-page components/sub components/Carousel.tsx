@@ -4,6 +4,7 @@ import "slick-carousel/slick/slick-theme.css";
 import React from 'react';
 import Slider, { Settings } from "react-slick";
 import { WithChildren } from "@/lib/Types";
+import { FaArrowLeftLong, FaArrowRightLong } from "react-icons/fa6";
 
 export default function Carousel({ children }: WithChildren) {
   var settings: Settings = {
@@ -58,30 +59,32 @@ export default function Carousel({ children }: WithChildren) {
     autoplaySpeed: 5000
   };
   return (
-    <Slider className="w-full overflow-hidden gap-4" autoplay {...settings}>
+    <Slider className="w-full gap-4 relative" autoplay {...settings}>
       {children}
     </Slider>
   );
 }
 
 function NextArrow(props: React.HtmlHTMLAttributes<HTMLDivElement>) {
-  const { className, style, onClick } = props;
+  const { onClick } = props;
   return (
     <div
-      className={className}
-      style={{ ...style, display: "block", background: "red" }}
       onClick={onClick}
-    />
+      className="absolute -bottom-8 left-8 cursor-pointer active:scale-90 z-30 text-theme opacity-50 hover:opacity-100"
+    >
+      <FaArrowLeftLong className="text-4xl" /> 
+    </div>
   );
 }
 
 function PrevArrow(props: React.HtmlHTMLAttributes<HTMLDivElement>) {
-  const { className, style, onClick } = props;
+  const { onClick } = props;
   return (
     <div
-      className={className}
-      style={{ ...style, display: "block", background: "green" }}
       onClick={onClick}
-    />
+      className="absolute -bottom-8 right-8 cursor-pointer active:scale-90 z-30 text-theme opacity-50 hover:opacity-100"
+    >
+      <FaArrowRightLong className="text-4xl" />
+    </div>
   );
 }

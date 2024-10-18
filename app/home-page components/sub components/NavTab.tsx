@@ -1,7 +1,7 @@
 import { TABS } from "@/lib/Variables/Navigation";
 import { motion, useAnimation } from "framer-motion";
 import { Dispatch, SetStateAction, useEffect, useMemo, useRef } from "react";
-import { createContext, useState } from "react";
+import { createContext } from "react";
 
 
 export const NavTabContext = createContext({

@@ -150,7 +150,7 @@ export default function Navigation() {
                             <Link className="text-sm hover:opacity-100 opacity-80" href={""}>
                                 Blog
                             </Link>
-                            <Link className="text-sm hover:opacity-100 opacity-80" href={""}>
+                            <Link className="text-sm hover:opacity-100 opacity-80" href={"/contact-us"}>
                                 Contact Us
                             </Link>
                         </div>

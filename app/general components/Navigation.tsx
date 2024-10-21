@@ -26,7 +26,7 @@ export default function Navigation() {
             case "about":
                 setActiveTab(1);
                 break;
-            case "adminssion":
+            case "admi\ssion":
                 setActiveTab(2);
                 break;
             case "acedemic-programs":

@@ -38,11 +38,11 @@ function Testimonial({ avatar, name, role, testimonial }: Omit<TestimonialInterf
             width={50}
             className="opacity-80 pt-8"
         />
-        <p className="mt-3 mb-5">
+        <p className="mt-3 mb-5 h-20">
             {testimonial}
         </p>
         <div className="flex items-center border-t-2 border-t-black/5 py-3 gap-3">
-            <div className="h-full rounded-full aspect-square border overflow-hidden">
+            <div className="h-full shrink-0 rounded-full aspect-square border overflow-hidden">
                   <Image
                       src={avatar}
                       alt={name}

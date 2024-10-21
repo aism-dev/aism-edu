@@ -7,7 +7,7 @@ import { WithChildren } from "@/lib/Types";
 import { FaArrowLeftLong, FaArrowRightLong } from "react-icons/fa6";
 
 export default function Carousel({ children }: WithChildren) {
-  var settings: Settings = {
+  const settings: Settings = {
     infinite: true,
     draggable: true,
     speed: 500,

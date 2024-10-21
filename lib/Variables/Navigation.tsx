@@ -3,8 +3,8 @@ import { NavTabContext } from "@/app/home-page components/sub components/NavTab"
 import Image from "next/image";
 import Link from "next/link";
 import { useContext } from "react";
-import { FaArrowRight, FaHistory } from "react-icons/fa"
-import { FaFire, FaHourglass, FaStar } from "react-icons/fa6";
+import { FaArrowRight, } from "react-icons/fa"
+import { FaFire, FaHourglass } from "react-icons/fa6";
 import { useLocation } from "react-use";
 
 interface TabContent {
@@ -217,7 +217,7 @@ function TabComponent({ content }: { content: TabContent[] }) {
                                 </span>
                                 <span className="flex items-center gap-2">
                                     {pathname === item.url ? 
-                                        <span className="text-green-700">You're currently Here</span>
+                                        <span className="text-green-700">You&apos;re currently Here</span>
                                         :
                                         <FaArrowRight className="group-hover:opacity-100 group-active:rotate-45 group-hover:translate-x-0 -translate-x-5 origin-left opacity-0 text-themelight" />
                                     }

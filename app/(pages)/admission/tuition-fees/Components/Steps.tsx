@@ -1,5 +1,4 @@
 import Step from "./Step";
-import clsx from "clsx";
 import { tuitionSteps } from "@/lib/Variables/TuitionFees";
 
 export default function Steps() {

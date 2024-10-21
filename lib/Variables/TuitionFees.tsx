@@ -105,7 +105,7 @@ export const tuitionSteps: TuitionStep[] = [
     content: (
       <>
         <p>
-          Students can pay their tuition via direct bank transfers to AISM's account or by contacting the Bursar's office for other arrangements. Ensure that your student ID is referenced in the payment details to avoid delays in processing.
+          Students can pay their tuition via direct bank transfers to AISM&apos;s account or by contacting the Bursar&apos;s office for other arrangements. Ensure that your student ID is referenced in the payment details to avoid delays in processing.
         </p>
         <p>
           For specific payment inquiries, reach out to <a href="mailto:finance@aism.edu">finance@aism.edu</a>.

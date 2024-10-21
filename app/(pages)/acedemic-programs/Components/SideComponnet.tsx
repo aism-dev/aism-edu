@@ -2,7 +2,6 @@
 import Link from "next/link";
 import { FaAngleRight, FaAt, FaPhoneFlip } from "react-icons/fa6";
 import { useEffect, useState } from "react";
-import { useLocation } from "react-use"; // This tries to access `window`, which doesn't exist on the server.
 
 const programs = [
     { id: 1, name: "Pre-Health (Pre-Medical) Sciences", link: "/acedemic-programs/pre-med-course" },

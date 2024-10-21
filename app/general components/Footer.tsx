@@ -1,7 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import Button from "./Button";
-import { FaAt, FaFacebook, FaInstagram, FaLink, FaLinkedin, FaMapLocation, FaPhone, FaTiktok, FaYoutube } from "react-icons/fa6";
+import { FaAt, FaFacebook, FaInstagram, FaLinkedin, FaMapLocation, FaPhone, FaTiktok, FaYoutube } from "react-icons/fa6";
 
 export default function Footer() {
     return (

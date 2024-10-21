@@ -6,7 +6,7 @@ import Slider, { Settings } from "react-slick";
 import { WithChildren } from "@/lib/Types";
 
 export default function HeroSlider({ children }: WithChildren) {
-    var settings: Settings = {
+    const settings: Settings = {
         infinite: true,
         draggable: true,
         speed: 500,

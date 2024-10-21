@@ -1,5 +1,5 @@
 import { IconType } from "react-icons";
-import { FaFacebook, FaFacebookF, FaTwitter } from "react-icons/fa6";
+import { FaFacebookF, FaTwitter } from "react-icons/fa6";
 
 export interface TeamProps {
     id: number,

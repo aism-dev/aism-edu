@@ -3,7 +3,7 @@ interface Programs {
     title: string;
     description: string;
     img: string;
-    isComingSoon?: any;
+    isComingSoon?: boolean;
     url: string
 }
 

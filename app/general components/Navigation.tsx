@@ -7,13 +7,14 @@ import { AnimatePresence, motion, useAnimation, Variants } from "framer-motion";
 import NavTab from "../home-page components/sub components/NavTab";
 import { FaAngleUp, FaArrowUp } from "react-icons/fa6";
 import clsx from "clsx";
-import {useLocation} from 'react-use';
+import { useLocation, useWindowSize } from 'react-use';
 
 export default function Navigation() {
     const [scrollPosition, setScrollPosition] = useState(0);
     const scrollPositionRef = useRef(0);
     const [activeTab, setActiveTab] = useState(0);
     const [hamburgerOpen,  setHamburgerOpen] = useState(false);
+    const ViewPort = useWindowSize()
 
 
     const state = useLocation();
@@ -70,12 +71,12 @@ export default function Navigation() {
     const controls = useAnimation();
 
     const topVariants: Variants = {
-        hidden: { y: -104 },
+        hidden: { y: ViewPort.width > 700 ? -104 : -86 },
         visible: { y: 0, transition: { duration: 0.25 } },
     };
 
     const logoPositionVariants: Variants = {
-        hidden: { y: 90, scale: 0.9 },
+        hidden: { y: ViewPort.width > 700 ? 90: 75, scale: 0.9 },
         visible: { y: 0, scale: 1, transition: { duration: 0.25 } },
     };
 
@@ -142,12 +143,12 @@ export default function Navigation() {
                             </Link>
                         </motion.div>
                         <Link href={"/"} className="grid">
-                            <span className="alt-font text-2xl opacity-70 font-medium leading-4">American International</span>
-                            <span className="alt-font text-3xl text-theme">School of Medicine</span>
+                            <span className="alt-font text-2xl max-sm:text-xl opacity-70 font-medium leading-4 max-sm:leading-3">American International</span>
+                            <span className="alt-font text-3xl max-sm:text-2xl text-theme">School of Medicine</span>
                         </Link>
                     </div>
                     <div className="flex flex-col justify-between items-end">
-                        <div className="inline-flex gap-6">
+                        <div className="inline-flex gap-6 max-sm:hidden">
                             <Link className={clsx(
                                 "text-sm hover:opacity-100",
                                 activeTab === 7 ? "opacity-100 underline underline-offset-4 text-theme font-medium" : "opacity-80",
@@ -169,7 +170,7 @@ export default function Navigation() {
                 </motion.div>
                 <div className="flex justify-between items-center relative border-b">
                     <motion.div
-                        className="flex items-center py-3"
+                        className="flex items-center py-3 max-sm:hidden"
                         variants={bottomLinksVariants}
                         initial="hidden"
                         animate={controls}
@@ -253,7 +254,10 @@ export default function Navigation() {
                             {currentlyHovered !== null && <NavTab containerSize={rectBoundWidth} centerRect={rectBoundHover} closeFunc={()=>setCurrentlyHovered(null)} unMountFunc={setLastHovered} currentlyHovered={currentlyHovered} lastHovered={lastHovered} />}
                         </AnimatePresence>
                     </motion.div>
-                    <div className="flex gap-3 items-center">
+                    <div className={clsx(
+                        "flex gap-3 items-center max-sm:py-3 max-sm:flex-1",
+                        shouldHide && scrollDirection !== "up" ? "max-sm:justify-end" : "max-sm:justify-between"
+                    )}>
                         <Button>
                             <span>Apply for Admission</span>
                         </Button>

@@ -30,7 +30,7 @@ export default function Testimonials() {
 
 function Testimonial({ avatar, name, role, testimonial }: Omit<TestimonialInterface, "id">) {
   return (
-    <div className="p-8 bg-white max-w-[95%] max-sm:max-w-full cursor-grab active:cursor-grabbing">
+    <div className="p-8 bg-white max-w-[95%] max-sm:max-w-full mx-auto cursor-grab active:cursor-grabbing">
         <Image
             src={"https://aism-edu.sirv.com/icons/quote-left-svgrepo-com%20(1).svg"}
             alt="Quotes"

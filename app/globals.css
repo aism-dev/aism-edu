@@ -369,6 +369,28 @@ a .isVisited {
   transform: translateY(-2px) rotate(-35deg) translateX(5px);
 }
 
+
+@media screen and (max-width: 700px) {
+  .hamburger div {
+    height: 3px;
+    width: 2.5rem;
+  }
+
+  .hamburger {
+    gap: 3px;
+    height: 24px;
+  }
+    
+  .hamburger:active div:nth-child(1),
+  .hamburger.active div:nth-child(1) {
+    transform: translateY(2px) rotate(25deg) translateX(5px);
+  }
+  .hamburger:active div:nth-child(3),
+  .hamburger.active div:nth-child(3) {
+    transform: translateY(-2px) rotate(-25deg) translateX(5px);
+  }
+}
+
 .gridy {
   background-image: linear-gradient(#f1f2ff 1px, transparent 1px), linear-gradient(to right, #f1f2ff 1px, transparent 1px);
   background-size: 20px 20px;

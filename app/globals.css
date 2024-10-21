@@ -61,7 +61,8 @@
   transform: scale(0.95) skewY(-2deg);
 }
 
-.btn:has(.mark-2:hover):active, .btn:has(.mark-5:hover):active {
+.btn:has(.mark-2:hover):active,
+.btn:has(.mark-5:hover):active {
   transform: scale(0.95);
 }
 
@@ -93,7 +94,8 @@
   color: #fff;
 }
 
-.btn:hover::after, .btn:focus::after {
+.btn:hover::after,
+.btn:focus::after {
   height: 100%;
   width: 100%;
 }
@@ -222,14 +224,15 @@ body {
   mix-blend-mode: darken;
 }
 
-.heroImg::after, .withGradient::after {
+.heroImg::after,
+.withGradient::after {
   position: absolute;
   content: "";
   width: 100%;
   height: 100%;
   top: 0;
   left: 0;
-  background: linear-gradient(to top, rgba(0,0,0,0.9) 10%, rgba(240,240,240,0) 100%);
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.9) 10%, rgba(240, 240, 240, 0) 100%);
 }
 
 .withGradientLight::after {
@@ -239,7 +242,7 @@ body {
   height: 100%;
   top: 0;
   left: 0;
-  background: linear-gradient(to top, rgba(0,0,0,0.6) 10%, rgba(240,240,240,0) 100%);
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.6) 10%, rgba(240, 240, 240, 0) 100%);
 }
 
 .heroImg {
@@ -258,8 +261,7 @@ a .isVisited {
   transition:
     0.35s font-weight,
     0.35s color,
-    0.05s filter
-    ;
+    0.05s filter;
 }
 
 .hoverText:hover {
@@ -271,7 +273,7 @@ a .isVisited {
   filter: saturate(0) brightness(0) invert(1);
 }
 
-.hoverText.text-white:hover + .hoverText.text-white {
+.hoverText.text-white:hover+.hoverText.text-white {
   filter: saturate(0) brightness(0.2) invert(1);
 }
 
@@ -280,12 +282,12 @@ a .isVisited {
 }
 
 /* To the right */
-.hoverText:hover + .hoverText {
+.hoverText:hover+.hoverText {
   font-weight: 500;
   color: #132e57;
 }
 
-.hoverText:hover + .hoverText + .hoverText {
+.hoverText:hover+.hoverText+.hoverText {
   font-weight: 300;
 }
 
@@ -336,11 +338,13 @@ a .isVisited {
   background-color: currentColor;
 }
 
-.hamburger:active div:nth-child(1), .hamburger.active div:nth-child(1) {
+.hamburger:active div:nth-child(1),
+.hamburger.active div:nth-child(1) {
   transform: translateY(2px) rotate(30deg) translateX(5px);
 }
 
-.hamburger:active div:nth-child(2), .hamburger.active div:nth-child(2) {
+.hamburger:active div:nth-child(2),
+.hamburger.active div:nth-child(2) {
   width: 0;
 }
 
@@ -348,7 +352,8 @@ a .isVisited {
   width: 50%;
 }
 
-.hamburger:active div:nth-child(3), .hamburger.active div:nth-child(3) {
+.hamburger:active div:nth-child(3),
+.hamburger.active div:nth-child(3) {
   transform: translateY(-2px) rotate(-30deg) translateX(5px);
 }
 
@@ -367,4 +372,36 @@ a .isVisited {
 .gridy {
   background-image: linear-gradient(#f1f2ff 1px, transparent 1px), linear-gradient(to right, #f1f2ff 1px, transparent 1px);
   background-size: 20px 20px;
+}
+
+.isOdd li {
+  margin-right: 16px;
+  position: relative;
+}
+
+.isOdd li::after {
+  content: "";
+  height: 7px;
+  width: 7px;
+  border-radius: 50%;
+  background-color: #183d74;
+  position: absolute;
+  right: -14px;
+  top: 10px;
+}
+
+.isNotOdd li {
+  margin-left: 16px;
+  position: relative;
+}
+
+.isNotOdd li::after {
+  content: "";
+  height: 7px;
+  width: 7px;
+  border-radius: 50%;
+  background-color: #183d74;
+  position: absolute;
+  left: -14px;
+  top: 10px;
 }

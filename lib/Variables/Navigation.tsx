@@ -48,21 +48,21 @@ const admissionTab: TabContent[] = [
         description: "Explore our step-by-step guide to applying at AISM, from initial requirements to enrollment. We make it easy for you to start your journey toward a world-class medical education.",
         icon: "https://aism-edu.sirv.com/icons/download%20(5).png",
         popular: true,
-        url: "#up"
+        url: "/admission/admission-process"
     },
     {
         id: 2,
         title: "Tuition & Fees",
         description: "Find detailed information about AISM’s tuition rates, fees, and available financial aid options to help you plan for your medical education.",
         icon: "https://aism-edu.sirv.com/icons/download%20(6).png",
-        url: ""
+        url: "/admission/tuition-fees"
     },
     {
         id: 3,
         title: "Visa Information",
         description: "Learn about the visa requirements and application process for international students at AISM, ensuring a smooth transition to your medical studies abroad.",
         icon: "https://aism-edu.sirv.com/icons/download%20(7).png",
-        url: ""
+        url: "/admission/visa-information"
     },
 ];
 

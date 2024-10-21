@@ -9,8 +9,6 @@ import { FaAngleUp, FaArrowUp } from "react-icons/fa6";
 import clsx from "clsx";
 import {useLocation} from 'react-use';
 
-
-
 export default function Navigation() {
     const [scrollPosition, setScrollPosition] = useState(0);
     const scrollPositionRef = useRef(0);

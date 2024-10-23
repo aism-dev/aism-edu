@@ -3,7 +3,7 @@ interface AdmissionStep {
   content: React.ReactNode;
 }
 
-export const VisProcess: AdmissionStep[] = [
+export const VisaProcess: AdmissionStep[] = [
   {
     title: "Submit Required Documents",
     content: (

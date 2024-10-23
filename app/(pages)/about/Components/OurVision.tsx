@@ -5,7 +5,7 @@ import Image from "next/image";
 export default function OurVision() {
     return (
         <>
-            <div className="grid gap-14 grid-cols-[auto_1fr_auto] w-full px-20 py-10 items-center">
+            <div className="grid md:gap-14 gap-6 md:grid-cols-[auto_1fr_auto] w-full md:px-20 sm:px-10 px-8 py-10 items-center">
                 <div className="w-fit">
                     <Button sizeVariation="XL">
                         Apply Now
@@ -17,7 +17,7 @@ export default function OurVision() {
                     </span>
                 </p>
                 <div className="pl-3">
-                    <BubbleText formatClass="text-5xl text-theme" text="AISM's Vision" />
+                    <BubbleText formatClass="md:text-5xl text-4xl max-md:hidden text-theme" text="AISM's Vision" />
                 </div>
             </div>
             <div className="flex flex-wrap border-y-2">

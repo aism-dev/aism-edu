@@ -11,7 +11,7 @@ export default function Footer() {
                 alt="logo"
                 height={500}
                 width={500}
-                className="h-[60%] w-auto blur-[2px] object-contain absolute pointer-events-none select-none -z-0 opacity-15 invert top-1/2 -translate-y-1/2 left-3"
+                className="md:h-[60%] h-[30%] w-auto blur-[2px] object-contain absolute pointer-events-none select-none -z-0 opacity-15 invert sm:top-1/2 top-1/3 -translate-y-1/2 sm:left-3 left-1/2 max-sm:-translate-x-1/2"
             />
             <div className="sm:px-16 px-8 sm:py-20 py-10 grid md:grid-cols-[auto_1fr] grid-cols-1 md:gap-20 sm:gap-10 gap-5">
                 <div>
@@ -31,14 +31,14 @@ export default function Footer() {
                             <span className="alt-font text-3xl">School of Medicine</span>
                         </div>
                     </div>
-                    <div className="pt-5 max-w-[20rem] pl-2">
+                    <div className="py-5 max-w-[20rem] pl-2">
                         <h4 className="font-medium text-lg flex items-center gap-2 opacity-70"><FaMapLocation /> Address:</h4>
                         <address className="not-italic ">
                             1000  Windward Concourse, Ste 110,
                             Alpharetta GA &mdash; 30005
                         </address>
                     </div>
-                    <div className="flex items-center gap-2 justify-between py-4">
+                    <div className="flex items-center gap-2 sm:justify-between max-sm:gap-5 py-4">
                         <Link href={""} className="alt-link h-10 w-10 rounded-lg grid place-items-center bg-white text-theme">
                             <FaFacebook className="text-2xl"/>
                         </Link>
@@ -57,7 +57,7 @@ export default function Footer() {
                     </div>
                 </div>
                 <div>
-                    <div className="grid sm:grid-cols-3 w-full grid-cols-1 gap-4">
+                    <div className="grid grid-cols-3 w-full gap-4">
                         <Button colorVariation="footer" sizeVariation="W" className="border-white">
                             Apply Now
                         </Button>
@@ -89,7 +89,7 @@ export default function Footer() {
                 </div>
             </div>
             <div className="bg-themeDark darker px-20 py-5 relative z-10 flex justify-between">
-                <span>Designed by: <Link href={"https://fabiconcept.online"} target="_blank" className="alt-link">Fabiconcept</Link></span>
+                <span className="max-sm:hidden">Designed by: <Link href={"https://fabiconcept.online"} target="_blank" className="alt-link">Fabiconcept</Link></span>
                 <span>
                     Copyright © {new Date().getFullYear()} American International School of Medicine
                 </span>

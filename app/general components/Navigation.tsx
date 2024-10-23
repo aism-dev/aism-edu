@@ -261,19 +261,26 @@ export default function Navigation() {
                         <Button>
                             <span>Apply for Admission</span>
                         </Button>
-                        <div onClick={() => setHamburgerOpen(!hamburgerOpen)} className={clsx(
-                            "hamburger text-theme",
-                            hamburgerOpen ? "active z-[1000]" : "",
-                            "min-[960px]:hidden"
+                        <div className="relative">
+                            <div onClick={() => setHamburgerOpen(!hamburgerOpen)} className={clsx(
+                                "hamburger text-theme",
+                                hamburgerOpen ? "active z-[1000]" : "",
+                                "min-[960px]:hidden"
 
-                        )}>
-                            <div></div>
-                            <div></div>
-                            <div></div>
+                            )}>
+                                <div></div>
+                                <div></div>
+                                <div></div>
+                            </div>
                         </div>
                     </div>
                 </div>
             </motion.nav>
+            <div className={clsx(
+                "fixed top-0 right-0 z-[10999] bg-gradient-to-b from-theme/60 to-themeDark/60 backdrop-blur-sm",
+                hamburgerOpen ? "h-screen w-screen overflow-hidden" : "h-0 w-0"
+            )}>
+            </div>
             <AnimatePresence>
                 {shouldHideBackTop && scrollDirection === "up" && <motion.div 
                     className={clsx(

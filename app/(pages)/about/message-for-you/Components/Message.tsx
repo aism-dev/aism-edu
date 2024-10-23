@@ -3,9 +3,8 @@ import { FaFacebookF, FaInstagram, FaLinkedinIn } from "react-icons/fa6";
 
 export default function MessageSection() {
     return (
-        <div className="p-20 grid gap-5">
-            <p></p>
-            <p>Congratulations on being accepted into American International School of Medicine.</p>
+        <div className="sm:px-20 sm:py-20 px-8 py-8 grid gap-5">
+            <p className="mt-4 text-lg">Congratulations on being accepted into American International School of Medicine.</p>
 
             <p>It is with Great pride that I introduce to you an institution, which has grown over the years into an excellent school that provides medical education and training to meet the growing demands for health and health care professionals worldwide.</p>
 
@@ -19,17 +18,17 @@ export default function MessageSection() {
 
             <p>Welcome to the American International School of Medicine &mdash; AISM</p>
 
-            <p className="font-medium sign-font mt-10 text-3xl text-theme underline underline-offset-8">Dr. Colin A. Wilkinson</p>
-            <p className="font-bold text-lg uppercase text-themeDark -mt-3">Founder & Chairman</p>
+            <p className="font-medium sign-font mt-10 sm:text-3xl text-2xl text-theme underline underline-offset-8">Dr. Colin A. Wilkinson</p>
+            <p className="font-bold sm:text-lg uppercase text-themeDark -mt-3">Founder & Chairman</p>
             <div className="flex items-center gap-3 justify-between w-fit">
-                <Link href={""} className="alt-link h-12 w-12 rounded-lg grid place-items-center text-theme hover:text-white hover:bg-theme border-2 border-theme">
-                    <FaFacebookF className="text-2xl" />
+                <Link href={""} className="alt-link sm:h-12 h-10 sm:w-12 w-10 rounded-lg grid place-items-center text-theme hover:text-white hover:bg-theme border-2 border-theme">
+                    <FaFacebookF className="sm:text-2xl text-xl" />
                 </Link>
-                <Link href={""} className="alt-link h-12 w-12 rounded-lg grid place-items-center text-theme hover:text-white hover:bg-theme border-2 border-theme">
-                    <FaInstagram className="text-2xl" />
+                <Link href={""} className="alt-link sm:h-12 h-10 sm:w-12 w-10 rounded-lg grid place-items-center text-theme hover:text-white hover:bg-theme border-2 border-theme">
+                    <FaInstagram className="sm:text-2xl text-xl" />
                 </Link>
-                <Link href={""} className="alt-link h-12 w-12 rounded-lg grid place-items-center text-theme hover:text-white hover:bg-theme border-2 border-theme">
-                    <FaLinkedinIn className="text-2xl" />
+                <Link href={""} className="alt-link sm:h-12 h-10 sm:w-12 w-10 rounded-lg grid place-items-center text-theme hover:text-white hover:bg-theme border-2 border-theme">
+                    <FaLinkedinIn className="sm:text-2xl text-xl" />
                 </Link>
             </div>
         </div>

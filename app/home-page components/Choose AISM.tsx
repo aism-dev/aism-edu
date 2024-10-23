@@ -29,9 +29,9 @@ export default function ChooseAISM() {
     };
 
     return (
-        <section className="p-20 bg-theme text-white grid sm:grid-cols-[auto_1fr] gap-20">
+        <section className="md:py-20 md:px-20 px-10 py-20 bg-theme text-white grid sm:grid-cols-[auto_1fr] gap-20">
             <div className="max-w-[clamp(25rem,30vw,20rem)] flex flex-col justify-between gap-4">
-                <h3 className="text-5xl alt-font capitalize">
+                <h3 className="text-5xl leading-9 capitalize">
                     What we do at <span title="American International School of Medicine" className="text-5xl">AISM</span>
                 </h3>
                 <p className="opacity-70">

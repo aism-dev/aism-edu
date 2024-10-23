@@ -29,17 +29,17 @@ export default function FindYourProgram() {
     };
 
     return (
-        <div className="py-20">
+        <div className="py-20 max-sm:px-10">
             <div className="text-center flex flex-col items-center gap-4">
                 <h2 className="text-4xl font-medium text-theme">Find your Course</h2>
                 <p className="max-w-[40rem] leading-6 text-black/70">
                     Explore a range of programs tailored to your career goals. Choose the path that best suits your aspirations and start your journey in healthcare today.
                 </p>
             </div>
-            <div className="flex gap-3 mt-8 px-4">
+            <div className="flex max-sm:flex-col gap-3 mt-8 px-4 max-sm:h-screen max-sm:min-h-[50rem]">
                 {Programs.map((program)=>(
                     <div key={program.id} onClick={() => handleClick(program.id - 1)} className={clsx(
-                        "h-[25rem] min-w-40 transition-[width_1s_ease] duration-500-alt relative overflow-hidden",
+                        "sm:h-[25rem] max-sm:min-h-[5rem] max-sm:mh min-w-40 transition-[width_1s_ease] duration-500-alt relative overflow-hidden",
                         currentItem === (program.id - 1) ? "flex-1" : "cursor-pointer"
                     )}>
                         <div className={clsx(
@@ -55,10 +55,10 @@ export default function FindYourProgram() {
                                 className="h-full min-w-full object-top object-cover self-start"
                                 />
                         </div>
-                        <div className="absolute z-10 bottom-10 left-24 text-white grid gap-3">
+                        <div className="absolute z-10 bottom-10 sm:left-24 left-10 text-white grid gap-3">
                             <h3 className={clsx(
                                 "origin-bottom-left text-2xl whitespace-nowrap flex flex-col",
-                                currentItem === (program.id - 1) ? "font-semibold" : "-rotate-90"
+                                currentItem === (program.id - 1) ? "font-semibold" : "sm:-rotate-90 translate-y-10"
                             )}>
                                 {currentItem === (program.id - 1) && program.isComingSoon && <span className="text-gray-300/80 capitalize font-thin">coming soon</span>}
                                 {program.title} 

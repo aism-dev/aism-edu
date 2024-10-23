@@ -161,7 +161,7 @@ body:has(a:hover) a:not(:hover) {
 
 @media screen and (max-width: 760px) {
   * {
-    font-size: 13px;
+    font-size: 14px;
   }
 }
 
@@ -323,7 +323,6 @@ a .isVisited {
   top: 50%;
   transform: translateY(-50%);
 }
-
 
 .hamburger div:nth-child(3) {
   position: absolute;

@@ -23,10 +23,10 @@ export default function HeroSection() {
                             initial={{ opacity: 0, y: 50 }}
                             animate={{ opacity: 1, y: 0 }}
                             transition={{ duration: 1, delay: 1 }}
-                            className="absolute bottom-32 left-32 text-white z-10 max-w-[40rem]"
+                            className="absolute bottom-32 md:left-32 pr-5 left-10 text-white z-10 max-w-[40rem]"
                         >
-                            <p className="text-5xl leading-[1.15] mb-2">{slideContent.title}</p>
-                            <p className="opacity-75">{slideContent.content}</p>
+                            <p className="sm:text-5xl text-3xl leading-[1.15] mb-2">{slideContent.title}</p>
+                            <p className="sm:opacity-75 opacity-85">{slideContent.content}</p>
                             <br />
                             <Button colorVariation="dark" sizeVariation="L" tabIndex={-1}>
                                 {slideContent.ctaText}

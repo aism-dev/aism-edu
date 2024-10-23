@@ -4,14 +4,14 @@ import Carousel from "@/app/home-page components/sub components/Carousel";
 
 export default function Affiliates() {
     return (
-        <div className="pt-24 pb-20 bg-black/5">
+        <div className="pt-24 pb-20 px-8 bg-black/5">
             <div className="text-center flex flex-col items-center gap-4">
                 <h2 className="text-4xl font-medium text-theme">Organisations Affiliated with AISM</h2>
-                <p className="max-w-[40rem] leading-6 text-black/70">
+                <p className="sm:max-w-[40rem] w-full px-8 leading-6 text-black/70">
                 Partnering with top organizations to provide students with enhanced clinical training, research opportunities, and career development pathways.
                 </p>
             </div>
-            <div className="px-10 mt-10">
+            <div className="sm:px-10 px-5 mt-10">
                 <Carousel>
                     {AffiliatesList.map((affiliate)=>(
                         <Affiliate 

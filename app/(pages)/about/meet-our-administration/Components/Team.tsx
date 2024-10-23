@@ -6,11 +6,11 @@ import Link from "next/link";
 export default function Team(props: TeamProps) {
     return (
         <div className={clsx(
-            "p-20",
+            "sm:p-20 p-8",
             props.id % 2 === 0 ?  "bg-black/5" : "",
 
         )}>
-            <h3 className="text-4xl text-theme font-semibold mb-8">{props.title}</h3>
+            <h3 className="sm:text-4xl text-3xl text-theme font-semibold mb-8">{props.title}</h3>
             <div className={clsx(
                 "grid",
                 props.members.length > 6 ? "sm:grid-cols-[repeat(auto-fill,minmax(25rem,1fr))] gap-x-8 gap-y-5" : "grid-cols-[repeat(auto-fill,minmax(20rem,1fr))] gap-5"

@@ -10,9 +10,9 @@ export default function Top() {
                 height={1208}
                 className="object-contain object-center w-full h-auto md:-mt-24 pointer-events-none select-none"
             />
-            <div className="absolute mt-20 z-20 text-center text-white">
-                <h1 className="text-6xl uppercase font-semibold">Administration</h1>
-                <p className="pt-3 text-xl w-[40rem,70%,20rem]">Providing world-class education and training to shape the future leaders in healthcare and medical research</p>
+            <div className="absolute mt-20 z-20 px-10 text-center text-white">
+                <h1 className="sm:text-5xl text-3xl uppercase font-semibold">Administration</h1>
+                <p className="pt-3 sm:text-xl text-lg w-[40rem,70%,20rem]">Providing world-class education and training to shape the future leaders in healthcare and medical research</p>
             </div>
         </div>
     )

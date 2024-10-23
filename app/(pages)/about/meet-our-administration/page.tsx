@@ -4,7 +4,7 @@ import Top from "./Components/Top";
 
 export default function MeetOurAdministration() {
     return (
-        <div className="mt-44">
+        <div className="sm:mt-44 mt-36">
             <Top />
             {teamsItems.map((team)=>(
                 <Team 

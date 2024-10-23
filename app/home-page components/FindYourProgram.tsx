@@ -1,18 +1,26 @@
 "use client"
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import clsx from "clsx";
 import { Programs } from "@/lib/Variables/Programs";
 import { motion } from  "framer-motion";
 import Image from "next/image";
 import Button from "../general components/Button";
+import { useIntersection } from "react-use";
 
 export default function FindYourProgram() {
     const [currentItem, setCurrentItem] = useState(0);
     const [intervalId, setIntervalId] = useState(setInterval(()=>{}, 10));
+    
+    const containerRef = useRef<HTMLDivElement>(null);
 
     const changeComponent = () => {
         setCurrentItem((prevReason) => (prevReason + 1) % Programs.length);
     };
+
+    const isInView = useIntersection(containerRef, {
+        rootMargin: "0px",
+        threshold:  0.25,
+    })
 
     useEffect(() => {
         const id = setInterval(changeComponent, 5000);
@@ -21,6 +29,7 @@ export default function FindYourProgram() {
         return () => clearInterval(id);
     }, []);
 
+    
     const handleClick = (id: number) => {
         setCurrentItem(id);
         clearInterval(intervalId); // Clear the current interval
@@ -28,8 +37,18 @@ export default function FindYourProgram() {
         setIntervalId(newIntervalId);
     };
 
+    useEffect(() => {
+        if (!isInView || isInView?.isIntersecting) {
+            const id = setInterval(changeComponent, 5000);
+            setIntervalId(id);
+            return;
+        }
+
+        clearInterval(intervalId);
+    }, [isInView]);
+
     return (
-        <div className="py-20 max-sm:px-10">
+        <div className="py-20 max-sm:px-10" ref={containerRef}>
             <div className="text-center flex flex-col items-center gap-4">
                 <h2 className="text-4xl font-medium text-theme">Find your Course</h2>
                 <p className="max-w-[40rem] leading-6 text-black/70">

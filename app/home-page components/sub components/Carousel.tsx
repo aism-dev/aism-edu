@@ -70,7 +70,7 @@ function NextArrow(props: React.HtmlHTMLAttributes<HTMLDivElement>) {
   return (
     <div
       onClick={onClick}
-      className="absolute -bottom-8 left-8 cursor-pointer active:scale-90 z-30 text-theme opacity-50 hover:opacity-100"
+      className="absolute sm:-bottom-8 -bottom-10 left-8 cursor-pointer active:scale-90 z-30 text-theme opacity-50 hover:opacity-100"
     >
       <FaArrowLeftLong className="text-4xl" /> 
     </div>
@@ -82,7 +82,7 @@ function PrevArrow(props: React.HtmlHTMLAttributes<HTMLDivElement>) {
   return (
     <div
       onClick={onClick}
-      className="absolute -bottom-8 right-8 cursor-pointer active:scale-90 z-30 text-theme opacity-50 hover:opacity-100"
+      className="absolute sm:-bottom-8 -bottom-10 right-8 cursor-pointer active:scale-90 z-30 text-theme opacity-50 hover:opacity-100"
     >
       <FaArrowRightLong className="text-4xl" />
     </div>

@@ -10,26 +10,26 @@ export default function TopSection() {
     const [playVideo, setPlayVideo] = useState(false);
 
     return (
-        <div className="bg-theme h-screen relative grid grid-cols-[1fr_1.25fr]" id="TopOfPage">
-            <div className="flex items-center">
-                <h1 className="text-8xl font-normal text-white p-20">
-                    <span className="text-8xl font-thin opacity-80">Message</span> <span className="text-3xl opacity-80">from</span> <br /> <span className="text-3xl opacity-80">the</span> President
+        <div className="sm:bg-theme sm:h-screen relative grid sm:grid-cols-[1fr_1.25fr]" id="TopOfPage">
+            <div className="flex items-center max-md:py-32 max-sm:bg-theme">
+                <h1 className="lg:text-8xl text-6xl font-normal text-white p-20">
+                    <span className="lg:text-8xl text-6xl font-thin opacity-80">Message</span> <span className="text-3xl opacity-80">from</span> <br /> <span className="text-3xl opacity-80">the</span> President
                 </h1>
             </div>
-            <div className="rounded-bl-full h-full bg-white overflow-hidden relative">
+            <div className="rounded-bl-full h-96 bg-white overflow-hidden relative">
                 <Image
                     src={"https://aism-edu.sirv.com/icons/AISM-light.png"}
                     alt="AISM Logo"
                     height={318}
                     width={318}
-                    className="w-full object-contain object-right-bottom h-full absolute top-1/2 -translate-y-1/2 left-1/2 -translate-x-1/2 blur opacity-25"
+                    className="w-full object-contain sm:object-right-bottom object-center h-full absolute top-1/2 -translate-y-1/2 left-1/2 -translate-x-1/2 blur opacity-25"
                 />
                 <Image
                     src={"https://aism-edu.sirv.com/CutOuts/dr.colin-a-wilkinson_LE_auto_x2-ai-brush-removebg-65ok652q.png"}
                     alt="Dr. Colin Wilkinson"
                     height={1920}
                     width={1280}
-                    className="w-full object-contain object-right-bottom h-full translate-y-80 origin-bottom-right scale-150 relative"
+                    className="w-full object-contain object-right-bottom h-full sm:translate-y-80 translate-y-40 origin-bottom-right scale-150 relative"
                 />
                 <div className="grid place-items-center absolute top-0 left-0 h-full w-full">
                     <div className={clsx(

@@ -8,14 +8,14 @@ import NavTab from "../home-page components/sub components/NavTab";
 import { FaAngleUp, FaArrowUp } from "react-icons/fa6";
 import clsx from "clsx";
 import { useLocation, useWindowSize } from 'react-use';
+import MobileNavigation from "./Sub Components/MobileNavigation";
 
 export default function Navigation() {
     const [scrollPosition, setScrollPosition] = useState(0);
     const scrollPositionRef = useRef(0);
     const [activeTab, setActiveTab] = useState(0);
     const [hamburgerOpen,  setHamburgerOpen] = useState(false);
-    const ViewPort = useWindowSize()
-
+    const ViewPort = useWindowSize();
 
     const state = useLocation();
 
@@ -71,7 +71,7 @@ export default function Navigation() {
     const controls = useAnimation();
 
     const topVariants: Variants = {
-        hidden: { y: ViewPort.width > 700 ? -104 : -86 },
+        hidden: { y: ViewPort.width > 700 ? -108 : -90 },
         visible: { y: 0, transition: { duration: 0.25 } },
     };
 
@@ -99,12 +99,12 @@ export default function Navigation() {
     };
 
     useEffect(() => {
-        if (shouldHide && scrollDirection !== "up") {
+        if ((shouldHide && scrollDirection !== "up") || hamburgerOpen) {
             controls.start("hidden");
             return;
         }
         controls.start("visible");
-    }, [shouldHide, scrollDirection]);
+    }, [shouldHide, scrollDirection, hamburgerOpen]);
 
     useEffect(() => {
         window.addEventListener('scroll', handleScroll);
@@ -256,7 +256,7 @@ export default function Navigation() {
                     </motion.div>
                     <div className={clsx(
                         "flex gap-6 items-center max-sm:py-3 max-sm:flex-1",
-                        shouldHide && scrollDirection !== "up" ? "max-sm:justify-end" : "max-sm:justify-between"
+                        (shouldHide && scrollDirection !== "up") || hamburgerOpen ? "max-sm:justify-end" : "max-sm:justify-between"
                     )}>
                         <Button>
                             <span>Apply for Admission</span>
@@ -276,11 +276,9 @@ export default function Navigation() {
                     </div>
                 </div>
             </motion.nav>
-            <div className={clsx(
-                "fixed top-0 right-0 z-[10999] bg-gradient-to-b from-theme/60 to-themeDark/60 backdrop-blur-sm",
-                hamburgerOpen ? "h-screen w-screen overflow-hidden" : "h-0 w-0"
-            )}>
-            </div>
+            <AnimatePresence>
+                {hamburgerOpen && <MobileNavigation />}
+            </AnimatePresence>
             <AnimatePresence>
                 {shouldHideBackTop && scrollDirection === "up" && <motion.div 
                     className={clsx(

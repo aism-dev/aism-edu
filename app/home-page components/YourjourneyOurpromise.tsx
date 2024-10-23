@@ -18,18 +18,18 @@ export default function YourJourneyOurPromise() {
                     alt="AISM Group Image"
                     width={1080}
                     height={604}
-                    className="w-full object-cover object-center -mt-20 pointer-events-none select-none"
+                    className="w-full min-h-full object-cover object-center sm:-mt-20 pointer-events-none select-none"
                 />
                 <div className="absolute bottom-0 z-20 text-white p-14 grid gap-3">
                     <h2 className="text-3xl font-medium">Your Journey, Our Promise</h2>
-                    <p className="opacity-80 max-w-[50%]">
+                    <p className="opacity-80 md:max-w-[50%]">
                         At AISM, we are committed to delivering exceptional medical education, shaping physicians who excel in any medical setting worldwide. Our graduates are equipped with the skills and knowledge to thrive, making them highly sought-after professionals across the globe.
                     </p>
                 </div>
             </div>
-            <div className="w-[clamp(30rem,40vw,20rem)] h-96 -mt-[23rem] mr-20 z-40 bg-white border-[15px] border-white">
+            <div className="md:w-[clamp(30rem,40vw,20rem)] w-full h-96 md:-mt-[23rem] md:mr-20 z-40 bg-white md:border-[15px] border-white">
                 <div className="relative w-full h-full grid place-items-center group bg-theme">
-                <div className={clsx(
+                    <div className={clsx(
                         "h-full w-full absolute top-0 left-0 pointer-events-none z-10",
                         "bg-black/35",
                     )}></div>

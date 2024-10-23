@@ -7,7 +7,7 @@ import { FaArrowRight, } from "react-icons/fa"
 import { FaFire, FaHourglass } from "react-icons/fa6";
 import { useLocation } from "react-use";
 
-interface TabContent {
+export interface TabContent {
     id: number,
     title: string,
     description:  string,
@@ -17,7 +17,7 @@ interface TabContent {
     isComingSoon?: boolean
 }
 
-const aboutTab: TabContent[] = [
+export const aboutTab: TabContent[] = [
     {
         id: 1,
         title: "Our Vision, Mission & Values",
@@ -41,7 +41,7 @@ const aboutTab: TabContent[] = [
     },
 ];
 
-const admissionTab: TabContent[] = [
+export const admissionTab: TabContent[] = [
     {
         id: 1,
         title: "Admission Process",
@@ -66,7 +66,7 @@ const admissionTab: TabContent[] = [
     },
 ];
 
-const academicProgramsTab: TabContent[] = [
+export const academicProgramsTab: TabContent[] = [
     {
         id: 1,
         title: "Pre-Health (Pre-Medical) Sciences",
@@ -107,7 +107,7 @@ const academicProgramsTab: TabContent[] = [
     },
 ];
 
-const applicationsTab: TabContent[] = [
+export const applicationsTab: TabContent[] = [
     {
         "id": 1,
         "title": "Application Form MD",

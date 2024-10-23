@@ -77,7 +77,7 @@ export default function FindYourProgram() {
                         <div className="absolute z-10 bottom-10 sm:left-24 left-10 text-white grid gap-3">
                             <h3 className={clsx(
                                 "origin-bottom-left text-2xl whitespace-nowrap flex flex-col",
-                                currentItem === (program.id - 1) ? "font-semibold" : "sm:-rotate-90 translate-y-10"
+                                currentItem === (program.id - 1) ? "font-semibold" : "sm:-rotate-90 translate-y-10 translate-x-16"
                             )}>
                                 {currentItem === (program.id - 1) && program.isComingSoon && <span className="text-gray-300/80 capitalize font-thin">coming soon</span>}
                                 {program.title} 

@@ -1,7 +1,7 @@
 "use client"
 import clsx from "clsx";
 import { useEffect, useRef, useState } from "react";
-import { FaPause, FaPlay } from "react-icons/fa6";
+import { FaPause, FaPlay, FaExpand } from "react-icons/fa6";
 import spinnerLoader from "../assets/spinner.svg";
 import Image from "next/image";
 import { useClickAway } from "react-use";
@@ -69,6 +69,10 @@ export default function VideoPlayer(videoProps: { src: string, closePlayer: () =
         if (!videoRef.current) return;
         setIsMuted(!isMuted);
     }
+    const handleFullScreen = () => {
+        if (!videoRef.current) return;
+        videoRef.current.requestFullscreen();
+    }
 
     const handlePlayPause = () => {
         if (!videoRef.current) return;
@@ -105,7 +109,7 @@ export default function VideoPlayer(videoProps: { src: string, closePlayer: () =
                 transition={{ duration: 0.15 }}
                 exit={{ x: 100 }}
             >
-                <div className="relative w-[60vw] h-[65vh] grid place-items-center group overflow-hidden">
+                <div className="relative md:w-[60vw] md:h-[65vh] sm:w-[95dvw] sm:h-[70dvh] w-[98dvw] h-auto max-h-[90dvh] grid place-items-center group overflow-hidden">
                     <video
                         className="w-full h-full object-cover object-center bg-theme"
                         playsInline
@@ -126,6 +130,10 @@ export default function VideoPlayer(videoProps: { src: string, closePlayer: () =
                     
                     <div className="absolute bottom-10 left-10 z-30 cursor-pointer text-white drop-shadow-md active:scale-75 active:opacity-50 active:rotate-12" onClick={handleMute}>
                         {isMuted ? <FaVolumeMute className="text-3xl" /> : <FaVolumeUp className="text-3xl" />}
+                    </div>
+                    
+                    <div className="absolute top-10 right-10 z-30 cursor-pointer text-white drop-shadow-md active:scale-75 active:opacity-50 active:rotate-12" onClick={handleFullScreen}>
+                        <FaExpand className="text-3xl" />
                     </div>
 
                     {!isBuffering ? <div title={ isPlaying ? "Pause the Video" : "Play the Video"} className={clsx(

@@ -143,8 +143,8 @@ export default function Navigation() {
                             </Link>
                         </motion.div>
                         <Link href={"/"} className="grid">
-                            <span className="alt-font text-2xl max-sm:text-xl opacity-70 font-medium leading-4 max-sm:leading-3">American International</span>
-                            <span className="alt-font text-3xl max-sm:text-2xl text-theme">School of Medicine</span>
+                            <span className="alt-font text-2xl max-sm:text-lg opacity-70 font-medium leading-4 max-sm:leading-3">American International</span>
+                            <span className="alt-font text-3xl max-sm:text-xl text-theme">School of Medicine</span>
                         </Link>
                     </div>
                     <div className="flex flex-col justify-between items-end">
@@ -165,7 +165,7 @@ export default function Navigation() {
                                 Contact Us
                             </Link>
                         </div>
-                        <Link href={"tel:+18664659966"} className="justify-self-end text-2xl text-themelight">+1 (866) 465 9966</Link>
+                        <Link href={"tel:+18664659966"} className="justify-self-end sm:text-2xl text-themelight">+1 (866) 465 9966</Link>
                     </div>
                 </motion.div>
                 <div className="flex justify-between items-center relative border-b">

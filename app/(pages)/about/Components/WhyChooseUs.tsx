@@ -1,4 +1,5 @@
 "use client"
+import { AnimatedEntrance } from "@/app/general components/AnimatedEntrance";
 import Image from "next/image";
 import { useEffect, useRef, useState } from "react";
 import CountUp from 'react-countup';
@@ -47,7 +48,7 @@ export default function WhyChooseUs() {
     }, [counter03Intersection]);
 
     return (
-        <div className="flex flex-wrap flex-row-reverse py-20">
+        <AnimatedEntrance className="flex flex-wrap flex-row-reverse py-20">
                 <div className="w-[40rem]">
                     <Image
                     src={"https://aism-edu.sirv.com/SaveClip.App_75234587_102484511140997_7839154373435935590_n_LE_auto_x2.jpg"}
@@ -97,6 +98,6 @@ export default function WhyChooseUs() {
                         </div>
                     </div>
                 </div>
-            </div>
+            </AnimatedEntrance>
     )
 }

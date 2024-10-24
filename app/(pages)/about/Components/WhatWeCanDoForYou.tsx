@@ -5,8 +5,8 @@ import Image from "next/image";
 export default function WhatWeCanDoForYou() {
     return (
         <>
-            <AnimatedEntrance className="grid md:grid-cols-2 w-full md:px-40 sm:px-10 px-8 pb-10 items-center gap-5" id="TopOfPage">
-                <div>
+            <AnimatedEntrance className="grid md:grid-cols-2 w-full md:px-40 sm:px-10 px-8 pb-10 items-center gap-5">
+                <div id="TopOfPage">
                     <BubbleText formatClass="sm:text-5xl text-4xl" text="What AISM can do for you?" />
                 </div>
                 <p className="sm:max-w-[clamp(35rem,40%,20rem)] w-full justify-self-end grid gap-4">

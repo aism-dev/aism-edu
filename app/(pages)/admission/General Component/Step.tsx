@@ -3,6 +3,7 @@ import clsx from "clsx";
 import { useInView } from "framer-motion";
 import { useRef } from "react";
 import { motion } from "framer-motion"
+import { AnimatedEntrance } from "@/app/general components/AnimatedEntrance";
 
 export default function Step({ isOdd, children }: { isOdd: boolean, children: React.ReactNode }) {
     const containerRef = useRef<HTMLDivElement>(null)
@@ -15,9 +16,9 @@ export default function Step({ isOdd, children }: { isOdd: boolean, children: Re
     return (
         isOdd ?
             <div className="grid sm:grid-cols-2 grid-cols-[1fr_auto] text-right isOdd" ref={containerRef}>
-                <div className="sm:p-10 p-5 border-l border-t border-b border-theme">
+                <AnimatedEntrance direction="left" className="sm:p-10 p-5 border-l border-t border-b border-theme">
                     {children}
-                </div>
+                </AnimatedEntrance>
                 <div className="gridy -ml-5 relative">
                     <div className="absolute sm:h-[120%] h-full flex flex-col items-center top-[10%] left-[0.65rem]">
                         <div className="h-5 w-5 rounded-full bg-theme"></div>
@@ -53,9 +54,9 @@ export default function Step({ isOdd, children }: { isOdd: boolean, children: Re
                         </div>
                     </div>
                 </div>
-                <div className="sm:p-10 p-5 border-r border-t border-b border-theme">
+                <AnimatedEntrance direction="right" className="sm:p-10 p-5 border-r border-t border-b border-theme">
                     {children}
-                </div>
+                </AnimatedEntrance>
             </div>
     )
 }

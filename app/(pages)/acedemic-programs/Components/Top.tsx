@@ -5,22 +5,22 @@ import { FaAngleRight } from "react-icons/fa6";
 
 export default function Top({ breadcrumb, title }: TopProps) {
     return (
-        <div className="py-10 px-20 bg-theme">
+        <div className="py-10 md:px-20 sm:px-10 px-8  bg-theme">
             <div className="flex items-center gap-3">
                 {breadcrumb.map((item, index) => (
                     <React.Fragment key={index}>
                         {item.href ? (
-                            <Link href={item.href} className="text-white opacity-50 alt-link">{item.label}</Link>
+                            <Link href={item.href} className="text-white opacity-50 alt-link max-sm:text-sm truncate">{item.label}</Link>
                         ) : (
-                            <span className="text-white">{item.label}</span>
+                            <p className="text-white max-sm:text-sm truncate">{item.label}</p>
                         )}
                         {index < breadcrumb.length - 1 && (
-                            <FaAngleRight className="text-white mt-1" />
+                            <FaAngleRight className="text-white mt-1 max-sm:text-sm" />
                         )}
                     </React.Fragment>
                 ))}
             </div>
-            <h1 className="text-white text-4xl mt-2">{title}</h1>
+            <h1 className="text-white md:text-4xl sm:text-3xl text-2xl mt-2">{title}</h1>
         </div>
     )
 }

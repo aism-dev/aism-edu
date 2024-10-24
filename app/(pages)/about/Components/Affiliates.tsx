@@ -1,6 +1,7 @@
 import Image from "next/image";
 import AffiliatesList, { AffiliateInterface } from "@/lib/Variables/Affiliates";
 import Carousel from "@/app/home-page components/sub components/Carousel";
+import { AnimatedEntrance } from "@/app/general components/AnimatedEntrance";
 
 export default function Affiliates() {
     return (
@@ -30,7 +31,7 @@ export default function Affiliates() {
 
 function Affiliate({ avatar, name, relationship, affiliation }: Omit<AffiliateInterface, "id">) {
   return (
-    <div className="p-8 bg-white max-w-[95%] max-sm:max-w-full cursor-grab active:cursor-grabbing relative">
+    <AnimatedEntrance className="p-8 bg-white max-w-[95%] max-sm:max-w-full cursor-grab active:cursor-grabbing relative">
         <Image
             src={avatar}
             alt="Quotes"
@@ -54,7 +55,7 @@ function Affiliate({ avatar, name, relationship, affiliation }: Omit<AffiliateIn
                 <p className="opacity-70 text-sm">{relationship}</p>
             </div>
         </div>
-    </div>
+    </AnimatedEntrance>
   )
 }
 

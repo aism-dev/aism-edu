@@ -4,6 +4,7 @@ import clsx from "clsx";
 import { motion, useAnimation, Variants } from "framer-motion";
 import { useEffect, useLayoutEffect, useRef, useState } from "react";
 import { FaAngleRight } from "react-icons/fa6";
+import { useRendersCount } from "react-use";
 
 export default function FaQs({ questions, section }: FAQInterface) {
     return (
@@ -12,7 +13,7 @@ export default function FaQs({ questions, section }: FAQInterface) {
             <div className="grid">
                 {questions.map((question, idx)=>(
                     <FAQ 
-                        key={`${section}-${idx}`}
+                        key={`${question.question}-${idx}`}
                         {...question}
                     />
                 ))}
@@ -27,6 +28,7 @@ const FAQ = ({ answer, question }: { question: string; answer: string; }) => {
     const controls = useAnimation();
     const [collapsed, setCollapsed] = useState(true);
     const [height, setHeight] = useState(0);
+    const isFirstMount = useRef(true);
 
     const variants: Variants = {
         hidden: { opacity: 0, height: 0, paddingTop: 0 },
@@ -34,11 +36,22 @@ const FAQ = ({ answer, question }: { question: string; answer: string; }) => {
 
     };
 
+    
+    useEffect(() => {
+        if(height === 0) return;
+        isFirstMount.current = false;
+    }, [isFirstMount, height]);
+
     useLayoutEffect(() => {
         if (contentRef.current) {
-            setHeight(contentRef.current.scrollHeight + 10); 
+            if(isFirstMount.current){
+                const tempHeight = contentRef.current.scrollHeight;
+                setHeight(tempHeight + 10); 
+                return;
+            }
+            setHeight(contentRef.current.scrollHeight); 
         }
-    }, [collapsed]);
+    }, [collapsed, isFirstMount]);
 
     useEffect(() => {
         if (collapsed) {

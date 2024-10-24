@@ -7,12 +7,12 @@ export default function FaQsSection() {
             <div className="grid sm:grid-cols-2 gap-10">
                 <div className="flex flex-col gap-6">
                     {faqData.map((faq, idx)=>(
-                        idx % 2 === 1 && <FaQs key={idx} {...faq} />
+                        idx % 2 === 1 && <FaQs key={`KL-${Math.floor(Math.random()*(89))}-${idx}`} {...faq} />
                     ))}
                 </div>
                 <div className="flex flex-col gap-6">
                     {faqData.map((faq, idx) => (
-                        idx % 2 === 0 && <FaQs key={idx} {...faq} />
+                        idx % 2 === 0 && <FaQs key={`KL-${Math.floor(Math.random()*(89))}-${idx}`} {...faq} />
                     ))}
                 </div>
             </div>

@@ -46,7 +46,7 @@ const FAQ = ({ answer, question }: { question: string; answer: string; }) => {
         if (contentRef.current) {
             if(isFirstMount.current){
                 const tempHeight = contentRef.current.scrollHeight;
-                setHeight(tempHeight + 10); 
+                setHeight(tempHeight + 20); 
                 return;
             }
             setHeight(contentRef.current.scrollHeight); 

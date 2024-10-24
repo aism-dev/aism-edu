@@ -277,7 +277,7 @@ export default function Navigation() {
                 </div>
             </motion.nav>
             <AnimatePresence>
-                {hamburgerOpen && <MobileNavigation />}
+                {hamburgerOpen && <MobileNavigation closeFunc={()=>setHamburgerOpen(false)} />}
             </AnimatePresence>
             <AnimatePresence>
                 {shouldHideBackTop && scrollDirection === "up" && <motion.div 

@@ -8,7 +8,7 @@ import { useEffect, useLayoutEffect, useRef, useState } from "react";
 import { FaAngleUp, FaHandPointLeft } from "react-icons/fa6";
 import { useLocation } from "react-use";
 
-export default function MobileNavigation() {
+export default function MobileNavigation({ closeFunc }: { closeFunc: () => void }) {
     const [activeTab, setActiveTab] = useState(0);
 
     const state = useLocation();
@@ -80,6 +80,7 @@ export default function MobileNavigation() {
                         currentTab={state.pathname ?? ""}
                         myIndex={1}
                         title="About"
+                        closeFunc={closeFunc}
                         content={aboutTab}
                         activeTab={activeTab}
                     />
@@ -87,17 +88,19 @@ export default function MobileNavigation() {
                         currentTab={state.pathname ?? ""}
                         title="Admission"
                         myIndex={2}
+                        closeFunc={closeFunc}
                         content={admissionTab}
                         activeTab={activeTab}
                      />
                     <NavItem
                         currentTab={state.pathname ?? ""}
+                        closeFunc={closeFunc}
                         title="Academic Programs"
                         myIndex={3}
                         content={academicProgramsTab}
                         activeTab={activeTab}
                      />
-                    <Link href={"/student-success"} className={clsx(
+                    <Link onClick={closeFunc} href={"/student-success"} className={clsx(
                         "py-5 text-xl border-b justify-between flex w-full no-underline cursor-pointer px-3",
                     )} >
                         <span className="inline-flex items-center gap-3">
@@ -112,6 +115,7 @@ export default function MobileNavigation() {
                     </Link>
                     <NavItem
                         currentTab={state.pathname ?? ""}
+                        closeFunc={closeFunc}
                         title="Applications"
                         content={applicationsTab}
                         myIndex={5}
@@ -119,15 +123,15 @@ export default function MobileNavigation() {
                      />
                 </div>
                  <div className="flex justify-between gap-6 p-6">
-                    <Link className={clsx(
+                    <Link onClick={closeFunc} className={clsx(
                         "py-3 px-8 hover:opacity-100 alt-link",
                     )} href={"/faqs"}>
                         FaQ
                     </Link>
-                    <Link className="py-3 px-8 hover:opacity-100 alt-link opacity-80" href={""}>
+                    <Link onClick={closeFunc} className="py-3 px-8 hover:opacity-100 alt-link opacity-80" href={""}>
                         Blog
                     </Link>
-                    <Link className={clsx(
+                    <Link onClick={closeFunc} className={clsx(
                         "py-3 px-8 hover:opacity-100 alt-link",
                     )} href={"/contact-us"}>
                         Contact Us
@@ -141,12 +145,13 @@ export default function MobileNavigation() {
     )
 }
 
-const NavItem = ({ content, title, currentTab, activeTab, myIndex }: {
+const NavItem = ({ content, title, currentTab, activeTab, myIndex, closeFunc }: {
     title: string,
     content: TabContent[]
     currentTab: string,
     activeTab: number,
-    myIndex: number
+    myIndex: number,
+    closeFunc: ()=>void
 }) => {
     const titleRef = useRef<HTMLHeadingElement>(null);
     const contentRef = useRef<HTMLParagraphElement>(null);
@@ -198,7 +203,7 @@ const NavItem = ({ content, title, currentTab, activeTab, myIndex }: {
                 className="overflow-hidden transition-all grid"
             >
                 {content.map((item)=>(
-                    <Link href={item.url} key={item.id} className="py-3 flex justify-between group ml-5 border-b no-underline border-b-white relative after:absolute after:h-11 after:w-3 after:border-l after:border-b after:-top-5 after:-left-5 hover:bg-white hover:text-theme hover:pl-5 hover:font-semibold">
+                    <Link onClick={closeFunc} href={item.url} key={item.id} className="py-3 flex justify-between group ml-5 border-b no-underline border-b-white relative after:absolute after:h-11 after:w-3 after:border-l after:border-b after:-top-5 after:-left-5 hover:bg-white hover:text-theme hover:pl-5 hover:font-semibold">
                         <div className="inline-flex">
                             <Image
                                 src={item.icon}

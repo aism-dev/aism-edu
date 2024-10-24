@@ -1,3 +1,4 @@
+import { AnimatedEntrance } from "@/app/general components/AnimatedEntrance";
 import { TeamProps } from "@/lib/Variables/TeamsContent";
 import clsx from "clsx";
 import Image from "next/image";
@@ -10,13 +11,15 @@ export default function Team(props: TeamProps) {
             props.id % 2 === 0 ?  "bg-black/5" : "",
 
         )}>
-            <h3 className="sm:text-4xl text-3xl text-theme font-semibold mb-8">{props.title}</h3>
+            <AnimatedEntrance direction="right">
+                <h3 className="sm:text-4xl text-3xl text-theme font-semibold mb-8">{props.title}</h3>
+            </AnimatedEntrance>
             <div className={clsx(
                 "grid",
                 props.members.length > 6 ? "sm:grid-cols-[repeat(auto-fill,minmax(25rem,1fr))] gap-x-8 gap-y-5" : "grid-cols-[repeat(auto-fill,minmax(20rem,1fr))] gap-5"
             )}>
                 {props.members.map((member) => (
-                    <div key={member.id} className={clsx(
+                    <AnimatedEntrance key={member.id} className={clsx(
                         "relative group hover:z-30",
                         props.members.length > 6 ?  "flex" : "",
                     )}>
@@ -48,7 +51,7 @@ export default function Team(props: TeamProps) {
                             <h4 className="leading-4 font-bold text-themeDark text-lg">{member.name}</h4>
                             <p className="text-gray-500 text-sm">{member.role}</p>
                         </div>
-                    </div>
+                    </AnimatedEntrance>
                 ))}
             </div>
         </div>

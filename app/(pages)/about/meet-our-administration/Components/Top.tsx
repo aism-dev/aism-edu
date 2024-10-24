@@ -1,8 +1,9 @@
+import { AnimatedEntrance } from "@/app/general components/AnimatedEntrance";
 import Image from "next/image";
 
 export default function Top() {
     return (
-        <div className="withGradient relative h-96 overflow-hidden grid place-items-center">
+        <AnimatedEntrance className="withGradient relative h-96 overflow-hidden grid place-items-center">
             <Image
                 src={"https://aism-edu.sirv.com/301617876_512872740529074_7075262364263306893_n_LE_auto_x2.jpg"}
                 alt="AISM Group Photo"
@@ -14,6 +15,6 @@ export default function Top() {
                 <h1 className="sm:text-5xl text-3xl uppercase font-semibold">Administration</h1>
                 <p className="pt-3 sm:text-xl text-lg w-[40rem,70%,20rem]">Providing world-class education and training to shape the future leaders in healthcare and medical research</p>
             </div>
-        </div>
+        </AnimatedEntrance>
     )
 }

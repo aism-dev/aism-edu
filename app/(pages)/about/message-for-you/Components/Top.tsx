@@ -1,4 +1,5 @@
 "use client"
+import { AnimatedEntrance } from "@/app/general components/AnimatedEntrance";
 import VideoPlayer from "@/app/general components/VideoPlayer";
 import clsx from "clsx";
 import { AnimatePresence } from "framer-motion";
@@ -10,13 +11,13 @@ export default function TopSection() {
     const [playVideo, setPlayVideo] = useState(false);
 
     return (
-        <div className="sm:bg-theme sm:h-screen relative grid sm:grid-cols-[1fr_1.25fr]" id="TopOfPage">
-            <div className="flex items-center max-md:py-32 max-sm:bg-theme">
+        <AnimatedEntrance className="sm:bg-theme sm:h-screen relative grid sm:grid-cols-[1fr_1.25fr]">
+            <div className="flex items-center max-md:py-32 max-sm:bg-theme" id="TopOfPage">
                 <h1 className="lg:text-8xl text-6xl font-normal text-white p-20">
                     <span className="lg:text-8xl text-6xl font-thin opacity-80">Message</span> <span className="text-3xl opacity-80">from</span> <br /> <span className="text-3xl opacity-80">the</span> President
                 </h1>
             </div>
-            <div className="rounded-bl-full h-96 bg-white overflow-hidden relative">
+            <div className="rounded-bl-full h-full max-md:h-96 bg-white overflow-hidden relative">
                 <Image
                     src={"https://aism-edu.sirv.com/icons/AISM-light.png"}
                     alt="AISM Logo"
@@ -43,6 +44,6 @@ export default function TopSection() {
                     </AnimatePresence>
                 </div>
             </div>
-        </div>
+        </AnimatedEntrance>
     )
 }

@@ -57,14 +57,14 @@ export default function Footer() {
                     </div>
                 </div>
                 <div>
-                    <div className="grid grid-cols-3 w-full gap-4">
-                        <Button colorVariation="footer" sizeVariation="W" className="border-white">
+                    <div className="sm:grid sm:grid-cols-3 flex flex-wrap w-full sm:gap-4 gap-2">
+                        <Button colorVariation="footer" sizeVariation="W" className="border-white flex-1 max-sm:min-w-56">
                             Apply Now
                         </Button>
-                        <Button colorVariation="footer" sizeVariation="W" className="border-white">
+                        <Button colorVariation="footer" sizeVariation="W" className="border-white flex-1 max-sm:min-w-56">
                             Visit
                         </Button>
-                        <Button colorVariation="footer" sizeVariation="W" className="border-white">
+                        <Button colorVariation="footer" sizeVariation="W" className="border-white flex-1 max-sm:min-w-56">
                             Contact Admissions
                         </Button>
                     </div>

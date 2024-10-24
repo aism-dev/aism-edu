@@ -11,6 +11,7 @@ export default function page() {
             />
             <Steps 
                 data={tuitionSteps}
+                noStep
             />
         </div>
     )

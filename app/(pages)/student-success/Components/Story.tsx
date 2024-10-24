@@ -16,11 +16,11 @@ const Story: FC<StoryPropsWithIsOdd> = ({ name, title, description, imageSrc, ra
 
     return (
         <div className={clsx(
-            "flex items-center px-20 py-10",
+            "flex sm:items-center items-start flex-wrap md:px-20 sm:px-10 px-5 py-10",
             isOdd ?  "" : "bg-black/5",
 
         )}>
-            <svg viewBox="0 -18 200 200" height={600} width={600} xmlns="http://www.w3.org/2000/svg" className="min-w-[20rem] flex-1">
+            <svg viewBox="0 -18 200 200" xmlns="http://www.w3.org/2000/svg" className="sm:min-w-[20rem] min-w-[15rem] md:h-[600px] sm:h-[500px] h-[300px] sm:flex-1">
                 <clipPath id="clipPic">
                     <path
                         fill="#183D74"
@@ -41,7 +41,7 @@ const Story: FC<StoryPropsWithIsOdd> = ({ name, title, description, imageSrc, ra
                     clipPath="url(#clipPic)"
                 />
             </svg>
-            <div className="flex-1 py-10 flex flex-col gap-3">
+            <div className="flex-1 min-w-80 py-10 flex flex-col gap-3">
                 <div className="grid">
                     <h3 className="text-3xl font-medium text-theme">{name}</h3>
                     <h5 className="text-base font-medium opacity-60">{title}</h5>

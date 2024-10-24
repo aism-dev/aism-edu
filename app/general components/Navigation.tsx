@@ -255,7 +255,7 @@ export default function Navigation() {
                         </AnimatePresence>
                     </motion.div>
                     <div className={clsx(
-                        "flex gap-6 items-center max-sm:py-3 max-sm:flex-1",
+                        "flex gap-6 items-center max-sm:py-3 max-sm:flex-1 justify-self-end",
                         (shouldHide && scrollDirection !== "up") || hamburgerOpen ? "max-sm:justify-end" : "max-sm:justify-between"
                     )}>
                         <Button>

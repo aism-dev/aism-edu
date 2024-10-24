@@ -1,4 +1,5 @@
 "use client"
+import { AnimatedEntrance } from "@/app/general components/AnimatedEntrance";
 import { FAQInterface } from "@/lib/Variables/FAQs";
 import clsx from "clsx";
 import { motion, useAnimation, Variants } from "framer-motion";
@@ -9,7 +10,9 @@ import { useRendersCount } from "react-use";
 export default function FaQs({ questions, section }: FAQInterface) {
     return (
         <div className="grid gap-6">
-            <h3 className="text-2xl font-semibold text-themeDark">{section}</h3>
+            <AnimatedEntrance direction="right">
+                <h3 className="text-2xl font-semibold text-themeDark">{section}</h3>
+            </AnimatedEntrance>
             <div className="grid">
                 {questions.map((question, idx)=>(
                     <FAQ 
@@ -62,7 +65,7 @@ const FAQ = ({ answer, question }: { question: string; answer: string; }) => {
     }, [collapsed, controls]);
 
     return (
-        <div className="border-t border-t-theme py-3">
+        <AnimatedEntrance className="border-t border-t-theme py-3">
             <h5 
                 ref={titleRef} 
                 className={clsx(
@@ -88,6 +91,6 @@ const FAQ = ({ answer, question }: { question: string; answer: string; }) => {
             >
                 {answer}
             </motion.p>
-        </div>
+        </AnimatedEntrance>
     );
 }

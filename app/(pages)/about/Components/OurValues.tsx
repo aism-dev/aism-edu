@@ -1,10 +1,11 @@
+import { AnimatedEntrance } from "@/app/general components/AnimatedEntrance";
 import Marquee from "react-fast-marquee";
 import { FaGlobe, FaSchool } from "react-icons/fa";
 import { FaAtom, FaCheck, FaHandshake, FaUserGroup } from "react-icons/fa6";
 
 export default function OurValues() {
     return (
-        <div className="">
+        <AnimatedEntrance direction="right"  className="">
             <Marquee
                 autoFill={true}
                 className="mt-4 bg-theme text-white py-6 overflow-hidden"
@@ -72,6 +73,6 @@ export default function OurValues() {
                     Excellence
                 </div>
             </Marquee>
-        </div>
+        </AnimatedEntrance>
     )
 }

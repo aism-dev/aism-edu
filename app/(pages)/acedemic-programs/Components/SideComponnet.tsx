@@ -59,9 +59,9 @@ export default function SideComponent() {
                     </div>
                     <div className="p-4 border">
                         <div className="flex justify-between group no-underline">
-                            <span>Phone : <Link href={"tel:+18664659966"}>+1 (866) 465 9966</Link></span>
+                            <span>Phone : <Link href={"tel:+14047566737"}>+1 (404) 756 - 6737</Link></span>
                             <div className="aspect-square text-theme group-hover:opacity-100 opacity-0 -translate-x-5 group-hover:translate-x-0 h-7 grid place-items-center">
-                                <Link href={"tel:+18664659966"} className="no-underline">
+                                <Link href={"tel:+14047566737"} className="no-underline">
                                     <FaPhoneFlip />
                                 </Link>
                             </div>

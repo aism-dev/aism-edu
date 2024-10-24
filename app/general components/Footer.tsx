@@ -72,11 +72,11 @@ export default function Footer() {
                     <AnimatedEntrance className="grid md:grid-cols-3 sm:grid-cols-2 grid-cols-1 gap-4">
                         <div className="pt-5 min-w-[20rem]">
                             <h4 className="font-medium text-lg flex items-center gap-2 opacity-70"><FaPhone />Call:</h4>
-                            <Link href={"tel:+18664659966"} className="alt-link"> +1 (866) 465 9966</Link>
+                            <Link href={"tel:+14047566737"} className="alt-link"> +1 (404) 756 - 6737</Link>
                         </div>
                         <div className="pt-5 min-w-[20rem]">
                             <h4 className="font-medium text-lg flex items-center gap-2 opacity-70"><FaAt />Email:</h4>
-                            <Link href={"tel:+18664659966"} className="alt-link"> +1 (866) 465 9966</Link>
+                            <Link href={"tel:+14047566737"} className="alt-link"> +1 (404) 756 - 6737</Link>
                         </div>
                         <div className="pt-5 min-w-[20rem] grid">
                             <h4 className="font-medium text-lg flex items-center gap-2 opacity-70">Quick Access:</h4>

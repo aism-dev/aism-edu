@@ -62,7 +62,7 @@ export default function FindYourProgram() {
                         currentItem === (program.id - 1) ? "flex-1" : "cursor-pointer"
                     )}>
                         <div onClick={() => handleClick(program.id - 1)} className={clsx(
-                            "sm:h-[25rem] max-sm:min-h-[5rem] max-sm:mh min-w-40 transition-[width_1s_ease] duration-500-alt relative overflow-hidden",
+                            "sm:h-[25rem] max-sm:min-h-[5rem] h-full min-w-40 transition-[width_1s_ease] duration-500-alt relative overflow-hidden",
                         )}>
                             <div className={clsx(
                                 "h-full pointer-events-none select-none absolute top-0 left-0 -z-10",

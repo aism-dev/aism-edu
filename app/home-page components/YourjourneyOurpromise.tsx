@@ -6,13 +6,14 @@ import { useState } from "react";
 import { AnimatePresence } from "framer-motion";
 import { FaPlay } from "react-icons/fa6";
 import clsx from "clsx";
+import { AnimatedEntrance } from "../general components/AnimatedEntrance";
 
 export default function YourJourneyOurPromise() {
     const [playVideo, setPlayVideo] = useState(false);
 
     return (
         <div className="p-6 pb-36 flex flex-col items-end relative">
-            <div className="h-[clamp(30rem,60vh,20rem)] overflow-hidden w-full withGradient relative">
+            <AnimatedEntrance className="h-[clamp(30rem,60vh,20rem)] overflow-hidden w-full withGradient relative">
                 <Image
                     src="https://aism-edu.sirv.com/301617876_512872740529074_7075262364263306893_n_LE_auto_x2.jpg"
                     alt="AISM Group Image"
@@ -26,8 +27,8 @@ export default function YourJourneyOurPromise() {
                         At AISM, we are committed to delivering exceptional medical education, shaping physicians who excel in any medical setting worldwide. Our graduates are equipped with the skills and knowledge to thrive, making them highly sought-after professionals across the globe.
                     </p>
                 </div>
-            </div>
-            <div className="md:w-[clamp(30rem,40vw,20rem)] w-full h-96 md:-mt-[23rem] md:mr-20 z-40 bg-white md:border-[15px] border-white">
+            </AnimatedEntrance>
+            <AnimatedEntrance className="md:w-[clamp(30rem,40vw,20rem)] w-full h-96 md:-mt-[23rem] md:mr-20 z-40 bg-white md:border-[15px] border-white">
                 <div className="relative w-full h-full grid place-items-center group bg-theme">
                     <div className={clsx(
                         "h-full w-full absolute top-0 left-0 pointer-events-none z-10",
@@ -51,7 +52,7 @@ export default function YourJourneyOurPromise() {
                     <h3 className="text-2xl text-theme font-medium">Message from the President</h3>
                     <p className="opacity-80">Watch our President address AISM&apos;s mission and vision, sharing how we are committed to shaping the future of medicine and empowering the next generation of healthcare professionals.</p>
                 </div>
-            </div>
+            </AnimatedEntrance>
             <AnimatePresence>
                 {playVideo && <VideoPlayer closePlayer={()=>setPlayVideo(false)} src="https://aism-edu.sirv.com/Videos/Dr%20Compressed.mp4" />}
             </AnimatePresence>

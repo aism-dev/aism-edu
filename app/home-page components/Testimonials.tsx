@@ -1,17 +1,18 @@
 import Image from "next/image"
 import Carousel from "./sub components/Carousel"
 import TestimonialsList, { TestimonialInterface } from "@/lib/Variables/Testimonials"
+import { AnimatedEntrance } from "../general components/AnimatedEntrance"
 
 export default function Testimonials() {
     return (
         <div className="pt-24 pb-20 bg-black/5 max-sm:px-5">
-            <div className="text-center flex flex-col items-center gap-4">
+            <AnimatedEntrance className="text-center flex flex-col items-center gap-4">
                 <h2 className="sm:text-4xl text-3xl font-medium text-theme">What Others Are Saying</h2>
                 <p className="max-w-[40rem] leading-6 text-black/70 px-10">
                     Hear from students, faculty, and professionals as they share their experiences and how AISM has impacted their careers in the medical field.
                 </p>
-            </div>
-            <div className="sm:px-10 px-5 mt-10">
+            </AnimatedEntrance>
+            <AnimatedEntrance className="sm:px-10 px-5 mt-10">
                 <Carousel>
                     {TestimonialsList.map((testimonial)=>(
                         <Testimonial 
@@ -23,7 +24,7 @@ export default function Testimonials() {
                         />
                     ))}
                 </Carousel>
-            </div>
+            </AnimatedEntrance>
         </div>
     )
 }

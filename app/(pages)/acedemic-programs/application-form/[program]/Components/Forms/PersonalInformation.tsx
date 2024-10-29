@@ -1,8 +1,12 @@
 import { Nationals } from "@/lib/Variables/Nationality";
 import InputCase from "./Sub Component/InputCase";
 import Button from "@/app/general components/Button";
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useLayoutEffect, useRef, useState } from "react";
 import { useDebounce } from "@/lib/Hooks/UseDebounce";
+import { FormBodyContext } from "../FormBody";
+import { useAnimation, Variants, motion } from "framer-motion";
+import { useFirstMountState } from "react-use";
+import clsx from "clsx";
 
 export default function PersonalInformation() {
     const [fullName, setFullName] = useState("");
@@ -24,7 +28,6 @@ export default function PersonalInformation() {
     });
 
     const debouncedFullName = useDebounce(fullName, 500);
-    const debouncedDob = useDebounce(dob, 500);
     const debouncedGender = useDebounce(gender, 500);
     const debouncedNationality = useDebounce(nationality, 500);
     const debouncedPhone = useDebounce(phone, 500);
@@ -106,19 +109,72 @@ export default function PersonalInformation() {
         }
     }, [debouncedAddress]);
 
+    // Framer section
+    const [height, setHeight] = useState(0);
+    const isFirstMount = useFirstMountState();
+    const contentRef = useRef<HTMLDivElement>(null);
+    const [collapsed, setCollapsed] = useState(true);
+    const controls = useAnimation();
+
+    const variants: Variants = {
+        hidden: { opacity: 0, height: 0, },
+        visible: { opacity: 1, height: height },
+    };
+
+    const { currentTab, setCurrentTab } = useContext(FormBodyContext);
+
+    useEffect(() => {
+        if (currentTab === 1) {
+            setCollapsed(false);
+        }
+    }, [currentTab]);
+    
+    useEffect(() => {
+        if (collapsed) {
+            controls.start("hidden");
+        } else {
+            controls.start("visible");
+        }
+    }, [collapsed, controls]);
+
+    useLayoutEffect(() => {
+        if (contentRef.current) {
+            if(isFirstMount){
+                const tempHeight = contentRef.current.scrollHeight;
+                setHeight(tempHeight + 20); 
+                return;
+            }
+            setHeight(contentRef.current.scrollHeight); 
+        }
+    }, [collapsed, isFirstMount]);
 
     return (
         <div className="flex flex-col">
             <div className="flex items-center gap-2 flex-1 py-5">
-                <div className="h-10 w-10 rounded-full bg-theme text-white border-2 border-theme grid place-items-center">
+            <div className={clsx(
+                    "h-10 w-10 rounded-full  border-2 border-theme grid place-items-center",
+                    { "bg-theme text-white": !collapsed }
+                )}>
                     1
                 </div>
                 <span>Personal Information</span>
                 <div className="h-[3px] bg-gray-300 flex-1 mt-1">
-                    <div className="h-full w-full bg-theme"></div>
+                    <div className={clsx(
+                        "h-full bg-theme",
+                        { "w-full": !collapsed },
+                        { "w-0": collapsed }
+                    )}></div>
                 </div>
             </div>
             
+            <motion.div
+                ref={contentRef}
+                initial="hidden"
+                className='overflow-hidden'
+                animate={controls}
+                variants={variants}
+                transition={{ duration: 0.15 }}
+            >
                 <div className="flex flex-wrap gap-x-6 gap-y-3">
                     {/* {JSON.stringify(errors)} */}
                     <InputCase
@@ -231,6 +287,7 @@ export default function PersonalInformation() {
                 <Button sizeVariation="XL" className="w-fit">
                     Continue
                 </Button>
+            </motion.div>
         </div>
     )
 }

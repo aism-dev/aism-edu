@@ -1,7 +1,11 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useLayoutEffect, useRef, useContext } from 'react';
 import Button from '@/app/general components/Button';
 import { useDebounce } from '@/lib/Hooks/UseDebounce';
 import InputCase from './Sub Component/InputCase';
+import { useFirstMountState } from 'react-use';
+import { Variants, motion, useAnimation } from 'framer-motion';
+import clsx from 'clsx';
+import { FormBodyContext } from '../FormBody';
 
 const EducationalBackground = () => {
     const [highSchool, setHighSchool] = useState('');
@@ -9,6 +13,45 @@ const EducationalBackground = () => {
     const [highSchoolGraduation, setHighSchoolGraduation] = useState('');
     const [university, setUniversity] = useState('');
     const [major, setMajor] = useState('');
+
+    // Framer section
+    const [height, setHeight] = useState(0);
+    const isFirstMount = useFirstMountState();
+    const contentRef = useRef<HTMLDivElement>(null);
+    const [collapsed, setCollapsed] = useState(true);
+    const controls = useAnimation();
+
+    const variants: Variants = {
+        hidden: { opacity: 0, height: 0, },
+        visible: { opacity: 1, height: height },
+    };
+
+    const { currentTab, setCurrentTab } = useContext(FormBodyContext);
+
+    useEffect(() => {
+        if (currentTab === 2) {
+            setCollapsed(false);
+        }
+    }, [currentTab]);
+    
+    useEffect(() => {
+        if (collapsed) {
+            controls.start("hidden");
+        } else {
+            controls.start("visible");
+        }
+    }, [collapsed, controls]);
+
+    useLayoutEffect(() => {
+        if (contentRef.current) {
+            if(isFirstMount){
+                const tempHeight = contentRef.current.scrollHeight;
+                setHeight(tempHeight + 20); 
+                return;
+            }
+            setHeight(contentRef.current.scrollHeight); 
+        }
+    }, [collapsed, isFirstMount]);
 
     const [errors, setErrors] = useState({
         highSchool: { error: 0, message: '' },
@@ -71,98 +114,114 @@ const EducationalBackground = () => {
     return (
         <div className="flex flex-col">
             <div className="flex items-center gap-2 flex-1 py-5">
-                <div className="h-10 w-10 rounded-full bg-theme text-white border-2 border-theme grid place-items-center">
+                <div className={clsx(
+                    "h-10 w-10 rounded-full  border-2 border-theme grid place-items-center",
+                    { "bg-theme text-white": !collapsed }
+                )}>
                     2
                 </div>
                 <span>Educational Background</span>
                 <div className="h-[3px] bg-gray-300 flex-1 mt-1">
-                    <div className="h-full w-full bg-theme"></div>
+                    <div className={clsx(
+                        "h-full bg-theme",
+                        { "w-full": !collapsed },
+                        { "w-0": collapsed }
+                    )}></div>
                 </div>
             </div>
 
-            <div className="flex flex-wrap gap-x-6 gap-y-3">
-                <InputCase
-                    error={errors.highSchool.error === 1 ? errors.highSchool.message : ''}
-                    heading="High School Name"
-                    required={true}
-                    className="flex flex-col gap-1 flex-1"
+            <motion.div
+                ref={contentRef}
+                initial="hidden"
+                className='overflow-hidden'
+                animate={controls}
+                variants={variants}
+                transition={{ duration: 0.15 }}
+            >
+                <div
+                    className="flex flex-wrap gap-x-6 gap-y-3 overflow-hidden"
                 >
-                    <input
-                        type="text"
-                        name="high-school"
-                        placeholder="Enter your High School Name"
-                        className="flex-1 outline-none px-5 py-3 min-w-80"
-                        value={highSchool}
-                        onChange={(e) => setHighSchool(e.target.value)}
-                    />
-                </InputCase>
-                <InputCase
-                    error={errors.highSchoolLocation.error === 1 ? errors.highSchoolLocation.message : ''}
-                    heading="Location"
-                    required={true}
-                    className="flex flex-col gap-1 flex-1"
-                >
-                    <input
-                        type="text"
-                        name="high-school-location"
-                        placeholder="City, State/Province, Country"
-                        className="flex-1 outline-none px-5 py-3 min-w-80"
-                        value={highSchoolLocation}
-                        onChange={(e) => setHighSchoolLocation(e.target.value)}
-                    />
-                </InputCase>
-                <InputCase
-                    error={errors.highSchoolGraduation.error === 1 ? errors.highSchoolGraduation.message : ''}
-                    heading="Year of Graduation"
-                    required={true}
-                    className="flex flex-col gap-1 flex-1"
-                >
-                    <input
-                        type="text"
-                        name="high-school-graduation"
-                        placeholder="YYYY"
-                        className="flex-1 outline-none px-5 py-3 min-w-80"
-                        value={highSchoolGraduation}
-                        onChange={(e) => setHighSchoolGraduation(e.target.value)}
-                    />
-                </InputCase>
-                <InputCase
-                    error={errors.university.error === 1 ? errors.university.message : ''}
-                    required={false}
-                    heading="College or University"
-                    className="flex flex-col gap-1 flex-1"
-                >
-                    <input
-                        type="text"
-                        name="university"
-                        placeholder="Enter your College or University"
-                        className="flex-1 outline-none px-5 py-3 min-w-80"
-                        value={university}
-                        onChange={(e) => setUniversity(e.target.value)}
-                    />
-                </InputCase>
-                <InputCase
-                    required={false}
-
-                    error={errors.major.error === 1 ? errors.major.message : ''}
-                    heading="Major/Program"
-                    className="flex flex-col gap-1 flex-1"
-                >
-                    <input
-                        type="text"
-                        name="major"
-                        placeholder="Enter your Major or Program"
-                        className="flex-1 outline-none px-5 py-3 min-w-80"
-                        value={major}
-                        onChange={(e) => setMajor(e.target.value)}
-                    />
-                </InputCase>
-            </div>
-
-            <p className="py-3"><i className="">Please provide your educational background details.</i></p>
-            <Button sizeVariation="XL" className="w-fit">
-                Continue
-            </Button>
+                    <InputCase
+                        error={errors.highSchool.error === 1 ? errors.highSchool.message : ''}
+                        heading="High School Name"
+                        required={true}
+                        className="flex flex-col gap-1 flex-1"
+                    >
+                        <input
+                            type="text"
+                            name="high-school"
+                            placeholder="Enter your High School Name"
+                            className="flex-1 outline-none px-5 py-3 min-w-80"
+                            value={highSchool}
+                            onChange={(e) => setHighSchool(e.target.value)}
+                        />
+                    </InputCase>
+                    <InputCase
+                        error={errors.highSchoolLocation.error === 1 ? errors.highSchoolLocation.message : ''}
+                        heading="Location"
+                        required={true}
+                        className="flex flex-col gap-1 flex-1"
+                    >
+                        <input
+                            type="text"
+                            name="high-school-location"
+                            placeholder="City, State/Province, Country"
+                            className="flex-1 outline-none px-5 py-3 min-w-80"
+                            value={highSchoolLocation}
+                            onChange={(e) => setHighSchoolLocation(e.target.value)}
+                        />
+                    </InputCase>
+                    <InputCase
+                        error={errors.highSchoolGraduation.error === 1 ? errors.highSchoolGraduation.message : ''}
+                        heading="Year of Graduation"
+                        required={true}
+                        className="flex flex-col gap-1 flex-1"
+                    >
+                        <input
+                            type="text"
+                            name="high-school-graduation"
+                            placeholder="YYYY"
+                            className="flex-1 outline-none px-5 py-3 min-w-80"
+                            value={highSchoolGraduation}
+                            onChange={(e) => setHighSchoolGraduation(e.target.value)}
+                        />
+                    </InputCase>
+                    <InputCase
+                        error={errors.university.error === 1 ? errors.university.message : ''}
+                        required={false}
+                        heading="College or University"
+                        className="flex flex-col gap-1 flex-1"
+                    >
+                        <input
+                            type="text"
+                            name="university"
+                            placeholder="Enter your College or University"
+                            className="flex-1 outline-none px-5 py-3 min-w-80"
+                            value={university}
+                            onChange={(e) => setUniversity(e.target.value)}
+                        />
+                    </InputCase>
+                    <InputCase
+                        required={false}
+                        error={errors.major.error === 1 ? errors.major.message : ''}
+                        heading="Major/Program"
+                        className="flex flex-col gap-1 flex-1"
+                    >
+                        <input
+                            type="text"
+                            name="major"
+                            placeholder="Enter your Major or Program"
+                            className="flex-1 outline-none px-5 py-3 min-w-80"
+                            value={major}
+                            onChange={(e) => setMajor(e.target.value)}
+                        />
+                    </InputCase>
+                </div>
+                <p className="py-3"><i className="">Please provide your educational background details.</i></p>
+                <Button sizeVariation="XL" className="w-fit">
+                    Continue
+                </Button>
+            </motion.div>
         </div>
     );
 };

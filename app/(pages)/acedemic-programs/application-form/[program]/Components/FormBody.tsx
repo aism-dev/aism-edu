@@ -8,15 +8,15 @@ interface FormBodyContext {
 }
 
 const formBodyContext: FormBodyContext = {
-    currentTab: 0,
+    currentTab: 1,
     setCurrentTab: ()=>{}
 }
 
-const FormBodyContext = React.createContext(formBodyContext);
+export const FormBodyContext = React.createContext(formBodyContext);
 
 export default function FormBody() {
-    const [currentTab,  setCurrentTab] = useState(0);
-    const [ ]=useState({
+    const [currentTab,  setCurrentTab] = useState(1);
+    const [] = useState({
         fullName: "",
         email: "",
         phone: "",
@@ -42,7 +42,6 @@ export default function FormBody() {
                     Thank you for choosing AISM as a step toward your medical career. This preliminary application form allows you to submit your basic information and pay the application fee, after which you’ll receive the full application form via email.
                 </p>
                 <i>Please complete each section below and ensure the information is accurate.</i>
-                {/* <FormTabs tabs={tabs} currentTab={currentTab} /> */}
                 <Form />
             </div>
         </FormBodyContext.Provider>

@@ -2,7 +2,7 @@
 import React, { useState } from "react";
 import Form from "./Form";
 
-interface FormData {
+export interface FormData {
     fullName: string,
     email: string,
     phone: string,

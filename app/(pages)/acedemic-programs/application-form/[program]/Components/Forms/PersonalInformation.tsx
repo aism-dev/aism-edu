@@ -5,7 +5,6 @@ import { useContext, useEffect, useLayoutEffect, useRef, useState } from "react"
 import { useDebounce } from "@/lib/Hooks/UseDebounce";
 import { FormBodyContext } from "../FormBody";
 import { useAnimation, Variants, motion } from "framer-motion";
-import { useFirstMountState } from "react-use";
 import clsx from "clsx";
 
 export default function PersonalInformation() {
@@ -27,12 +26,40 @@ export default function PersonalInformation() {
         address: { error: 0, message: "" },
     });
 
+    const canProceed = Object.values(errors).every((error) => error.error === 2);
+
     const debouncedFullName = useDebounce(fullName, 500);
     const debouncedGender = useDebounce(gender, 500);
+    const debouncedDOB = useDebounce(dob, 500);
     const debouncedNationality = useDebounce(nationality, 500);
     const debouncedPhone = useDebounce(phone, 500);
     const debouncedEmail = useDebounce(email, 500);
     const debouncedAddress = useDebounce(address, 500);
+
+    useEffect(() => {
+        const currentYear = new Date().getFullYear();
+        const dobRegex = /^\d{4}-(0[1-9]|1[0-2])-(0[1-9]|[12][0-9]|3[01])$/;
+        if (!debouncedDOB) {
+            setErrors((prevErrors) => ({ ...prevErrors, dob: { error: 0, message: '' } }));
+            return;
+        }
+        if (!debouncedDOB) {
+            setErrors((prevErrors) => ({ ...prevErrors, dob: { error: 1, message: 'Date of birth is required' } }));
+            return;
+        } 
+        
+        if (!dobRegex.test(debouncedDOB)) {
+            setErrors((prevErrors) => ({ ...prevErrors, dob: { error: 1, message: 'Invalid date of birth' } }));
+            return;
+        } 
+
+        const age = currentYear - parseInt(debouncedDOB);
+        if (age < 16 || age > 100) {
+            setErrors((prevErrors) => ({ ...prevErrors, dob: { error: 1, message: 'You must be between 16 and 100 years old to apply' } }));
+            return;
+        }
+            setErrors((prevErrors) => ({ ...prevErrors, dob: { error: 2, message: '' } }));
+    }, [debouncedDOB]);
 
     useEffect(() => {
         const splitName = debouncedFullName.trim().split(" ");
@@ -47,7 +74,6 @@ export default function PersonalInformation() {
             setErrors((prevErrors) => ({ ...prevErrors, fullName: { error: 2, message: "" } }));
         }
     }, [debouncedFullName]);
-
 
     useEffect(() => {
         if (!debouncedGender) {
@@ -111,22 +137,35 @@ export default function PersonalInformation() {
 
     // Framer section
     const [height, setHeight] = useState(0);
-    const isFirstMount = useFirstMountState();
     const contentRef = useRef<HTMLDivElement>(null);
     const [collapsed, setCollapsed] = useState(true);
     const controls = useAnimation();
+    const firstCollapse = useRef(true);
 
     const variants: Variants = {
         hidden: { opacity: 0, height: 0, },
         visible: { opacity: 1, height: height },
     };
 
-    const { currentTab, setCurrentTab } = useContext(FormBodyContext);
+    const { currentTab, setCurrentTab, setFormData } = useContext(FormBodyContext);
+
+    const HandleProceed = () => {
+        if (!canProceed) return;
+        const payload = {
+            fullName,
+            dob,
+            gender,
+            nationality,
+            phone,
+            email,
+            address,
+        }
+        setFormData((prevFormData) => ({ ...prevFormData, ...payload }));
+        setCurrentTab(2);
+    }
 
     useEffect(() => {
-        if (currentTab === 1) {
-            setCollapsed(false);
-        }
+        setCollapsed(currentTab !== 1);
     }, [currentTab]);
     
     useEffect(() => {
@@ -139,17 +178,21 @@ export default function PersonalInformation() {
 
     useLayoutEffect(() => {
         if (contentRef.current) {
-            if(isFirstMount){
-                const tempHeight = contentRef.current.scrollHeight;
-                setHeight(tempHeight + 20); 
-                return;
+            if(firstCollapse.current) {
+                setHeight(contentRef.current.scrollHeight + 20); 
+                firstCollapse.current = false;
+                return
             }
             setHeight(contentRef.current.scrollHeight); 
         }
-    }, [collapsed, isFirstMount]);
+    }, [collapsed]);
 
     return (
-        <div className="flex flex-col">
+        <div className={clsx(
+            "flex flex-col",
+            { "my-6 opacity-100": !collapsed },
+            { "opacity-50": collapsed }
+        )}>
             <div className="flex items-center gap-2 flex-1 py-5">
             <div className={clsx(
                     "h-10 w-10 rounded-full  border-2 border-theme grid place-items-center",
@@ -166,18 +209,18 @@ export default function PersonalInformation() {
                     )}></div>
                 </div>
             </div>
-            
+
             <motion.div
                 ref={contentRef}
                 initial="hidden"
-                className='overflow-hidden'
+                className='overflow-hidden px-1'
                 animate={controls}
                 variants={variants}
                 transition={{ duration: 0.15 }}
             >
                 <div className="flex flex-wrap gap-x-6 gap-y-3">
-                    {/* {JSON.stringify(errors)} */}
                     <InputCase
+                        key="fullName"
                         error={errors.fullName.error === 1 ? errors.fullName.message : ""}
                         heading="Full Name (First, Middle, Last)"
                         required={true}
@@ -193,6 +236,7 @@ export default function PersonalInformation() {
                         />
                     </InputCase>
                     <InputCase
+                        key="dob"
                         error={errors.dob.error === 1 ? errors.dob.message : ""}
                         heading="Date of Birth"
                         required={true}
@@ -207,6 +251,7 @@ export default function PersonalInformation() {
                         />
                     </InputCase>
                     <InputCase
+                        key="gender"
                         error={errors.gender.error === 1 ? errors.gender.message : ""}
                         heading="Gender"
                         required={true}
@@ -222,6 +267,7 @@ export default function PersonalInformation() {
                         />
                     </InputCase>
                     <InputCase
+                        key="nationality"
                         error={errors.nationality.error === 1 ? errors.nationality.message : ""}
                         heading="Nationality"
                         required={true}
@@ -234,10 +280,11 @@ export default function PersonalInformation() {
                             value={nationality}
                             onChange={(e) => setNationality(e.target.value)}
                         >
-                            {Nationals.map((nation) => (<option value={nation}>{nation}</option>))}
+                            {Nationals.map((nation, _) => (<option key={_} value={nation}>{nation}</option>))}
                         </select>
                     </InputCase>
                     <InputCase
+                        key="phone"
                         error={errors.phone.error === 1 ? errors.phone.message : ""}
                         heading="Phone Number (with country code)"
                         required={true}
@@ -253,6 +300,7 @@ export default function PersonalInformation() {
                         />
                     </InputCase>
                     <InputCase
+                        key="email"
                         error={errors.email.error === 1 ? errors.email.message : ""}
                         heading="Email Address"
                         required={true}
@@ -268,6 +316,7 @@ export default function PersonalInformation() {
                         />
                     </InputCase>
                     <InputCase
+                        key="address"
                         error={errors.address.error === 1 ? errors.address.message : ""}
                         heading="Mailing Address"
                         required={true}
@@ -282,9 +331,13 @@ export default function PersonalInformation() {
                             onChange={(e) => setAddress(e.target.value)}
                         />
                     </InputCase>
+
                 </div>
                 <p className="py-3"><i className="">Please provide your basic details so we can reach you and verify your identity.</i></p>
-                <Button sizeVariation="XL" className="w-fit">
+                <Button sizeVariation="XL" onClick={HandleProceed} className={clsx(
+                    "w-fit",
+                    canProceed ? "" : "pointer-events-none opacity-40 grayscale"
+                )}>
                     Continue
                 </Button>
             </motion.div>

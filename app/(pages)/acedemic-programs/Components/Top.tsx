@@ -12,7 +12,7 @@ export default function Top({ breadcrumb, title }: TopProps) {
                     {breadcrumb.map((item, index) => (
                         <React.Fragment key={index}>
                             {item.href ? (
-                                <Link href={item.href} className="text-white opacity-50 alt-link max-sm:text-sm truncate">{item.label}</Link>
+                                <Link href={item.href} className="text-white first:opacity-50 alt-link max-sm:text-sm truncate">{item.label}</Link>
                             ) : (
                                 <p className="text-white max-sm:text-sm truncate">{item.label}</p>
                             )}

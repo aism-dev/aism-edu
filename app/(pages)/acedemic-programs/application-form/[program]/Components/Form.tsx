@@ -5,9 +5,9 @@ import ProgramOfInterest from "./Forms/ProgramOfInterest";
 export default function Form() {
     return (
         <div className="">
-            <PersonalInformation />
-            <EducationalBackground />
-            <ProgramOfInterest />
+            <PersonalInformation key={"PersonalInformation"} />
+            <EducationalBackground key={"EducationalBackground"} />
+            <ProgramOfInterest key={"ProgramOfInterest"} />
         </div>
     )
 }

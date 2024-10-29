@@ -73,7 +73,7 @@ const ProgramOfInterest = () => {
     const firstCollapse01 = useRef(true);
 
     useLayoutEffect(() => {
-        if (contentRef.current && currentTab === 2) {
+        if (contentRef.current && currentTab === 3) {
             if (firstCollapse01.current) {
                 setHeight(contentRef.current.scrollHeight + 20);
                 firstCollapse01.current = false;
@@ -95,7 +95,7 @@ const ProgramOfInterest = () => {
             isTransferStudent,
         }
         setFormData((prevFormData) => ({ ...prevFormData, ...payload }));
-        setCurrentTab(3);
+        setCurrentTab(4);
     }
 
     return (

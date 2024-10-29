@@ -1,6 +1,7 @@
 import PersonalInformation from "./Forms/PersonalInformation";
 import EducationalBackground from "./Forms/EducationalBackground";
 import ProgramOfInterest from "./Forms/ProgramOfInterest";
+import ApplicationFeePayment from "./Forms/ApplicationFeePayment";
 
 export default function Form() {
     return (
@@ -8,6 +9,7 @@ export default function Form() {
             <PersonalInformation key={"PersonalInformation"} />
             <EducationalBackground key={"EducationalBackground"} />
             <ProgramOfInterest key={"ProgramOfInterest"} />
+            <ApplicationFeePayment />
         </div>
     )
 }

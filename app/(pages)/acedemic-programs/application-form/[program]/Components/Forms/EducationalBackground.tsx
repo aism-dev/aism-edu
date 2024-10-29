@@ -161,7 +161,7 @@ const EducationalBackground = () => {
                 )}>
                     2
                 </div>
-                <span>Educational Background {`${canProceed}`}</span>
+                <span>Educational Background</span>
                 <div className="h-[3px] bg-gray-300 flex-1 mt-1">
                     <div className={clsx(
                         "h-full bg-theme",

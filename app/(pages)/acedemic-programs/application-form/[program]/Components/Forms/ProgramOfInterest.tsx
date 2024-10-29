@@ -2,7 +2,6 @@ import React, { useState, useEffect, useRef, useContext, useLayoutEffect } from 
 import InputCase from './Sub Component/InputCase';
 import Button from '@/app/general components/Button';
 import { useDebounce } from '@/lib/Hooks/UseDebounce';
-import { useFirstMountState } from 'react-use';
 import { useAnimation, Variants, motion } from 'framer-motion';
 import { FormBodyContext } from '../FormBody';
 import clsx from 'clsx';
@@ -15,32 +14,38 @@ const ProgramOfInterest = () => {
     const [errors, setErrors] = useState({
         intendedProgram: { error: 0, message: '' },
         preferredStartDate: { error: 0, message: '' },
-        isTransferStudent: { error: 0, message: '' },
     });
 
     const debouncedIntendedProgram = useDebounce(intendedProgram, 500);
     const debouncedPreferredStartDate = useDebounce(preferredStartDate, 500);
 
     useEffect(() => {
+        if (!debouncedIntendedProgram) {
+            setErrors((prevErrors) => ({ ...prevErrors, intendedProgram: { error: 0, message: '' } }));
+            return;
+        }
         if (!debouncedIntendedProgram || (debouncedIntendedProgram !== 'Premedical' && debouncedIntendedProgram !== 'Basic Sciences' && debouncedIntendedProgram !== 'Clinical Sciences')) {
             setErrors((prevErrors) => ({ ...prevErrors, intendedProgram: { error: 1, message: 'Please select a valid program' } }));
         } else {
-            setErrors((prevErrors) => ({ ...prevErrors, intendedProgram: { error: 0, message: '' } }));
+            setErrors((prevErrors) => ({ ...prevErrors, intendedProgram: { error: 2, message: '' } }));
         }
     }, [debouncedIntendedProgram]);
 
     useEffect(() => {
         const currentDate = new Date().toISOString().slice(0, 10);
-        if (!debouncedPreferredStartDate || debouncedPreferredStartDate < currentDate) {
+        if(!debouncedPreferredStartDate) {
+            setErrors((prevErrors) => ({ ...prevErrors, preferredStartDate: { error: 0, message: '' } }));
+            return;
+        }
+        if (debouncedPreferredStartDate < currentDate) {
             setErrors((prevErrors) => ({ ...prevErrors, preferredStartDate: { error: 1, message: 'Please select a valid start date' } }));
         } else {
-            setErrors((prevErrors) => ({ ...prevErrors, preferredStartDate: { error: 0, message: '' } }));
+            setErrors((prevErrors) => ({ ...prevErrors, preferredStartDate: { error: 2, message: '' } }));
         }
     }, [debouncedPreferredStartDate]);
 
     // Framer section
     const [height, setHeight] = useState(0);
-    const isFirstMount = useFirstMountState();
     const contentRef = useRef<HTMLDivElement>(null);
     const [collapsed, setCollapsed] = useState(true);
     const controls = useAnimation();
@@ -50,12 +55,11 @@ const ProgramOfInterest = () => {
         visible: { opacity: 1, height: height },
     };
 
-    const { currentTab, setCurrentTab } = useContext(FormBodyContext);
+    const { currentTab, setCurrentTab, setFormData } = useContext(FormBodyContext);
+    const canProceed = Object.values(errors).every((error)=>  error.error === 2);
 
     useEffect(() => {
-        if (currentTab === 3) {
-            setCollapsed(false);
-        }
+        setCollapsed(currentTab !== 3);
     }, [currentTab]);
     
     useEffect(() => {
@@ -66,19 +70,40 @@ const ProgramOfInterest = () => {
         }
     }, [collapsed, controls]);
 
+    const firstCollapse01 = useRef(true);
+
     useLayoutEffect(() => {
-        if (contentRef.current) {
-            if(isFirstMount){
-                const tempHeight = contentRef.current.scrollHeight;
-                setHeight(tempHeight + 20); 
-                return;
+        if (contentRef.current && currentTab === 2) {
+            if (firstCollapse01.current) {
+                setHeight(contentRef.current.scrollHeight + 20);
+                firstCollapse01.current = false;
+                return
             }
-            setHeight(contentRef.current.scrollHeight); 
+            setHeight(contentRef.current.scrollHeight);
         }
-    }, [collapsed, isFirstMount]);
+    }, [collapsed, currentTab]);
+
+    const handleBack = () => {
+        setCurrentTab(2);
+    }
+
+    const HandleProceed = () => {
+        if (!canProceed) return;
+        const payload = {
+            intendedProgram,
+            preferredStartDate,
+            isTransferStudent,
+        }
+        setFormData((prevFormData) => ({ ...prevFormData, ...payload }));
+        setCurrentTab(3);
+    }
 
     return (
-        <div className="flex flex-col">
+        <div className={clsx(
+            "flex flex-col",
+            { "mb-3 opacity-100": !collapsed },
+            { "opacity-50": collapsed }
+        )}>
             <div className="flex items-center gap-2 flex-1 py-5">
                 <div className={clsx(
                     "h-10 w-10 rounded-full  border-2 border-theme grid place-items-center",
@@ -137,7 +162,7 @@ const ProgramOfInterest = () => {
                         />
                     </InputCase>
                     <InputCase
-                        error={errors.isTransferStudent.error === 1 ? errors.isTransferStudent.message : ''}
+                        error={''}
                         heading="Are you applying as a transfer student?"
                         required={true}
                         className="flex flex-col gap-1 flex-1"
@@ -165,9 +190,17 @@ const ProgramOfInterest = () => {
                     </InputCase>
                 </div>
                 <p className="py-3"><i className="">Please provide details about the program you're interested in.</i></p>
-                <Button sizeVariation="XL" className="w-fit">
-                    Continue
-                </Button>
+                <div className='flex gap-3 items-center'>
+                    <Button sizeVariation="XL" onClick={handleBack} className="w-fit">
+                        Back
+                    </Button>
+                    <Button sizeVariation="XL" onClick={HandleProceed} className={clsx(
+                        "w-fit",
+                        canProceed ? "" : "pointer-events-none opacity-40 grayscale"
+                    )}>
+                        Continue
+                    </Button>
+                </div>
             </motion.div>
         </div>
     );

@@ -11,9 +11,10 @@ import { applicationSent } from "@/lib/Variables/EmailTemplates/ApplicationSent"
 interface PayPalButtonProps {
     onSuccess?: (details: any) => void;
     onError?: (error: any) => void;
+    setError: React.Dispatch<React.SetStateAction<string>>
 }
 
-const PayPalPayment: React.FC<PayPalButtonProps> = ({ onSuccess, onError }) => {
+const PayPalPayment: React.FC<PayPalButtonProps> = ({ onSuccess, onError, setError }) => {
     const APPLICATION_FEE = "150.00";
     const { formData } = useContext(FormBodyContext);
 
@@ -98,14 +99,17 @@ const PayPalPayment: React.FC<PayPalButtonProps> = ({ onSuccess, onError }) => {
                             handleSubmit()
                             console.log("Payment completed successfully:", details);
                             onSuccess?.(details);
+                            setError("");
                         }
                     } catch (err) {
                         console.error("Capture error:", err);
+                        setError("Payment capture failed. Please check your payment details and try again.");
                         onError?.(err);
                     }
                 }}
                 onError={(err) => {
                     console.error("Payment error:", err);
+                    setError("An error occurred while processing your payment. Please try again later or contact support.");
                     onError?.(err);
                 }}
             />

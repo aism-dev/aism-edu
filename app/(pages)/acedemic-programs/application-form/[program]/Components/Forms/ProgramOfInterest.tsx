@@ -170,7 +170,7 @@ const ProgramOfInterest = () => {
                         error={''}
                         heading="Are you applying as a transfer student?"
                         required={true}
-                        className="flex flex-col gap-1 flex-1"
+                        className="flex flex-col gap-1 flex-1 min-w-80"
                     >
                         <div className="flex items-center gap-5 px-5 py-3">
                             <label className='flex gap-2'>

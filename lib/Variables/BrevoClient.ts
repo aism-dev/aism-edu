@@ -57,8 +57,11 @@ class BrevoClient {
                 throw new Error(`Failed to send email: ${errorData.message ?? errorData}`);
             }
 
+            console.log('Email sent successfully.');
+
             return response;
         } catch (error) {
+            console.error('Error occurred:', error);
             throw new Error(`Error sending email: ${error}`);
         }
     }

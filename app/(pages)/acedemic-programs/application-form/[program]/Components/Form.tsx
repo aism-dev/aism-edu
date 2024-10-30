@@ -9,7 +9,7 @@ export default function Form() {
             <PersonalInformation key={"PersonalInformation"} />
             <EducationalBackground key={"EducationalBackground"} />
             <ProgramOfInterest key={"ProgramOfInterest"} />
-            <ApplicationFeePayment />
+            <ApplicationFeePayment key={"ApplicationFeePayment"} />
         </div>
     )
 }

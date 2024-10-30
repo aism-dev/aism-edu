@@ -25,8 +25,8 @@ class BrevoClient {
         recipients,
         subject,
         replyTo,
-        senderName = "CashGo No reply",
-        senderEmail = "noreply@credilityfin.com",
+        senderName = "AISM No reply",
+        senderEmail = "noreply@aism.edu",
     }: EmailRequest): Promise<Response> {
         const headers = new Headers({
             'accept': 'application/json',

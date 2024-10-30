@@ -143,6 +143,8 @@ export default function PersonalInformation() {
     const controls = useAnimation();
     const firstCollapse = useRef(true);
 
+    const $maxdob = new Date("12/31/2008").toISOString().split('T')[0];
+
     const variants: Variants = {
         hidden: { opacity: 0, height: 0, },
         visible: { opacity: 1, height: height },
@@ -154,7 +156,7 @@ export default function PersonalInformation() {
         if (!canProceed) return;
         const payload = {
             fullName,
-            dob,
+            birthDate: dob,
             gender,
             nationality,
             phone,
@@ -246,6 +248,7 @@ export default function PersonalInformation() {
                         <input
                             type="date"
                             name="dob"
+                            max={$maxdob}
                             className="flex-1 outline-none px-5 py-3 min-w-80"
                             value={dob}
                             onChange={(e) => setDob(e.target.value)}

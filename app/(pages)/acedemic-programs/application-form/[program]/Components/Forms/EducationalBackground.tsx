@@ -223,6 +223,8 @@ const EducationalBackground = () => {
                             type="number"
                             name="high-school-graduation"
                             placeholder="YYYY"
+                            min={1990}
+                            max={new Date().getFullYear()}
                             className="flex-1 outline-none px-5 py-3 min-w-80"
                             value={highSchoolGraduation}
                             onChange={(e) => setHighSchoolGraduation(e.target.value)}
@@ -262,13 +264,13 @@ const EducationalBackground = () => {
                 <p className="py-3"><i className="">Please provide your educational background details.</i></p>
                 <div className='flex gap-3 items-center'>
                     <Button sizeVariation="XL" onClick={handleBack} className="w-fit">
-                                                <span className="flex flex-row-reverse items-center gap-2">Back <FaAngleLeft /></span>
+                        <span className="flex flex-row-reverse items-center gap-2">Back <FaAngleLeft /></span>
                     </Button>
                     <Button sizeVariation="XL" onClick={HandleProceed} hovered={canProceed} className={clsx(
                         "w-fit",
                         canProceed ? "" : "pointer-events-none opacity-40 grayscale"
                     )}>
-                                                <span className='flex items-center gap-2'>{canProceed ? "Proceed" : "Fill in the section"} <FaAngleRight /></span>
+                        <span className='flex items-center gap-2'>{canProceed ? "Proceed" : "Fill in the section"} <FaAngleRight /></span>
                     </Button>
                 </div>
             </motion.div>

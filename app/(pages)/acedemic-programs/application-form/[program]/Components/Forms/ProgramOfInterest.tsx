@@ -59,6 +59,9 @@ const ProgramOfInterest = () => {
     const { currentTab, setCurrentTab, setFormData } = useContext(FormBodyContext);
     const canProceed = Object.values(errors).every((error)=>  error.error === 2);
 
+    const today = new Date().getTime() + (48 * 60 * 60 * 1000);
+    const $minPreferredDate = new Date(today).toISOString().split('T')[0];
+
     useEffect(() => {
         setCollapsed(currentTab !== 3);
     }, [currentTab]);
@@ -156,6 +159,7 @@ const ProgramOfInterest = () => {
                     >
                         <input
                             type="date"
+                            min={$minPreferredDate}
                             name="preferred-start-date"
                             className="flex-1 outline-none px-5 py-3 min-w-80"
                             value={preferredStartDate}

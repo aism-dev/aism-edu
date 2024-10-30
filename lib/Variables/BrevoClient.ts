@@ -45,13 +45,64 @@ class BrevoClient {
             htmlContent,
         });
 
-        const response = await fetch(this.baseUrlEmail, {
-            method: 'POST',
-            headers,
-            body,
-        });
+        try {
+            const response = await fetch(this.baseUrlEmail, {
+                method: 'POST',
+                headers,
+                body,
+            });
 
-        return response;
+            if (!response.ok) {
+                const errorData = await response.json();
+                throw new Error(`Failed to send email: ${errorData.message ?? errorData}`);
+            }
+
+            return response;
+        } catch (error) {
+            throw new Error(`Error sending email: ${error}`);
+        }
+    }
+
+    async test({ senderEmail, recipientEmail }: { senderEmail: string, recipientEmail: string }) {
+        const apiKey = this.apiKey;
+
+        const emailData = {
+            sender: {
+                name: "Test Sender",
+                email: senderEmail
+            },
+            to: [
+                {
+                    email: recipientEmail,
+                    name: "Recipient Name"
+                }
+            ],
+            subject: "Testing Brevo API",
+            htmlContent: "<p>Congratulations! You successfully sent this email via Brevo SMTP API.</p>",
+            textContent: "Congratulations! You successfully sent this email via Brevo SMTP API."
+        };
+
+        try {
+            const response = await fetch(this.baseUrlEmail, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                    'api-key': apiKey
+                },
+                body: JSON.stringify(emailData)
+            });
+
+
+            if (response.ok) {
+                const data = await response.json();
+                console.log('Email sent successfully. Returned data:', data);
+            } else {
+                const errorData = await response.json();
+                console.error('Error occurred:', errorData);
+            }
+        } catch (error) {
+            console.error('Error occurred while sending the email:', error);
+        }
     }
 }
 

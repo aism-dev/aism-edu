@@ -5,8 +5,8 @@ import InputCase from './Sub Component/InputCase';
 import { Variants, motion, useAnimation } from 'framer-motion';
 import clsx from 'clsx';
 import { FormBodyContext } from '../FormBody';
-import PayPalPayment from '../PayPalComponent';
 import { FaAngleLeft } from 'react-icons/fa6';
+import PayPalPayment from './PayPalComponent';
 
 const ApplicationFeePayment = () => {
     // Framer section
@@ -16,8 +16,8 @@ const ApplicationFeePayment = () => {
     const controls = useAnimation();
 
     const variants: Variants = {
-        hidden: { opacity: 0, height: 0, overflow: "hidden" },
-        visible: { opacity: 1, height: height, overflow: "unset" },
+        hidden: { opacity: 0, maxHeight: 0, overflow: "hidden", pointerEvents: "none" },
+        visible: { opacity: 1, maxHeight: "100%", overflow: "unset",  pointerEvents: "all" },
     };
 
     const { currentTab, setCurrentTab, setFormData } = useContext(FormBodyContext);
@@ -49,9 +49,6 @@ const ApplicationFeePayment = () => {
 
     const handleBack = () => {
         setCurrentTab(3);
-    }
-
-    const HandleProceed = () => {
     }
 
     return (
@@ -88,7 +85,7 @@ const ApplicationFeePayment = () => {
                 <p className=''>To proceed with your application, please complete the non-refundable application fee payment of <span className='text-xl font-semibold text-theme'>$150 USD</span>.</p>
                 <p className=''>Once we receive your payment, you&apos;ll receive the full application form via email, which will require additional details and supporting documents.</p>
                 <p className="py-3"><sup className='text-2xl text-red-600'>*</sup><i className="">Note: This fee is non-refundable and covers the review of your application materials.</i></p>
-                <div className='flex gap-3 items-start'>
+                <div className='grid gap-3 items-start sm:grid-cols-[1fr_auto]'>
                     <PayPalPayment />
                     <Button sizeVariation="L" onClick={handleBack} className="w-fit">
                         <span className="flex flex-row-reverse items-center gap-2">Back <FaAngleLeft /></span>

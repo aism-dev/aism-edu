@@ -7,6 +7,7 @@ import Navigation from "./general components/Navigation";
 import Footer from "./general components/Footer";
 import NextTopLoader from "nextjs-toploader";
 import AddClassToElements from "./general components/DetectTextOnDark";
+import { Toaster } from "react-hot-toast";
 
 const geistSans = localFont({
     src: "./fonts/Nunito-VariableFont_wght.woff",
@@ -27,6 +28,10 @@ export default function RootLayout({
                 className={`${geistSans.variable} antialiased overflow-x-hidden`}
             >
                 <AddClassToElements />
+                <Toaster
+                    position="top-center"
+                    reverseOrder={false}
+                />
                 <NextTopLoader 
                     color="#1563d8"
                     crawlSpeed={200}

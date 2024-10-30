@@ -6,6 +6,7 @@ import { applicationReceived } from "@/lib/Variables/EmailTemplates/ApplicationR
 import { socials } from "@/lib/Variables/Socials";
 import toast from "react-hot-toast";
 import { FormBodyContext } from "../FormBody";
+import { applicationSent } from "@/lib/Variables/EmailTemplates/ApplicationSent";
 
 interface PayPalButtonProps {
     onSuccess?: (details: any) => void;
@@ -18,17 +19,31 @@ const PayPalPayment: React.FC<PayPalButtonProps> = ({ onSuccess, onError }) => {
 
     const performSubmit = async () => {
         const smtpCLient = new BrevoClient();
-        const payload: EmailRequest = {
-            htmlContent: applicationReceived({ formData, social: socials }),
+        const template = applicationReceived({ formData, social: socials });
+        const templateApplicant = applicationSent({ formData, social: socials, applicationLink: "#" });
+        const payloadToAism: EmailRequest = {
+            htmlContent: template,
             recipients: [
-                { email: "favourajokubi@gmail.com", name: "Admission Board" }
+                { email: "fabianajokubi@gmail.com", name: "Admission Board" }
             ],
-            subject: "Application Received",
+            subject: "New Application Received",
             replyTo: { email: formData.email, name: formData.fullName },
             senderEmail: formData.email,
             senderName: formData.fullName,
         }
-        await smtpCLient.sendEmail(payload);
+        
+        const payloadToApplicant: EmailRequest = {
+            htmlContent: templateApplicant,
+            recipients: [
+                { email: formData.email, name: formData.fullName }
+            ],
+            subject: "Application Confirmation | AISM",
+        }
+
+
+
+        await smtpCLient.sendEmail(payloadToAism);
+        await smtpCLient.sendEmail(payloadToApplicant);
     }
 
 

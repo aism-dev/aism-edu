@@ -1,7 +1,5 @@
-import React, { useState, useEffect, useLayoutEffect, useRef, useContext } from 'react';
+import React, { useState, useEffect, useRef, useContext } from 'react';
 import Button from '@/app/general components/Button';
-import { useDebounce } from '@/lib/Hooks/UseDebounce';
-import InputCase from './Sub Component/InputCase';
 import { Variants, motion, useAnimation } from 'framer-motion';
 import clsx from 'clsx';
 import { FormBodyContext } from '../FormBody';
@@ -10,7 +8,6 @@ import PayPalPayment from './PayPalComponent';
 
 const ApplicationFeePayment = () => {
     // Framer section
-    const [height, setHeight] = useState(0);
     const contentRef = useRef<HTMLDivElement>(null);
     const [collapsed, setCollapsed] = useState(true);
     const controls = useAnimation();
@@ -20,7 +17,7 @@ const ApplicationFeePayment = () => {
         visible: { opacity: 1, maxHeight: "100%", overflow: "unset",  pointerEvents: "all" },
     };
 
-    const { currentTab, setCurrentTab, setFormData } = useContext(FormBodyContext);
+    const { currentTab, setCurrentTab } = useContext(FormBodyContext);
 
     useEffect(() => {
         setCollapsed(currentTab !== 4);
@@ -35,17 +32,6 @@ const ApplicationFeePayment = () => {
     }, [collapsed, controls]);
     
     const firstCollapse01 = useRef(true);
-
-    useLayoutEffect(() => {
-        if (contentRef.current && currentTab === 4) {
-            if (firstCollapse01.current) {
-                setHeight(contentRef.current.scrollHeight + 20);
-                firstCollapse01.current = false;
-                return
-            }
-            setHeight(contentRef.current.scrollHeight);
-        }
-    }, [collapsed, currentTab]);
 
     const handleBack = () => {
         setCurrentTab(3);
@@ -86,7 +72,7 @@ const ApplicationFeePayment = () => {
                 <p className=''>Once we receive your payment, you&apos;ll receive the full application form via email, which will require additional details and supporting documents.</p>
                 <p className="py-3"><sup className='text-2xl text-red-600'>*</sup><i className="">Note: This fee is non-refundable and covers the review of your application materials.</i></p>
                 <div className='grid gap-3 items-start sm:grid-cols-[1fr_auto]'>
-                    <PayPalPayment />
+                    {currentTab === 4 && <PayPalPayment />}
                     <Button sizeVariation="L" onClick={handleBack} className="w-fit">
                         <span className="flex flex-row-reverse items-center gap-2">Back <FaAngleLeft /></span>
                     </Button>

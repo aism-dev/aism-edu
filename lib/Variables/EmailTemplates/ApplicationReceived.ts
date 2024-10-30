@@ -237,7 +237,7 @@ export const applicationReceived = ({ formData, social }: { formData: FormData, 
                     </div>
                     <div class="field">
                         <span class="field-label">Transfer Student:</span>
-                        <span class="field-value">{{isTransferStudent ? 'Yes' : '$NformData.'}</span>
+                        <span class="field-value">${formData.isTransferStudent ? "Yes" : "No"}</span>
                     </div>
                 </div>
 

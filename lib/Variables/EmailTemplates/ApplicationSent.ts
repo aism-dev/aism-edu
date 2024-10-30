@@ -1,7 +1,7 @@
 import { FormData } from "@/app/(pages)/acedemic-programs/application-form/[program]/Components/FormBody";
 import { Socials } from "../Socials";
 
-export const applicationSent = ({ formData, social }: { formData: FormData, social: Socials}) => `
+export const applicationSent = ({ formData, social, applicationLink }: { formData: FormData, social: Socials, applicationLink: string }) => `
     <!DOCTYPE html>
     <html lang="en">
     <head>
@@ -54,45 +54,23 @@ export const applicationSent = ({ formData, social }: { formData: FormData, soci
                 font-weight: 600;
             }
 
-            .next-steps {
-                background: #f8fafc;
-                border-radius: 6px;
-                padding: 20px;
-                margin: 25px 0;
-            }
-
-            .next-steps h2 {
-                color: #183d74;
-                font-size: 20px;
-                margin-bottom: 15px;
-            }
-
-            .next-steps ul {
-                list-style-type: none;
-                padding-left: 0;
-            }
-
-            .next-steps li {
-                margin-bottom: 12px;
-                padding-left: 25px;
-                position: relative;
-            }
-
-            .next-steps li:before {
-                content: "•";
-                color: #183d74;
-                font-size: 20px;
-                position: absolute;
-                left: 0;
-                top: -2px;
-            }
-
             .attachment-note {
                 background: #edf2f7;
                 border-left: 4px solid #183d74;
                 padding: 15px;
                 margin: 25px 0;
                 border-radius: 0 6px 6px 0;
+            }
+
+            .download-button {
+                display: inline-block;
+                padding: 10px 20px;
+                background-color: #183d74;
+                color: #ffffff;
+                text-decoration: none;
+                border-radius: 5px;
+                margin-top: 15px;
+                font-weight: bold;
             }
 
             .application-summary {
@@ -167,8 +145,9 @@ export const applicationSent = ({ formData, social }: { formData: FormData, soci
                 <p>Thank you for applying to the American International School of Medicine. We have successfully received your application for the ${formData.intendedProgram} program.</p>
                 
                 <div class="attachment-note">
-                    <p><strong>Application Copy Attached</strong></p>
-                    <p>We have attached a PDF copy of your complete application form to this email for your records.</p>
+                    <p><strong>Access Your Application Form</strong></p>
+                    <p>We’ve attached a URL to your application form. You can <a href="${applicationLink}" target="_blank">view it here</a> or click the button below to access it directly.</p>
+                    <a href="${applicationLink}" target="_blank" class="download-button">Download Application Form</a>
                 </div>
 
                 <div class="application-summary">
@@ -179,16 +158,6 @@ export const applicationSent = ({ formData, social }: { formData: FormData, soci
                     <div class="summary-item">
                         <span class="summary-label">Preferred Start Date:</span> ${formData.preferredStartDate}
                     </div>
-                </div>
-
-                <div class="next-steps">
-                    <h2>Next Steps</h2>
-                    <ul>
-                        <li>Our admissions team will review your application within 5-7 business days</li>
-                        <li>You will receive an email notification for any additional documents required</li>
-                        <li>If your application is complete, we will schedule an interview</li>
-                        <li>Final admission decision will be communicated via email</li>
-                    </ul>
                 </div>
 
                 <div class="contact-support">
@@ -220,4 +189,4 @@ export const applicationSent = ({ formData, social }: { formData: FormData, soci
         </div>
     </body>
     </html>
-`
+`;

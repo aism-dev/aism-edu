@@ -6,6 +6,7 @@ import { useDebounce } from "@/lib/Hooks/UseDebounce";
 import { FormBodyContext } from "../FormBody";
 import { useAnimation, Variants, motion } from "framer-motion";
 import clsx from "clsx";
+import { FaAngleRight } from "react-icons/fa6";
 
 export default function PersonalInformation() {
     const [fullName, setFullName] = useState("");
@@ -334,11 +335,11 @@ export default function PersonalInformation() {
 
                 </div>
                 <p className="py-3"><i className="">Please provide your basic details so we can reach you and verify your identity.</i></p>
-                <Button sizeVariation="XL" onClick={HandleProceed} className={clsx(
+                <Button sizeVariation="XL" onClick={HandleProceed} hovered={canProceed} className={clsx(
                     "w-fit",
                     canProceed ? "" : "pointer-events-none opacity-40 grayscale"
                 )}>
-                    Continue
+                        <span className='flex items-center gap-2'>{canProceed ? "Proceed" : "Fill in the section"} <FaAngleRight /></span>
                 </Button>
             </motion.div>
         </div>

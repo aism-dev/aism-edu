@@ -5,6 +5,7 @@ import { useDebounce } from '@/lib/Hooks/UseDebounce';
 import { useAnimation, Variants, motion } from 'framer-motion';
 import { FormBodyContext } from '../FormBody';
 import clsx from 'clsx';
+import { FaAngleLeft, FaAngleRight } from 'react-icons/fa6';
 
 const ProgramOfInterest = () => {
     const [intendedProgram, setIntendedProgram] = useState('');
@@ -192,13 +193,13 @@ const ProgramOfInterest = () => {
                 <p className="py-3"><i className="">Please provide details about the program you're interested in.</i></p>
                 <div className='flex gap-3 items-center'>
                     <Button sizeVariation="XL" onClick={handleBack} className="w-fit">
-                        Back
+                        <span className="flex flex-row-reverse items-center gap-2">Back <FaAngleLeft /></span>
                     </Button>
-                    <Button sizeVariation="XL" onClick={HandleProceed} className={clsx(
+                    <Button sizeVariation="XL" onClick={HandleProceed} hovered={canProceed} className={clsx(
                         "w-fit",
                         canProceed ? "" : "pointer-events-none opacity-40 grayscale"
                     )}>
-                        Continue
+                        <span className='flex items-center gap-2'>{canProceed ? "Proceed" : "Fill in the section"} <FaAngleRight /></span>
                     </Button>
                 </div>
             </motion.div>

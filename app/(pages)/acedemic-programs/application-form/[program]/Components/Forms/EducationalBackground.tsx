@@ -5,6 +5,7 @@ import InputCase from './Sub Component/InputCase';
 import { Variants, motion, useAnimation } from 'framer-motion';
 import clsx from 'clsx';
 import { FormBodyContext } from '../FormBody';
+import { FaAngleLeft, FaAngleRight } from 'react-icons/fa6';
 
 const EducationalBackground = () => {
     const [highSchool, setHighSchool] = useState('');
@@ -261,13 +262,13 @@ const EducationalBackground = () => {
                 <p className="py-3"><i className="">Please provide your educational background details.</i></p>
                 <div className='flex gap-3 items-center'>
                     <Button sizeVariation="XL" onClick={handleBack} className="w-fit">
-                        Back
+                                                <span className="flex flex-row-reverse items-center gap-2">Back <FaAngleLeft /></span>
                     </Button>
-                    <Button sizeVariation="XL" onClick={HandleProceed} className={clsx(
+                    <Button sizeVariation="XL" onClick={HandleProceed} hovered={canProceed} className={clsx(
                         "w-fit",
                         canProceed ? "" : "pointer-events-none opacity-40 grayscale"
                     )}>
-                        Continue
+                                                <span className='flex items-center gap-2'>{canProceed ? "Proceed" : "Fill in the section"} <FaAngleRight /></span>
                     </Button>
                 </div>
             </motion.div>

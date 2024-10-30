@@ -6,6 +6,7 @@ import { Variants, motion, useAnimation } from 'framer-motion';
 import clsx from 'clsx';
 import { FormBodyContext } from '../FormBody';
 import PayPalPayment from '../PayPalComponent';
+import { FaAngleLeft } from 'react-icons/fa6';
 
 const ApplicationFeePayment = () => {
     // Framer section
@@ -15,8 +16,8 @@ const ApplicationFeePayment = () => {
     const controls = useAnimation();
 
     const variants: Variants = {
-        hidden: { opacity: 0, height: 0, },
-        visible: { opacity: 1, height: height },
+        hidden: { opacity: 0, height: 0, overflow: "hidden" },
+        visible: { opacity: 1, height: height, overflow: "unset" },
     };
 
     const { currentTab, setCurrentTab, setFormData } = useContext(FormBodyContext);
@@ -79,7 +80,7 @@ const ApplicationFeePayment = () => {
             <motion.div
                 ref={contentRef}
                 initial="hidden"
-                className='overflow-hidden px-1'
+                className='px-1'
                 animate={controls}
                 variants={variants}
                 transition={{ duration: 0.15 }}
@@ -88,10 +89,10 @@ const ApplicationFeePayment = () => {
                 <p className=''>Once we receive your payment, you&apos;ll receive the full application form via email, which will require additional details and supporting documents.</p>
                 <p className="py-3"><sup className='text-2xl text-red-600'>*</sup><i className="">Note: This fee is non-refundable and covers the review of your application materials.</i></p>
                 <div className='flex gap-3 items-start'>
-                    <Button sizeVariation="L" onClick={handleBack} className="w-fit">
-                        Back
-                    </Button>
                     <PayPalPayment />
+                    <Button sizeVariation="L" onClick={handleBack} className="w-fit">
+                        <span className="flex flex-row-reverse items-center gap-2">Back <FaAngleLeft /></span>
+                    </Button>
                 </div>
             </motion.div>
         </div>

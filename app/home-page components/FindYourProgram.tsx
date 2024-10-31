@@ -1,11 +1,11 @@
 "use client"
-import { useEffect, useMemo, useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import clsx from "clsx";
 import { Programs } from "@/lib/Variables/Programs";
 import { motion } from  "framer-motion";
 import Image from "next/image";
 import Button from "../general components/Button";
-import { useIntersection, useWindowSize } from "react-use";
+import { useIntersection} from "react-use";
 import { AnimatedEntrance } from "../general components/AnimatedEntrance";
 
 export default function FindYourProgram() {

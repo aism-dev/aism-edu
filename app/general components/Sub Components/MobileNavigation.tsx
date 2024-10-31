@@ -1,5 +1,5 @@
 "use client"
-import { aboutTab, academicProgramsTab, admissionTab, applicationsTab, TabContent } from "@/lib/Variables/Navigation";
+import { aboutTab, academicProgramsTab, admissionTab, TabContent } from "@/lib/Variables/Navigation";
 import clsx from "clsx";
 import { motion, useAnimation, Variants } from "framer-motion";
 import Image from "next/image";
@@ -113,14 +113,14 @@ export default function MobileNavigation({ closeFunc }: { closeFunc: () => void 
                             )} />
                         </button>
                     </Link>
-                    <NavItem
+                    {/* <NavItem
                         currentTab={state.pathname ?? ""}
                         closeFunc={closeFunc}
                         title="Applications"
                         content={applicationsTab}
                         myIndex={5}
                         activeTab={activeTab}
-                     />
+                     /> */}
                 </div>
                  <div className="flex justify-between gap-6 p-6">
                     <Link onClick={closeFunc} className={clsx(
@@ -137,9 +137,6 @@ export default function MobileNavigation({ closeFunc }: { closeFunc: () => void 
                         Contact Us
                     </Link>
                 </div>
-            </div>
-            <div className="w-0 bg-red-500">
-                hello
             </div>
         </motion.div>
     )

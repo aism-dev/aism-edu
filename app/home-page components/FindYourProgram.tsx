@@ -11,13 +11,8 @@ import { AnimatedEntrance } from "../general components/AnimatedEntrance";
 export default function FindYourProgram() {
     const [currentItem, setCurrentItem] = useState(0);
     const [intervalId, setIntervalId] = useState(setInterval(()=>{}, 10));
-    const ViewPort = useWindowSize();
     
     const containerRef = useRef<HTMLDivElement>(null);
-
-    const delay = useMemo(() => {
-        return ViewPort.width <= 700 ? 10000 : 5000
-    }, [ViewPort])
 
     const changeComponent = () => {
         setCurrentItem((prevReason) => (prevReason + 1) % Programs.length);
@@ -29,29 +24,29 @@ export default function FindYourProgram() {
     })
 
     useEffect(() => {
-        const id = setInterval(changeComponent, delay);
+        const id = setInterval(changeComponent, 10000);
         setIntervalId(id);
 
         return () => clearInterval(id);
-    }, [delay]);
+    }, []);
 
     
     const handleClick = (id: number) => {
         setCurrentItem(id);
         clearInterval(intervalId); // Clear the current interval
-        const newIntervalId = setInterval(changeComponent, delay); // Set a new interval
+        const newIntervalId = setInterval(changeComponent, 10000); // Set a new interval
         setIntervalId(newIntervalId);
     };
 
     useEffect(() => {
         if (!isInView || isInView?.isIntersecting) {
-            const id = setInterval(changeComponent, delay);
+            const id = setInterval(changeComponent, 10000);
             setIntervalId(id);
             return;
         }
 
         clearInterval(intervalId);
-    }, [isInView, delay]);
+    }, [isInView]);
 
     return (
         <div className="py-20 max-sm:px-3" ref={containerRef}>
@@ -87,7 +82,7 @@ export default function FindYourProgram() {
                                     "origin-bottom-left text-2xl whitespace-nowrap flex flex-col",
                                     currentItem === (program.id - 1) ? "font-semibold" : "sm:-rotate-90 translate-y-10 max-sm:translate-x-4"
                                 )}>
-                                    {currentItem === (program.id - 1) && program.isComingSoon && <span className="text-gray-300/80 capitalize sm:font-thin font-light">coming soon</span>}
+                                    {currentItem === (program.id - 1) && program.isComingSoon && <span className="text-gray-300/80 capitalize font-thin">coming soon</span>}
                                     {program.title}
                                 </h3>
                                 <motion.p

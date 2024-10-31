@@ -54,7 +54,7 @@ export default function Navigation() {
     const tabRef01 = useRef<HTMLDivElement>(null);
     const tabRef02 = useRef<HTMLDivElement>(null);
     const tabRef03 = useRef<HTMLDivElement>(null);
-    const tabRef04 = useRef<HTMLDivElement>(null);
+    // const tabRef04 = useRef<HTMLDivElement>(null);
     const tabRef05 = useRef<HTMLDivElement>(null);
 
     const [scrollDirection, setScrollDirection] = useState<null | "up" | "down">(null);
@@ -226,7 +226,7 @@ export default function Navigation() {
                             setLastHovered(2.5);
                             setCurrentlyHovered(null);
                         }} >Student Success</Link>
-                        <span className={clsx(
+                        {/* <span className={clsx(
                             "py-3  min-[960px]:flex hidden items-center gap-2 group px-7 cursor-pointer hover:text-theme",
                             activeTab === 5 ? "text-theme font-semibold underline underline-offset-8" : "",
                         )} onMouseEnter={() => {
@@ -238,7 +238,7 @@ export default function Navigation() {
                         }} ref={tabRef04}>Applications<FaAngleUp className={clsx(
                             "group-hover:rotate-180",
                             activeTab === 5 ? "rotate-90" : "",
-                            )} /></span>
+                            )} /></span> */}
                         <span className={clsx(
                             "py-3 min-[960px]:hidden flex items-center gap-2 group px-7 cursor-pointer hover:text-theme",
                         )} onMouseEnter={() => {

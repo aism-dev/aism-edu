@@ -156,11 +156,11 @@ export const TABS: {
         title: 'Applications',
         Component: <TabComponent content={academicProgramsTab} />,
     },
-    // {
-    //     id: 4,
-    //     title: 'Student Success',
-    //     Component: <TabComponent content={applicationsTab} />,
-    // },
+    {
+        id: 4,
+        title: 'Student Success',
+        Component: <TabComponent content={applicationsTab} />,
+    },
     {
         id: 4,
         title: 'More',

@@ -12,7 +12,7 @@ export default function YourJourneyOurPromise() {
     const [playVideo, setPlayVideo] = useState(false);
 
     return (
-        <div className="sm:px-6 pt-6 px-2 pb-36 flex flex-col items-end relative">
+        <div className="sm:px-6 pt-6 px-4 pb-36 max-sm:pb-52 max-sm:gap-3 flex flex-col items-end relative">
             <AnimatedEntrance className="h-[clamp(30rem,60vh,20rem)] overflow-hidden w-full withGradient relative">
                 <Image
                     src="https://aism-edu.sirv.com/301617876_512872740529074_7075262364263306893_n_LE_auto_x2.jpg"

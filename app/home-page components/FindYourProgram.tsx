@@ -87,7 +87,7 @@ export default function FindYourProgram() {
                                     "origin-bottom-left text-2xl whitespace-nowrap flex flex-col",
                                     currentItem === (program.id - 1) ? "font-semibold" : "sm:-rotate-90 translate-y-10 max-sm:translate-x-4"
                                 )}>
-                                    {currentItem === (program.id - 1) && program.isComingSoon && <span className="text-gray-300/80 capitalize font-thin">coming soon</span>}
+                                    {currentItem === (program.id - 1) && program.isComingSoon && <span className="text-gray-300/80 capitalize sm:font-thin font-light">coming soon</span>}
                                     {program.title}
                                 </h3>
                                 <motion.p

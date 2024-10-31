@@ -30,8 +30,8 @@ export default function ChooseAISM() {
     };
 
     return (
-        <div className="md:py-20 md:px-20 px-10 py-20 bg-theme text-white grid md:grid-cols-[auto_1fr] gap-20">
-            <AnimatedEntrance className="max-w-[clamp(25rem,30vw,20rem)] flex flex-col justify-between gap-4">
+        <div className="md:py-20 md:px-20 sm:px-10 px-5 py-20 bg-theme text-white grid md:grid-cols-[auto_1fr] gap-20">
+            <AnimatedEntrance threshold={0.1} className="max-w-[clamp(25rem,30vw,20rem)] flex flex-col justify-between gap-4">
                 <h3 className="text-5xl leading-9 capitalize">
                     What we do at <span title="American International School of Medicine" className="text-5xl">AISM</span>
                 </h3>
@@ -41,7 +41,7 @@ export default function ChooseAISM() {
             </AnimatedEntrance>
             <div className="grid sm:grid-cols-[repeat(auto-fill,minmax(15rem,1fr))] grid-cols-[repeat(auto-fill,minmax(20rem,1fr))] gap-6">
                 {WhatWeDoAtAism.map((item) => (
-                    <AnimatedEntrance key={item.id}>
+                    <AnimatedEntrance threshold={0.1} key={item.id}>
 
                         <div onMouseEnter={() => handleClick(item.id - 1)} className="sm:h-[22rem] h-80 hover:-translate-y-1 hover:translate-x-1 group bg-white overflow-hidden relative flex">
                             <div className="h-9 p-2 overflow-hidden w-9 rounded-md bg-theme absolute top-4 left-4 z-20">

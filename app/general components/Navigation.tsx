@@ -258,7 +258,7 @@ export default function Navigation() {
                         "flex gap-6 items-center max-sm:py-3 max-sm:flex-1 justify-self-end",
                         (shouldHide && scrollDirection !== "up") || hamburgerOpen ? "max-sm:justify-end" : "max-sm:justify-between"
                     )}>
-                        <Button>
+                        <Button href="/acedemic-programs/application-form">
                             <span>Apply for Admission</span>
                         </Button>
                         <div className="relative">

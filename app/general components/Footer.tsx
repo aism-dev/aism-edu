@@ -65,7 +65,7 @@ export default function Footer() {
                         <Button href="https://www.google.com/maps/dir/5.5038247,7.0502649/1755+E+Park+Pl+Blvd,+Stone+Mountain,+GA+30087,+USA/@1.4556928,-124.4564065,3z/data=!3m1!4b1!4m9!4m8!1m1!4e1!1m5!1m1!1s0x88f5aff24a97c9c7:0x73b61a14e2227369!2m2!1d-84.1184891!2d33.8265653?entry=ttu&g_ep=EgoyMDI0MTAyNy4wIKXMDSoASAFQAw%3D%3D" colorVariation="footer" sizeVariation="W" className="border-white flex-1 max-sm:min-w-56">
                             Visit
                         </Button>
-                        <Button colorVariation="footer" sizeVariation="W" className="border-white flex-1 max-sm:min-w-56">
+                        <Button href="/contact-us" colorVariation="footer" sizeVariation="W" className="border-white flex-1 max-sm:min-w-56">
                             Contact Admissions
                         </Button>
                     </AnimatedEntrance>

@@ -76,14 +76,14 @@ export default function Footer() {
                         </div>
                         <div className="pt-5 min-w-[20rem]">
                             <h4 className="font-medium text-lg flex items-center gap-2 opacity-70"><FaAt />Email:</h4>
-                            <Link href={"tel:+14047566737"} className="alt-link"> +1 (404) 756 - 6737</Link>
+                            <Link href={"mailto:admissions@aism.edu"} className="alt-link">admissions@aism.edu</Link>
                         </div>
                         <div className="pt-5 min-w-[20rem] grid">
                             <h4 className="font-medium text-lg flex items-center gap-2 opacity-70">Quick Access:</h4>
                             <div className="flex item-center justify-between gap-6">
-                                <Link href={""} className="alt-link">About Us</Link>
-                                <Link href={""} className="alt-link">Blog</Link>
-                                <Link href={""} className="alt-link">Contact Us</Link>
+                                <Link href={"/about"} className="alt-link">About Us</Link>
+                                <Link href={"/faqs"} className="alt-link">Frequently Asked Questions</Link>
+                                <Link href={"/contact-us"} className="alt-link">Contact Us</Link>
                             </div>
                         </div>
                     </AnimatedEntrance>

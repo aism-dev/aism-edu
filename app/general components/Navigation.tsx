@@ -155,7 +155,7 @@ export default function Navigation() {
                             )} href={"/faqs"}>
                                 FaQ
                             </Link>
-                            <Link className="text-sm hover:opacity-100 opacity-80" href={""}>
+                            <Link className="text-sm hover:opacity-100 opacity-80" href={"#"}>
                                 Blog
                             </Link>
                             <Link className={clsx(

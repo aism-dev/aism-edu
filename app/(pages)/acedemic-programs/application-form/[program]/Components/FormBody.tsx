@@ -24,13 +24,14 @@ export interface FormData {
 interface FormBodyContext {
     currentTab: number,
     setCurrentTab: React.Dispatch<React.SetStateAction<number>>,
-    formData: FormData, 
-    setFormData: React.Dispatch<React.SetStateAction<FormData>>
+    formData: FormData,
+    setFormData: React.Dispatch<React.SetStateAction<FormData>>,
+    setApplicationComplete: React.Dispatch<React.SetStateAction<boolean>>,
 }
 
 const formBodyContext: FormBodyContext = {
     currentTab: 1,
-    setCurrentTab: ()=>{},
+    setCurrentTab: () => { },
     formData: {
         fullName: "",
         email: "",
@@ -48,13 +49,15 @@ const formBodyContext: FormBodyContext = {
         preferredStartDate: "",
         isTransferStudent: false,
     },
-    setFormData: ()=>{}
+    setFormData: () => { },
+    setApplicationComplete: () => { },
 }
 
 export const FormBodyContext = React.createContext(formBodyContext);
 
 export default function FormBody() {
     const [currentTab,  setCurrentTab] = useState(1);
+    const [applicationComplete, setApplicationComplete] = useState(false);
     const [formData, setFormData] = useState({
         fullName: "",
         email: "",
@@ -74,7 +77,7 @@ export default function FormBody() {
     })
 
     return (
-        <FormBodyContext.Provider value={{ currentTab, setCurrentTab, formData, setFormData }}>
+        <FormBodyContext.Provider value={{ currentTab, setCurrentTab, formData, setFormData, setApplicationComplete }}>
             <div className="py-10 xl:px-20 md:px-10 sm:px-7 px-5">
                 <h1 className="text-3xl font-semibold text-theme">Apply to AISM &mdash; Start Your Journey</h1>
                 <p className="my-3">
@@ -83,7 +86,7 @@ export default function FormBody() {
                 <i>Please complete each section below and ensure the information is accurate.</i>
                 <Form />
             </div>
-            <SuccessModal />
+            {applicationComplete && <SuccessModal />}
         </FormBodyContext.Provider>
     )
 }

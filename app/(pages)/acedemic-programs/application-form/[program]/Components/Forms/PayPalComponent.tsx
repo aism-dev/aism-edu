@@ -16,7 +16,7 @@ interface PayPalButtonProps {
 
 const PayPalPayment: React.FC<PayPalButtonProps> = ({ onSuccess, onError, setError }) => {
     const APPLICATION_FEE = "150.00";
-    const { formData } = useContext(FormBodyContext);
+    const { formData, setApplicationComplete } = useContext(FormBodyContext);
 
     const performSubmit = async () => {
         const smtpCLient = new BrevoClient();
@@ -45,6 +45,7 @@ const PayPalPayment: React.FC<PayPalButtonProps> = ({ onSuccess, onError, setErr
 
         await smtpCLient.sendEmail(payloadToAism);
         await smtpCLient.sendEmail(payloadToApplicant);
+        setApplicationComplete(true);
     }
 
 

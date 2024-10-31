@@ -37,7 +37,7 @@ export default function page() {
                 features={features}
                 description="The American International School of Medicine began in 1999 and has graduated hundreds of medical doctors worldwide."
                 applyLink={{
-                    href: "#",
+                    href: "/acedemic-programs/application-form",
                     label: "Apply Now"
                 }}
                 applicationInfo={applicationInfo}

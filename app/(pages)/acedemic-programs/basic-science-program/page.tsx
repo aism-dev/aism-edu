@@ -38,7 +38,7 @@ export default function page() {
                 features={features}
                 description="Start your medical journey with the AISM Basic Science Course, offering a comprehensive foundation comparable to the first two years of U.S. medical school. The first four semesters are classroom-based, followed by hands-on credit hours in hospital settings to develop essential patient communication skills. Taught at our campuses in Guyana and Georgia, the program includes field studies and lab work for a well-rounded experience. With three application windows—January, May, and September—you have flexible entry points to begin your path to a medical career."
                 applyLink={{
-                    href: "#",
+                    href: "/acedemic-programs/application-form",
                     label: "Apply Now"
                 }}
                 applicationInfo={applicationInfo}

@@ -38,7 +38,7 @@ export default function page() {
                 features={features}
                 description="To create the world’s first online course for healthcare. This will be offered globally for a duration of some 12 weeks. On finishing, students will have a full certificate of completion."
                 applyLink={{
-                    href: "#",
+                    href: "/acedemic-programs/application-form",
                     label: "Apply Now"
                 }}
                 applicationInfo={applicationInfo}

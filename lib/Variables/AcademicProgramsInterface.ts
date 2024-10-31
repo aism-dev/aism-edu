@@ -29,5 +29,5 @@ export interface TopProps {
         label: string;
         href?: string;
     }[];
-    title: string;
+    title?: string;
 }

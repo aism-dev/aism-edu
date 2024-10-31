@@ -4,7 +4,7 @@ import Link from "next/link";
 import React from "react";
 import { FaAngleRight } from "react-icons/fa6";
 
-export default function Top({ breadcrumb}: Omit<TopProps, "title">) {
+export default function Top({ breadcrumb, title }: TopProps) {
     return (
         <div className="py-10 md:px-20 sm:px-10 px-8  bg-theme">
             <AnimatedEntrance direction="right">
@@ -22,6 +22,7 @@ export default function Top({ breadcrumb}: Omit<TopProps, "title">) {
                         </React.Fragment>
                     ))}
                 </div>
+                {title && <h1 className="text-white md:text-4xl sm:text-3xl text-2xl mt-2">{title}</h1>}
             </AnimatedEntrance>
         </div>
     )

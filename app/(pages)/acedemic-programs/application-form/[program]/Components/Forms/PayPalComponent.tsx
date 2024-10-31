@@ -78,6 +78,7 @@ const PayPalPayment: React.FC<PayPalButtonProps> = ({ onSuccess, onError, setErr
                                         }
                                     }
                                 },
+                                
                                 description: "Application Form Fee",
                                 items: [
                                     {
@@ -90,7 +91,10 @@ const PayPalPayment: React.FC<PayPalButtonProps> = ({ onSuccess, onError, setErr
                                     }
                                 ]
                             }
-                        ]
+                        ],
+                        application_context: {
+                            shipping_preference: "NO_SHIPPING",
+                        }
                     });
                 }}
                 onApprove={async (data: OnApproveData, actions: OnApproveActions) => {

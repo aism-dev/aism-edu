@@ -282,7 +282,7 @@ export default function Navigation() {
             <AnimatePresence>
                 {shouldHideBackTop && scrollDirection === "up" && <motion.div 
                     className={clsx(
-                        "fixed bottom-10 right-10 z-[200]"
+                        "fixed bottom-24 right-10 z-[200]"
                     )}
                     initial={{
                         y: 20,
@@ -298,7 +298,7 @@ export default function Navigation() {
                     }}
                     title="Go to the Top"
                 >
-                    <Link href={"#TopOfPage"} className={clsx("h-14 w-14 rounded-lg bg-theme text-white shadow-xl cursor-pointer active:scale-90 active:rotate-12 active:opacity-50 origin-bottom-left",
+                    <Link href={"#TopOfPage"} className={clsx("h-14 w-14 rounded-full border border-white/50 bg-theme text-white shadow-xl cursor-pointer active:scale-90 active:rotate-12 active:opacity-50 origin-bottom-left",
                         "grid place-items-center text-2xl")}>
                         <FaArrowUp />
                     </Link>

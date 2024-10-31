@@ -8,6 +8,7 @@ import Footer from "./general components/Footer";
 import NextTopLoader from "nextjs-toploader";
 import AddClassToElements from "./general components/DetectTextOnDark";
 import { Toaster } from "react-hot-toast";
+import ChatBot from "./general components/ChatBot";
 
 const geistSans = localFont({
     src: "./fonts/Nunito-VariableFont_wght.woff",
@@ -28,6 +29,7 @@ export default function RootLayout({
                 className={`${geistSans.variable} antialiased overflow-x-hidden`}
             >
                 <AddClassToElements />
+                <ChatBot />
                 <Toaster
                     position="top-center"
                     reverseOrder={false}

@@ -1,18 +1,23 @@
 "use client"
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useMemo, useRef, useState } from "react";
 import clsx from "clsx";
 import { Programs } from "@/lib/Variables/Programs";
 import { motion } from  "framer-motion";
 import Image from "next/image";
 import Button from "../general components/Button";
-import { useIntersection } from "react-use";
+import { useIntersection, useWindowSize } from "react-use";
 import { AnimatedEntrance } from "../general components/AnimatedEntrance";
 
 export default function FindYourProgram() {
     const [currentItem, setCurrentItem] = useState(0);
     const [intervalId, setIntervalId] = useState(setInterval(()=>{}, 10));
+    const ViewPort = useWindowSize();
     
     const containerRef = useRef<HTMLDivElement>(null);
+
+    const delay = useMemo(() => {
+        return ViewPort.width <= 700 ? 10000 : 5000
+    }, [ViewPort])
 
     const changeComponent = () => {
         setCurrentItem((prevReason) => (prevReason + 1) % Programs.length);
@@ -24,39 +29,39 @@ export default function FindYourProgram() {
     })
 
     useEffect(() => {
-        const id = setInterval(changeComponent, 5000);
+        const id = setInterval(changeComponent, delay);
         setIntervalId(id);
 
         return () => clearInterval(id);
-    }, []);
+    }, [delay]);
 
     
     const handleClick = (id: number) => {
         setCurrentItem(id);
         clearInterval(intervalId); // Clear the current interval
-        const newIntervalId = setInterval(changeComponent, 5000); // Set a new interval
+        const newIntervalId = setInterval(changeComponent, delay); // Set a new interval
         setIntervalId(newIntervalId);
     };
 
     useEffect(() => {
         if (!isInView || isInView?.isIntersecting) {
-            const id = setInterval(changeComponent, 5000);
+            const id = setInterval(changeComponent, delay);
             setIntervalId(id);
             return;
         }
 
         clearInterval(intervalId);
-    }, [isInView]);
+    }, [isInView, delay]);
 
     return (
-        <div className="py-20 max-sm:px-10" ref={containerRef}>
+        <div className="py-20 max-sm:px-3" ref={containerRef}>
             <AnimatedEntrance className="text-center flex flex-col items-center gap-4">
                 <h2 className="text-4xl font-medium text-theme">Find your Course</h2>
                 <p className="max-w-[40rem] leading-6 text-black/70">
                     Explore a range of programs tailored to your career goals. Choose the path that best suits your aspirations and start your journey in healthcare today.
                 </p>
             </AnimatedEntrance>
-            <div className="flex max-sm:flex-col gap-3 mt-8 px-4 max-sm:h-screen max-sm:min-h-[50rem]">
+            <div className="flex max-sm:flex-col gap-3 mt-8 sm:px-4 max-sm:h-screen max-sm:min-h-[50rem]">
                 {Programs.map((program)=>(
                     <AnimatedEntrance key={program.id} className={clsx(
                         currentItem === (program.id - 1) ? "flex-1" : "cursor-pointer"
@@ -80,7 +85,7 @@ export default function FindYourProgram() {
                             <div className="absolute z-10 bottom-10 sm:left-24 left-10 text-white grid gap-3">
                                 <h3 className={clsx(
                                     "origin-bottom-left text-2xl whitespace-nowrap flex flex-col",
-                                    currentItem === (program.id - 1) ? "font-semibold" : "sm:-rotate-90 translate-y-10 max-sm:translate-x-16"
+                                    currentItem === (program.id - 1) ? "font-semibold" : "sm:-rotate-90 translate-y-10 max-sm:translate-x-4"
                                 )}>
                                     {currentItem === (program.id - 1) && program.isComingSoon && <span className="text-gray-300/80 capitalize font-thin">coming soon</span>}
                                     {program.title}

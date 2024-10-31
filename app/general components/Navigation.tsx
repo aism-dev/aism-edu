@@ -165,7 +165,7 @@ export default function Navigation() {
                                 Contact Us
                             </Link>
                         </div>
-                        <Link href={"tel:+14047566737"} className="justify-self-end sm:text-2xl text-themelight">+1 (404) 756 - 6737</Link>
+                        <Link href={"tel:+14047566737"} className="justify-self-end sm:text-2xl text-themelight max-sm:hidden">+1 (404) 756 - 6737</Link>
                     </div>
                 </motion.div>
                 <div className="flex justify-between items-center relative border-b">

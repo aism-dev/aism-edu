@@ -75,7 +75,7 @@ export default function MobileNavigation({ closeFunc }: { closeFunc: () => void 
             )}
         >
             <div className="relative text-white mt-20 w-full">
-                <div className="grid px-10">
+                <div className="grid sm:px-10 px-5">
                     <NavItem
                         currentTab={state.pathname ?? ""}
                         myIndex={1}

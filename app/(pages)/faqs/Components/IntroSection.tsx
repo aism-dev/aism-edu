@@ -8,7 +8,8 @@ export default function IntroSection() {
                 <BubbleText formatClass="sm:text-5xl text-4xl text-white" text="Frequently Asked Question?" />
             </div>
             <p className="sm:max-w-[clamp(30rem,40%,20rem)] w-full sm:justify-self-end grid gap-4">
-                <span className="text-white">Find answers to common questions about our programs, admissions, and campus life at AISM. If you don&apos;t see your question here, rest assured—we&apos;re here to help!</span>
+                <span className="text-white">Find answers to common questions about our programs, admissions, and campus life at AISM. If you don&apos;t see your question here, rest assured</span>
+                <span className="text-white opacity-70">&mdash;we&apos;re here to help!</span>
             </p>
         </AnimatedEntrance>
     )

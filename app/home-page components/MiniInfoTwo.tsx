@@ -5,7 +5,7 @@ export default function MiniInfoTwo() {
     return (
         <AnimatedEntrance className="grid sm:gap-14 gap-7 sm:grid-cols-[auto_1fr_auto] w-full sm:px-20 px-10 py-10 items-center bg-black/5">
             <div className="w-fit">
-                <Button sizeVariation="XL">
+                <Button href="/acedemic-programs/application-form" sizeVariation="XL">
                     Join Us
                 </Button>
             </div>

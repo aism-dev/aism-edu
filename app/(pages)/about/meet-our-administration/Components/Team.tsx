@@ -7,7 +7,7 @@ import Link from "next/link";
 export default function Team(props: TeamProps) {
     return (
         <div className={clsx(
-            "sm:p-20 p-8",
+            "md:p-20 sm:p-8 p-5",
             props.id % 2 === 0 ?  "bg-black/5" : "",
 
         )}>
@@ -24,7 +24,7 @@ export default function Team(props: TeamProps) {
                         props.members.length > 6 ?  "flex" : "",
                     )}>
                         {member.hasSocials &&
-                            <div className="absolute top-1/2 delay-500 -translate-y-1/2 left-full -translate-x-full group-hover:translate-x-0 opacity-0 group-hover:opacity-100 p-2 grid gap-3 border border-theme bg-theme border-r-transparent">
+                            <div className="absolute top-1/2 delay-500 -translate-y-1/2 left-full -translate-x-full sm:group-hover:translate-x-0 max-sm:z-30 opacity-0 group-hover:opacity-100 p-2 grid gap-3 border border-theme bg-theme border-r-transparent">
                                 {member.socials.map((social) => (
                                     <Link key={social.id} href={social.url} target="_blank" className="alt-link h-8 w-8 rounded-lg grid place-items-center text-white border-2 border-white">
                                         <social.icon className="text-xl" />

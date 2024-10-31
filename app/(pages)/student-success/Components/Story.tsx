@@ -16,7 +16,7 @@ const Story: FC<StoryPropsWithIsOdd> = ({ name, title, description, imageSrc, ra
     };
 
     return (
-        <AnimatedEntrance className={clsx(
+        <AnimatedEntrance threshold={0.1} className={clsx(
             "flex sm:items-center items-start flex-wrap md:px-20 sm:px-10 px-5 py-10",
             isOdd ?  "" : "bg-black/5",
         )}>

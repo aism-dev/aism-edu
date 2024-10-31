@@ -14,7 +14,7 @@ export default function Footer() {
                 width={500}
                 className="md:h-[60%] h-[30%] w-auto blur-[2px] object-contain absolute pointer-events-none select-none -z-0 opacity-15 invert sm:top-1/2 top-1/3 -translate-y-1/2 sm:left-3 left-1/2 max-sm:-translate-x-1/2"
             />
-            <AnimatedEntrance className="sm:px-16 px-8 sm:py-20 py-10 grid md:grid-cols-[auto_1fr] grid-cols-1 md:gap-20 sm:gap-10 gap-5">
+            <AnimatedEntrance className="sm:px-16 px-5 sm:py-20 py-10 grid md:grid-cols-[auto_1fr] grid-cols-1 md:gap-20 sm:gap-10 gap-5">
                 <div>
                     <AnimatedEntrance className="flex items-center gap-2 h-fit">
                         <Link href={"/"} className="no-underline">
@@ -28,8 +28,8 @@ export default function Footer() {
                             />
                         </Link>
                         <div className="grid">
-                            <span className="alt-font text-2xl opacity-70 font-medium leading-4">American International</span>
-                            <span className="alt-font text-3xl">School of Medicine</span>
+                            <span className="alt-font sm:text-2xl text-xl opacity-70 font-medium leading-4">American International</span>
+                            <span className="alt-font sm:text-3xl text-2xl">School of Medicine</span>
                         </div>
                     </AnimatedEntrance>
                     <AnimatedEntrance className="py-5 max-w-[20rem] pl-2">
@@ -90,8 +90,8 @@ export default function Footer() {
                 </div>
             </AnimatedEntrance>
             <AnimatedEntrance className="bg-themeDark darker px-20 py-5 relative z-10 flex justify-between">
-                <span className="max-sm:hidden">Designed by: <Link href={"https://fabiconcept.online"} target="_blank" className="alt-link">Fabiconcept</Link></span>
-                <span>
+                <span className="max-sm:opacity-0 max-sm:pointer-events-none max-sm:absolute">Designed by: <Link href={"https://fabiconcept.online"} target="_blank" className="alt-link">Fabiconcept</Link></span>
+                <span className="text-center">
                     Copyright © {new Date().getFullYear()} American International School of Medicine
                 </span>
             </AnimatedEntrance>

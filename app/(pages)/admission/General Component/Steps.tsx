@@ -5,7 +5,7 @@ import { AdmissionStep } from "@/lib/Variables/VisaProcess";
 
 export default function Steps({ data, noStep }: { data: TuitionStep[] | AdmissionStep[], noStep?: boolean }) {
     return (
-        <div className="grid sm:p-20 px-8 py-20 gap-5">
+        <div className="grid sm:p-20 px-5 py-20 gap-5 overflow-x-hidden">
             {data.map((process, id) => (
                 <Step key={id} isOdd={(id + 1) % 2 !== 0}>
                     {!noStep && <h2 className={clsx(

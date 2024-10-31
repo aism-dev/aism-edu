@@ -8,7 +8,7 @@ export default function OurVision() {
         <>
             <AnimatedEntrance direction="right"  className="grid md:gap-14 gap-6 md:grid-cols-[auto_1fr_auto] w-full md:px-20 sm:px-10 px-8 py-10 items-center">
                 <div className="w-fit">
-                    <Button sizeVariation="XL">
+                    <Button href="/acedemic-programs/application-form" sizeVariation="XL">
                         Apply Now
                     </Button>
                 </div>
@@ -21,7 +21,7 @@ export default function OurVision() {
                     <BubbleText formatClass="md:text-5xl text-4xl max-md:hidden text-theme" text="AISM's Vision" />
                 </div>
             </AnimatedEntrance>
-            <AnimatedEntrance className="flex flex-wrap border-y-2">
+            <AnimatedEntrance threshold={0.1} className="flex flex-wrap border-y-2 overflow-x-hidden">
                 <AnimatedEntrance direction="right" className="w-[35rem]">
                     <Image
                         src={"https://aism-edu.sirv.com/pexels-hawk-i-i-75310404-19547594.jpg"}

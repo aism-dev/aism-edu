@@ -18,7 +18,7 @@ export default function TopSection() {
                         <span className="lg:text-8xl text-6xl font-thin opacity-80">Message</span> <span className="text-3xl opacity-80">from</span> <br /> <span className="text-3xl opacity-80">the</span> President
                     </h1>
                 </div>
-                <div className="rounded-bl-full h-full max-md:h-96 bg-white overflow-hidden relative">
+                <div className="sm:rounded-bl-full h-full max-md:h-96 bg-white overflow-hidden relative">
                     <Image
                         src={"https://aism-edu.sirv.com/icons/AISM-light.png"}
                         alt="AISM Logo"

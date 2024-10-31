@@ -12,7 +12,7 @@ export default function YourJourneyOurPromise() {
     const [playVideo, setPlayVideo] = useState(false);
 
     return (
-        <div className="p-6 pb-36 flex flex-col items-end relative">
+        <div className="sm:px-6 pt-6 px-2 pb-36 flex flex-col items-end relative">
             <AnimatedEntrance className="h-[clamp(30rem,60vh,20rem)] overflow-hidden w-full withGradient relative">
                 <Image
                     src="https://aism-edu.sirv.com/301617876_512872740529074_7075262364263306893_n_LE_auto_x2.jpg"
@@ -21,7 +21,7 @@ export default function YourJourneyOurPromise() {
                     height={604}
                     className="w-full min-h-full object-cover object-center sm:-mt-20 pointer-events-none select-none"
                 />
-                <div className="absolute bottom-0 z-20 text-white p-14 grid gap-3">
+                <div className="absolute bottom-0 z-20 text-white sm:p-14 p-6 grid gap-3">
                     <h2 className="text-3xl font-medium">Your Journey, Our Promise</h2>
                     <p className="opacity-80 md:max-w-[50%]">
                         At AISM, we are committed to delivering exceptional medical education, shaping physicians who excel in any medical setting worldwide. Our graduates are equipped with the skills and knowledge to thrive, making them highly sought-after professionals across the globe.

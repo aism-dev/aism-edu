@@ -24,12 +24,12 @@ export const tuitionSteps: TuitionStep[] = [
         <p>
           The premedical program offers a foundational study experience for students pursuing medical degrees. Tuition details for international and CARICOM students are outlined below:
         </p>
-        <ul>
-          <li><strong>International Students:</strong> $4,500 per trimester</li>
-          <li><strong>CARICOM Students:</strong> $3,500 per trimester</li>
-          <li><strong>Other Fees:</strong> $2,200 (International), $1,500 (CARICOM) per trimester</li>
-          <li><strong>Lab/Tech & Exam Fees:</strong> $750 per trimester</li>
-          <li><strong>Total (per trimester):</strong> $7,450 (International), $5,750 (CARICOM)</li>
+        <ul className="my-4">
+          <li className="my-2"><strong>International Students:</strong> $4,500 per trimester</li>
+          <li className="my-2"><strong>CARICOM Students:</strong> $3,500 per trimester</li>
+          <li className="my-2"><strong>Other Fees:</strong> $2,200 (International), $1,500 (CARICOM) per trimester</li>
+          <li className="my-2"><strong>Lab/Tech & Exam Fees:</strong> $750 per trimester</li>
+          <li className="my-2"><strong>Total (per trimester):</strong> $7,450 (International), $5,750 (CARICOM)</li>
         </ul>
       </>
     ),
@@ -41,12 +41,12 @@ export const tuitionSteps: TuitionStep[] = [
         <p>
           The Basic Sciences program covers the first two years of medical education. Tuition fees per trimester are as follows:
         </p>
-        <ul>
-          <li><strong>International Students:</strong> $7,500 per trimester</li>
-          <li><strong>CARICOM Students:</strong> $5,000 per trimester</li>
-          <li><strong>Other Fees:</strong> $2,450 (International), $1,750 (CARICOM) per trimester</li>
-          <li><strong>Lab/Tech & Exam Fees:</strong> $750 per trimester</li>
-          <li><strong>Total (per trimester):</strong> $10,700 (International), $7,500 (CARICOM)</li>
+        <ul className="my-4">
+          <li className="my-2"><strong>International Students:</strong> $7,500 per trimester</li>
+          <li className="my-2"><strong>CARICOM Students:</strong> $5,000 per trimester</li>
+          <li className="my-2"><strong>Other Fees:</strong> $2,450 (International), $1,750 (CARICOM) per trimester</li>
+          <li className="my-2"><strong>Lab/Tech & Exam Fees:</strong> $750 per trimester</li>
+          <li className="my-2"><strong>Total (per trimester):</strong> $10,700 (International), $7,500 (CARICOM)</li>
         </ul>
       </>
     ),
@@ -58,12 +58,12 @@ export const tuitionSteps: TuitionStep[] = [
         <p>
           The Clinical Sciences program takes students through practical, hands-on medical education in hospitals. Tuition per trimester is detailed below:
         </p>
-        <ul>
-          <li><strong>International Students:</strong> $8,500 per trimester</li>
-          <li><strong>CARICOM Students:</strong> $6,000 per trimester</li>
-          <li><strong>Other Fees:</strong> $2,750 (International), $1,850 (CARICOM) per trimester</li>
-          <li><strong>Lab/Tech & Exam Fees:</strong> $750 per trimester</li>
-          <li><strong>Total (per trimester):</strong> $12,000 (International), $8,600 (CARICOM)</li>
+        <ul className="my-4">
+          <li className="my-2"><strong>International Students:</strong> $8,500 per trimester</li>
+          <li className="my-2"><strong>CARICOM Students:</strong> $6,000 per trimester</li>
+          <li className="my-2"><strong>Other Fees:</strong> $2,750 (International), $1,850 (CARICOM) per trimester</li>
+          <li className="my-2"><strong>Lab/Tech & Exam Fees:</strong> $750 per trimester</li>
+          <li className="my-2"><strong>Total (per trimester):</strong> $12,000 (International), $8,600 (CARICOM)</li>
         </ul>
       </>
     ),
@@ -73,10 +73,10 @@ export const tuitionSteps: TuitionStep[] = [
     content: (
       <>
         <p>In addition to tuition, some programs may require additional fees, including:</p>
-        <ul>
-          <li><strong>Student’s Liability Insurance (Clinical Sciences):</strong> $1,500 per year</li>
-          <li><strong>Transfer and Matriculation Fee:</strong> $1,500 (one-time, non-refundable)</li>
-          <li><strong>Basic Science Credit Transfer Fee:</strong> $1,750 per year (up to 2 years transfer)</li>
+        <ul className="my-4">
+          <li className="my-2"><strong>Student’s Liability Insurance (Clinical Sciences):</strong> $1,500 per year</li>
+          <li className="my-2"><strong>Transfer and Matriculation Fee:</strong> $1,500 (one-time, non-refundable)</li>
+          <li className="my-2"><strong>Basic Science Credit Transfer Fee:</strong> $1,750 per year (up to 2 years transfer)</li>
         </ul>
       </>
     ),
@@ -88,11 +88,11 @@ export const tuitionSteps: TuitionStep[] = [
         <p>
           AISM offers flexible payment plans for students, but all tuition and fees must be paid one month before the start of each semester. Refund policies are in place for students withdrawing due to proven prolonged illness:
         </p>
-        <ul>
-          <li>1st week: 90% refund</li>
-          <li>2nd week: 50% refund</li>
-          <li>3rd week: 10% refund</li>
-          <li>After the 4th week: No refund</li>
+        <ul className="my-4">
+          <li className="my-2">1st week: 90% refund</li>
+          <li className="my-2">2nd week: 50% refund</li>
+          <li className="my-2">3rd week: 10% refund</li>
+          <li className="my-2">After the 4th week: No refund</li>
         </ul>
         <p>
           Late payments incur a 3% penalty on each delinquent installment. Students with unpaid balances may face suspension from classes or withholding of services.

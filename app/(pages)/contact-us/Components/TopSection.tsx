@@ -9,7 +9,7 @@ export default function TopSection() {
                 <h1 className="md:text-5xl sm:text-4xl text-3xl text-theme font-medium">Get in Touch</h1>
                 <p className="sm:max-w-[80%] text-balance mt-3">We&apos;d love to hear from you! Whether you have questions, need support, or want to learn more about our services, our team is here to help.</p>
             </AnimatedEntrance>
-            <div className="grid grid-cols-2">
+            <div className="grid sm:grid-cols-2 gap-6">
                 <AnimatedEntrance className="grid gap-2">
                     <div className="sm:h-9 h-8 sm:w-9 w-8 rounded-lg bg-theme/10 text-theme grid place-items-center"><FaLocationDot /></div>
                     <h5 className="mt-2 sm:text-xl text-lg font-medium text-theme">Our Address</h5>

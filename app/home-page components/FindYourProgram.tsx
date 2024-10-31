@@ -15,6 +15,7 @@ export default function FindYourProgram() {
     const containerRef = useRef<HTMLDivElement>(null);
 
     const changeComponent = () => {
+        if(!isInView) return;
         setCurrentItem((prevReason) => (prevReason + 1) % Programs.length);
     };
 

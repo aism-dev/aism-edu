@@ -1,6 +1,7 @@
 "use client"
 import React, { useState } from "react";
 import Form from "./Form";
+import SuccessModal from "./SuccessModal";
 
 export interface FormData {
     fullName: string,
@@ -82,6 +83,7 @@ export default function FormBody() {
                 <i>Please complete each section below and ensure the information is accurate.</i>
                 <Form />
             </div>
+            <SuccessModal />
         </FormBodyContext.Provider>
     )
 }

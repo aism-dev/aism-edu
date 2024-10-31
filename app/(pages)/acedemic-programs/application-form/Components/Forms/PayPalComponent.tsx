@@ -1,6 +1,6 @@
 import { PayPalScriptProvider, PayPalButtons } from "@paypal/react-paypal-js";
 import React, { useContext } from 'react';
-import { OnApproveData, OnApproveActions } from "@paypal/paypal-js";
+import { OnApproveData, OnApproveActions, OrderResponseBody } from "@paypal/paypal-js";
 import BrevoClient, { EmailRequest } from "@/lib/Variables/BrevoClient";
 import { applicationReceived } from "@/lib/Variables/EmailTemplates/ApplicationReceived";
 import { socials } from "@/lib/Variables/Socials";
@@ -9,8 +9,8 @@ import { FormBodyContext } from "../FormBody";
 import { applicationSent } from "@/lib/Variables/EmailTemplates/ApplicationSent";
 
 interface PayPalButtonProps {
-    onSuccess?: (details: any) => void;
-    onError?: (error: any) => void;
+    onSuccess?: (details: OrderResponseBody) => void;
+    onError?: (error: unknown) => void;
     setError: React.Dispatch<React.SetStateAction<string>>
 }
 

@@ -1,4 +1,4 @@
-interface AdmissionStep {
+export interface AdmissionStep {
   title: string;
   content: React.ReactNode;
 }

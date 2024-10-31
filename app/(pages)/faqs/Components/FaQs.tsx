@@ -5,7 +5,6 @@ import clsx from "clsx";
 import { motion, useAnimation, Variants } from "framer-motion";
 import { useEffect, useLayoutEffect, useRef, useState } from "react";
 import { FaAngleRight } from "react-icons/fa6";
-import { useRendersCount } from "react-use";
 
 export default function FaQs({ questions, section }: FAQInterface) {
     return (

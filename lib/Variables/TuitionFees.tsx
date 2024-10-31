@@ -1,4 +1,4 @@
-interface TuitionStep {
+export interface TuitionStep {
   title: string;
   content: React.ReactNode;
 }

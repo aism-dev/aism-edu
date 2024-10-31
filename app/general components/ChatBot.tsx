@@ -10,7 +10,6 @@ declare global {
             product_name: string;
             asyncInit?: () => void;
         };
-        OpenWidget: any;
     }
 }
 

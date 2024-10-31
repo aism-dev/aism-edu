@@ -1,4 +1,3 @@
-import clsx from "clsx";
 import Image from "next/image";
 import { useClickAway } from "react-use";
 import { motion } from "framer-motion";

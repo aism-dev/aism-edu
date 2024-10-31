@@ -194,7 +194,7 @@ const ProgramOfInterest = () => {
                         </div>
                     </InputCase>
                 </div>
-                <p className="py-3"><i className="">Please provide details about the program you're interested in.</i></p>
+                <p className="py-3"><i className="">Please provide details about the program you&apos;re interested in.</i></p>
                 <div className='flex gap-3 items-center'>
                     <Button sizeVariation="XL" onClick={handleBack} className="w-fit">
                         <span className="flex flex-row-reverse items-center gap-2">Back <FaAngleLeft /></span>

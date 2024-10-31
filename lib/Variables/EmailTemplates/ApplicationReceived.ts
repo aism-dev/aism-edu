@@ -1,4 +1,4 @@
-import { FormData } from "@/app/(pages)/acedemic-programs/application-form/[program]/Components/FormBody";
+import { FormData } from "@/app/(pages)/acedemic-programs/application-form/Components/FormBody";
 import { Socials } from "../Socials";
 
 export const applicationReceived = ({ formData, social }: { formData: FormData, social: Socials}) => `

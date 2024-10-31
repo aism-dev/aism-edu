@@ -1,7 +1,9 @@
 import clsx from "clsx";
 import Step from "./Step";
+import { TuitionStep } from "@/lib/Variables/TuitionFees";
+import { AdmissionStep } from "@/lib/Variables/VisaProcess";
 
-export default function Steps({ data, noStep }: { data: any[], noStep?: boolean }) {
+export default function Steps({ data, noStep }: { data: TuitionStep[] | AdmissionStep[], noStep?: boolean }) {
     return (
         <div className="grid sm:p-20 px-8 py-20 gap-5">
             {data.map((process, id) => (

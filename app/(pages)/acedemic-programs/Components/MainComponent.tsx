@@ -61,8 +61,8 @@ export default function MainComponent({
             </div>
             <div className="my-5 grid grid-cols-[repeat(auto-fill,minmax(15rem,1fr))] sm:px-5 mt-5">
                 {features.map((feature, index) => (
-                    <AnimatedEntrance>
-                        <div key={index} className="p-5 hover:bg-theme/5">
+                    <AnimatedEntrance key={index}>
+                        <div className="p-5 hover:bg-theme/5">
                             <FaCheck className="text-2xl text-green-600" />
                             <p className="font-medium text-themeDark">{feature.description}</p>
                         </div>

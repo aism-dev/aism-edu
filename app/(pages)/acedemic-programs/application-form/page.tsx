@@ -1,4 +1,4 @@
-import Top from "../../Components/Top";
+import Top from "../Components/Top";
 import FormBody from "./Components/FormBody";
 
 export default function page() {

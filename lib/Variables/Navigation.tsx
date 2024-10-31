@@ -156,16 +156,16 @@ export const TABS: {
         title: 'Applications',
         Component: <TabComponent content={academicProgramsTab} />,
     },
-    {
-        id: 4,
-        title: 'Student Success',
-        Component: <TabComponent content={applicationsTab} />,
-    },
     // {
     //     id: 4,
-    //     title: 'More',
-    //     Component: <TabComponent content={moreTab} />,
+    //     title: 'Student Success',
+    //     Component: <TabComponent content={applicationsTab} />,
     // },
+    {
+        id: 4,
+        title: 'More',
+        Component: <TabComponent content={moreTab} />,
+    },
 ].map((n, idx) => ({ ...n, id: idx }));
 
 function TabComponent({ content }: { content: TabContent[] }) {

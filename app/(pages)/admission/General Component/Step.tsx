@@ -16,7 +16,7 @@ export default function Step({ isOdd, children }: { isOdd: boolean, children: Re
     return (
         isOdd ?
             <div className="grid sm:grid-cols-2 grid-cols-[1fr_auto] text-right isOdd" ref={containerRef}>
-                <AnimatedEntrance direction="left" className="sm:p-10 p-5 border-l border-t border-b border-theme">
+                <AnimatedEntrance threshold={0.1} direction="left" className="sm:p-10 p-5 border-l border-t border-b border-theme">
                     {children}
                 </AnimatedEntrance>
                 <div className="gridy -ml-5 relative">
@@ -54,7 +54,7 @@ export default function Step({ isOdd, children }: { isOdd: boolean, children: Re
                         </div>
                     </div>
                 </div>
-                <AnimatedEntrance direction="right" className="sm:p-10 p-5 border-r border-t border-b border-theme">
+                <AnimatedEntrance threshold={0.1} direction="right" className="sm:p-10 p-5 border-r border-t border-b border-theme">
                     {children}
                 </AnimatedEntrance>
             </div>

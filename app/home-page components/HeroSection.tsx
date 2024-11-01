@@ -28,7 +28,7 @@ export default function HeroSection() {
                             <p className="sm:text-5xl text-3xl leading-[1.15] mb-2">{slideContent.title}</p>
                             <p className="sm:opacity-75 opacity-85">{slideContent.content}</p>
                             <br />
-                            <Button colorVariation="dark" sizeVariation="L" tabIndex={-1}>
+                            <Button colorVariation="dark" sizeVariation="L" href={slideContent.cta}>
                                 {slideContent.ctaText}
                             </Button>
                         </motion.div>

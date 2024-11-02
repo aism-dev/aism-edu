@@ -35,7 +35,7 @@ export const AnimatedEntrance: React.FC<AnimatedEntranceProps> = ({
     duration = 0.5,
     delay = 0,
     distance = 30,
-    threshold = 0.5,
+    threshold = 0.1,
     once = true,
     ease = "easeOut",
     customVariants,

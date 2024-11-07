@@ -35,75 +35,186 @@ export type Teams = TeamProps;
 export const boardOfDirectors: (Member | MemberNoSocials)[] = [
     {
         id: 1,
-        image: "https://aism-edu.sirv.com/dr.colin-a-wilkinson_LE_auto_x2.jpg", // Actual image URL
-        hasSocials: true,
         name: "Dr. Colin A. Wilkinson",
-        role: "Chairman",
+        image: "https://aism-edu.sirv.com/dr.colin-a-wilkinson_LE_auto_x2.jpg",
+        role: "Chair",
+        hasSocials: true,
         socials: [
-            {
-                id: 1,
-                icon: FaFacebookF,
-                url: "#"
-            },
-            {
-                id: 2,
-                icon: FaTwitter,
-                url: "#"
-            }
-        ]
+            { id: 1, icon: FaFacebookF, url: "https://facebook.com/dr.colin" },
+            { id: 2, icon: FaTwitter, url: "https://twitter.com/dr.colin" },
+        ],
     },
     {
         id: 2,
+        name: "Dr. Clinton Wilkinson",
         image: "https://aism-edu.sirv.com/Team/default_profile_image.png",
+        role: "Vice Chair",
         hasSocials: false,
+    },
+    {
+        id: 3,
         name: "Dr. Dion George",
-        role: "Secretary"
-    }
+        image: "https://aism-edu.sirv.com/Team/default_profile_image.png",
+        role: "Secretary",
+        hasSocials: false,
+    },
 ];
 
 export const boardMembers: (Member | MemberNoSocials)[] = [
     {
         id: 1,
-        image: "https://aism-edu.sirv.com/Team/default_profile_image.png",
-        hasSocials: false,
         name: "Dr. Donn D. Martin",
-        role: "Member"
+        image: "https://aism-edu.sirv.com/Team/default_profile_image.png",
+        role: "Member",
+        hasSocials: false,
     },
     {
         id: 2,
+        name: "Dr. Christine Wilkinson",
         image: "https://aism-edu.sirv.com/Team/default_profile_image.png",
+        role: "Member",
         hasSocials: false,
-        name: "Dr. Nancy Akunna",
-        role: "Member"
     },
     {
         id: 3,
+        name: "Dr. Neil Klein",
         image: "https://aism-edu.sirv.com/Team/default_profile_image.png",
+        role: "Member",
         hasSocials: false,
-        name: "Dr. Christine Wilkinson",
-        role: "Member"
     },
     {
         id: 4,
-        image: "https://aism-edu.sirv.com/Team/default_profile_image.png",
-        hasSocials: false,
         name: "Rev. Fr. Dr. Basil",
-        role: "Chaplain"
+        image: "https://aism-edu.sirv.com/Team/default_profile_image.png",
+        role: "Chaplain",
+        hasSocials: false,
     },
     {
         id: 5,
+        name: "Dr. G. Mujtata",
         image: "https://aism-edu.sirv.com/Team/default_profile_image.png",
+        role: "Member",
         hasSocials: false,
-        name: "Dr. Neil Klein",
-        role: "Member"
     },
     {
         id: 6,
+        name: "Dr. William Cornell, JD, MD.",
         image: "https://aism-edu.sirv.com/Team/default_profile_image.png",
+        role: "Legal Counsel",
         hasSocials: false,
-        name: "Dr. G. Mujtaba",
-        role: "Member"
-    }
+    },
+    {
+        id: 7,
+        name: "Mr. Phillip Wallcott, M. Sc",
+        image: "https://aism-edu.sirv.com/Team/default_profile_image.png",
+        role: "Member",
+        hasSocials: false,
+    },
+    {
+        id: 8,
+        name: "Dr. Otis Powell",
+        image: "https://aism-edu.sirv.com/Team/default_profile_image.png",
+        role: "Member",
+        hasSocials: false,
+    },
+];
+
+export const administrationStaff: (Member | MemberNoSocials)[] = [
+    {
+        id: 1,
+        name: "Dr. Colin A. Wilkinson",
+        image: "https://aism-edu.sirv.com/dr.colin-a-wilkinson_LE_auto_x2.jpg",
+        role: "President / CEO",
+        hasSocials: true,
+        socials: [
+            { id: 1, icon: FaFacebookF, url: "https://facebook.com/dr.colin" },
+            { id: 2, icon: FaTwitter, url: "https://twitter.com/dr.colin" },
+        ],
+    },
+    {
+        id: 2,
+        name: "Lorna McBarnett",
+        image: "https://aism-edu.sirv.com/Team/default_profile_image.png",
+        role: "Chancellor (Emeritus)",
+        hasSocials: false,
+    },
+    {
+        id: 3,
+        name: "Dr. Christine M. Wilkinson",
+        image: "https://aism-edu.sirv.com/Team/default_profile_image.png",
+        role: "Executive Vice President",
+        hasSocials: false,
+    },
+    {
+        id: 4,
+        name: "Dr. William Cornell, MD, JD, ESQ.",
+        image: "https://aism-edu.sirv.com/Team/default_profile_image.png",
+        role: "Vice President / Associate Dean of Basic Medical Sciences",
+        hasSocials: false,
+    },
+    {
+        id: 5,
+        name: "Dr. Dion George",
+        image: "https://aism-edu.sirv.com/Team/default_profile_image.png",
+        role: "Corporate Secretary",
+        hasSocials: false,
+    },
+    {
+        id: 6,
+        name: "Dr. Donn D. Martin",
+        image: "https://aism-edu.sirv.com/Team/default_profile_image.png",
+        role: "Vice President Research Institute",
+        hasSocials: false,
+    },
+    {
+        id: 7,
+        name: "Dr. Renee Sandy",
+        image: "https://aism-edu.sirv.com/Team/default_profile_image.png",
+        role: "Director of Office of Enrollment Management",
+        hasSocials: false,
+    },
+    {
+        id: 8,
+        name: "Dr. Otis Powell",
+        image: "https://aism-edu.sirv.com/Team/default_profile_image.png",
+        role: "Dean of Clinical Sciences",
+        hasSocials: false,
+    },
+    {
+        id: 9,
+        name: "Dr. Nancy Akunna",
+        image: "https://aism-edu.sirv.com/Team/default_profile_image.png",
+        role: "Associate Dean - Student Outcomes",
+        hasSocials: false,
+    },
+    {
+        id: 10,
+        name: "Dr. Bala Roa",
+        image: "https://aism-edu.sirv.com/Team/default_profile_image.png",
+        role: "Associate Dean of Admission",
+        hasSocials: false,
+    },
+    {
+        id: 11,
+        name: "Dr. Tanesha Jerrick",
+        image: "https://aism-edu.sirv.com/Team/default_profile_image.png",
+        role: "Associate Dean of Student Services",
+        hasSocials: false,
+    },
+    {
+        id: 12,
+        name: "Dr. Dion George",
+        image: "https://aism-edu.sirv.com/Team/default_profile_image.png",
+        role: "Associate Dean of Finance (Acting)",
+        hasSocials: false,
+    },
+    {
+        id: 13,
+        name: "Dr. Curtis Briscoe",
+        image: "https://aism-edu.sirv.com/Team/default_profile_image.png",
+        role: "Director Officer of Public Relations",
+        hasSocials: false,
+    },
 ];
 
 export const officers: (Member | MemberNoSocials)[] = [
@@ -177,298 +288,323 @@ export const officers: (Member | MemberNoSocials)[] = [
     }
 ];
 
-export const deans: (Member | MemberNoSocials)[] = [
+export const administration: (Member | MemberNoSocials)[] = [
     {
         id: 1,
-        image: "https://aism-edu.sirv.com/Team/default_profile_image.png",
-        hasSocials: false,
-        name: "Dr. Nancy Akunna",
-        role: "Dean of Administration"
+        name: "Dr. Colin A. Wilkinson",
+        image: "https://aism-edu.sirv.com/dr.colin-a-wilkinson_LE_auto_x2.jpg",
+        role: "President / CEO",
+        hasSocials: true,
+        socials: [
+            { id: 1, icon: FaFacebookF, url: "https://facebook.com/dr.colin" },
+            { id: 2, icon: FaTwitter, url: "https://twitter.com/dr.colin" },
+        ],
     },
     {
         id: 2,
+        name: "Lorna McBarnett",
         image: "https://aism-edu.sirv.com/Team/default_profile_image.png",
+        role: "Chancellor (Emeritus)",
         hasSocials: false,
-        name: "Dr. Renee Sandy",
-        role: "Associate Dean of Academics"
     },
     {
         id: 3,
+        name: "Dr. Christine M. Wilkinson",
         image: "https://aism-edu.sirv.com/Team/default_profile_image.png",
+        role: "Executive Vice President",
         hasSocials: false,
-        name: "Dr. Bala Rao",
-        role: "Dean of Admission"
     },
     {
         id: 4,
+        name: "Dr. William Cornell, MD, JD, ESQ.",
         image: "https://aism-edu.sirv.com/Team/default_profile_image.png",
+        role: "Vice President / Associate Dean of Basic Medical Sciences",
         hasSocials: false,
-        name: "Dr. Christine Wilkinson",
-        role: "Registrar"
     },
     {
         id: 5,
+        name: "Dr. Dion George",
         image: "https://aism-edu.sirv.com/Team/default_profile_image.png",
+        role: "Corporate Secretary",
         hasSocials: false,
-        name: "Ms. Patricia Coates",
-        role: "Bursar"
     },
     {
         id: 6,
+        name: "Dr. Donn D. Martin",
         image: "https://aism-edu.sirv.com/Team/default_profile_image.png",
+        role: "Vice President Research Institute",
         hasSocials: false,
-        name: "Debra Nedd, MS",
-        role: "Dean of School of Nursing (Acting Interim)"
     },
     {
         id: 7,
+        name: "Dr. Renee Sandy",
         image: "https://aism-edu.sirv.com/Team/default_profile_image.png",
+        role: "Director of Office of Enrollment Management",
         hasSocials: false,
-        name: "Dr. Otis Powell",
-        role: "Dean of Clinical Sciences"
     },
     {
         id: 8,
+        name: "Dr. Otis Powell",
         image: "https://aism-edu.sirv.com/Team/default_profile_image.png",
+        role: "Dean of Clinical Sciences",
         hasSocials: false,
-        name: "Dr. Robert Fountila",
-        role: "Assistant Director of Admissions"
     },
     {
         id: 9,
+        name: "Dr. Nancy Akunna",
         image: "https://aism-edu.sirv.com/Team/default_profile_image.png",
+        role: "Associate Dean - Student Outcomes",
         hasSocials: false,
-        name: "Ms. Patricia Coates",
-        role: "Librarian"
     },
     {
         id: 10,
+        name: "Dr. Bala Roa",
         image: "https://aism-edu.sirv.com/Team/default_profile_image.png",
+        role: "Associate Dean of Admission",
         hasSocials: false,
-        name: "Dr. Shawn Edwards",
-        role: "Dean of Basic Sciences"
     },
     {
         id: 11,
+        name: "Dr. Tanesha Jerrick",
         image: "https://aism-edu.sirv.com/Team/default_profile_image.png",
+        role: "Associate Dean of Student Services",
         hasSocials: false,
-        name: "Dr. Tanisha Jerrick",
-        role: "Dean of Student Services"
     },
     {
         id: 12,
+        name: "Dr. Dion George",
         image: "https://aism-edu.sirv.com/Team/default_profile_image.png",
+        role: "Associate Dean of Finance (Acting)",
         hasSocials: false,
-        name: "Calvin Wilkinson",
-        role: "Dean of Finance"
     },
     {
         id: 13,
+        name: "Dr. Curtis Briscoe",
         image: "https://aism-edu.sirv.com/Team/default_profile_image.png",
+        role: "Director Officer of Public Relations",
         hasSocials: false,
-        name: "Mr. Melroy Jeffery",
-        role: "Buildings and Grounds"
-    }
+    },
+    {
+        id: 14,
+        name: "G. Mark",
+        image: "https://aism-edu.sirv.com/Team/default_profile_image.png",
+        role: "Administration of IT and Digital Services",
+        hasSocials: false,
+    },
+    {
+        id: 15,
+        name: "O. Hendricks",
+        image: "https://aism-edu.sirv.com/Team/default_profile_image.png",
+        role: "Administration of IT and Digital Services",
+        hasSocials: false,
+    },
+    {
+        id: 16,
+        name: "Fabian Dev",
+        image: "https://aism-edu.sirv.com/Team/default_profile_image.png",
+        role: "Administration of IT and Digital Services",
+        hasSocials: false,
+    },
 ];
 
 export const basicScienceFaculty: (Member | MemberNoSocials)[] = [
     {
         id: 1,
-        image: "https://aism-edu.sirv.com/Team/default_profile_image.png",
-        hasSocials: false,
         name: "Dr. Donn D. Martin",
-        role: "Physiology"
+        image: "https://aism-edu.sirv.com/Team/default_profile_image.png",
+        role: "Basic Science Faculty",
+        hasSocials: false,
     },
     {
         id: 2,
-        image: "https://aism-edu.sirv.com/Team/default_profile_image.png",
-        hasSocials: false,
         name: "Dr. Radbod Movassagh",
-        role: "Physical Diagnosis, Pharmacology"
+        image: "https://aism-edu.sirv.com/Team/default_profile_image.png",
+        role: "Physiology",
+        hasSocials: false,
     },
     {
         id: 3,
-        image: "https://aism-edu.sirv.com/Team/default_profile_image.png",
-        hasSocials: false,
         name: "Dr. Mehran Heravi",
-        role: "Biochemistry"
+        image: "https://aism-edu.sirv.com/Team/default_profile_image.png",
+        role: "Physical Diagnosis, Pharmacology",
+        hasSocials: false,
     },
     {
         id: 4,
-        image: "https://aism-edu.sirv.com/Team/default_profile_image.png",
-        hasSocials: false,
         name: "Dr. Renee Sandy",
-        role: "Microbiology, Immunology and Foundational Sciences"
+        image: "https://aism-edu.sirv.com/Team/default_profile_image.png",
+        role: "Biochemistry",
+        hasSocials: false,
     },
     {
         id: 5,
-        image: "https://aism-edu.sirv.com/Team/default_profile_image.png",
-        hasSocials: false,
         name: "Gurdev D. Singh, DDS, Ph.D",
-        role: "Anatomy and Histology"
+        image: "https://aism-edu.sirv.com/Team/default_profile_image.png",
+        role: "Microbiology, Immunology and Foundational Sciences",
+        hasSocials: false,
     },
     {
         id: 6,
+        name: "Kampta Prashad",
         image: "https://aism-edu.sirv.com/Team/default_profile_image.png",
+        role: "Anatomy and Histology",
         hasSocials: false,
-        name: "Kampta Prashad, MBBS",
-        role: "Physical Diagnosis"
     },
     {
         id: 7,
-        image: "https://aism-edu.sirv.com/Team/default_profile_image.png",
-        hasSocials: false,
         name: "Dr. Sepideh Yadollahi",
-        role: "Pathology and Foundational Sciences"
+        image: "https://aism-edu.sirv.com/Team/default_profile_image.png",
+        role: "MBBS Physical Diagnosis, Pathology and Foundational Sciences",
+        hasSocials: false,
     },
     {
         id: 8,
-        image: "https://aism-edu.sirv.com/Team/default_profile_image.png",
-        hasSocials: false,
         name: "Lemuel A. Evans, Ph.D",
-        role: "Nutrition and Molecular Biology"
-    }
+        image: "https://aism-edu.sirv.com/Team/default_profile_image.png",
+        role: "Nutrition and Molecular Biology",
+        hasSocials: false,
+    },
 ];
 
-export const clinicalSciencesFaculty: (Member | MemberNoSocials)[] = [
+export const clinicalScienceFaculty: (Member | MemberNoSocials)[] = [
     {
         id: 1,
-        image: "https://aism-edu.sirv.com/Team/default_profile_image.png",
-        hasSocials: false,
         name: "Dr. Pearline Grant",
-        role: "ICM Demonstrator"
+        image: "https://aism-edu.sirv.com/Team/default_profile_image.png",
+        role: "ICM Demonstrator",
+        hasSocials: false,
     },
     {
         id: 2,
-        image: "https://aism-edu.sirv.com/Team/default_profile_image.png",
-        hasSocials: false,
         name: "Roberts",
-        role: "MBBS, OB/GYN"
+        image: "https://aism-edu.sirv.com/Team/default_profile_image.png",
+        role: "MBBS, OB/ GYN.",
+        hasSocials: false,
     },
     {
         id: 3,
-        image: "https://aism-edu.sirv.com/Team/default_profile_image.png",
-        hasSocials: false,
         name: "J. Williams",
-        role: "Internal Medicine"
+        image: "https://aism-edu.sirv.com/Team/default_profile_image.png",
+        role: "Internal Medicine",
+        hasSocials: false,
     },
     {
         id: 4,
-        image: "https://aism-edu.sirv.com/Team/default_profile_image.png",
-        hasSocials: false,
         name: "Motto",
-        role: "MBBS Pediatrics"
+        image: "https://aism-edu.sirv.com/Team/default_profile_image.png",
+        role: "MBBS Pediatrics",
+        hasSocials: false,
     },
     {
         id: 5,
-        image: "https://aism-edu.sirv.com/Team/default_profile_image.png",
-        hasSocials: false,
         name: "K. Amin",
-        role: "MD Family Medicine"
+        image: "https://aism-edu.sirv.com/Team/default_profile_image.png",
+        role: "MD Family Medicine",
+        hasSocials: false,
     },
     {
         id: 6,
-        image: "https://aism-edu.sirv.com/Team/default_profile_image.png",
-        hasSocials: false,
         name: "N. Singh",
-        role: "MD Clinical and Forensic Pathology"
+        image: "https://aism-edu.sirv.com/Team/default_profile_image.png",
+        role: "MD Clinical and Forensic Pathology",
+        hasSocials: false,
     },
     {
         id: 7,
-        image: "https://aism-edu.sirv.com/Team/default_profile_image.png",
-        hasSocials: false,
         name: "B. Justice",
-        role: "MD, Surgery and Surgical Oncology"
+        image: "https://aism-edu.sirv.com/Team/default_profile_image.png",
+        role: "MD, Surgery and Surgical Oncology.",
+        hasSocials: false,
     },
     {
         id: 8,
-        image: "https://aism-edu.sirv.com/Team/default_profile_image.png",
-        hasSocials: false,
         name: "Surendra Persaud",
-        role: "MD Surgery"
+        image: "https://aism-edu.sirv.com/Team/default_profile_image.png",
+        role: "MD Surgery",
+        hasSocials: false,
     },
     {
         id: 9,
-        image: "https://aism-edu.sirv.com/Team/default_profile_image.png",
-        hasSocials: false,
         name: "W. Williams",
-        role: "MD Family Medicine"
+        image: "https://aism-edu.sirv.com/Team/default_profile_image.png",
+        role: "MD Family Medicine",
+        hasSocials: false,
     },
     {
         id: 10,
-        image: "https://aism-edu.sirv.com/Team/default_profile_image.png",
-        hasSocials: false,
         name: "Lisa Hasso",
-        role: "MD Internal Medicine"
+        image: "https://aism-edu.sirv.com/Team/default_profile_image.png",
+        role: "MD Internal Medicine",
+        hasSocials: false,
     },
     {
         id: 11,
-        image: "https://aism-edu.sirv.com/Team/default_profile_image.png",
-        hasSocials: false,
         name: "G.N. Kini",
-        role: "MD Family and Internal Medicine"
+        image: "https://aism-edu.sirv.com/Team/default_profile_image.png",
+        role: "MD Family and Internal Medicine",
+        hasSocials: false,
     },
     {
         id: 12,
-        image: "https://aism-edu.sirv.com/Team/default_profile_image.png",
-        hasSocials: false,
         name: "W. Ramarez",
-        role: "MD Infectious Disease, Internal Medicine"
+        image: "https://aism-edu.sirv.com/Team/default_profile_image.png",
+        role: "MD Infectious Disease, Internal medicine",
+        hasSocials: false,
     },
     {
         id: 13,
-        image: "https://aism-edu.sirv.com/Team/default_profile_image.png",
-        hasSocials: false,
         name: "H. B. Giddings",
-        role: "MD, Internal Medicine and Endocrinology"
+        image: "https://aism-edu.sirv.com/Team/default_profile_image.png",
+        role: "MD, Internal Medicine and Endocrinology",
+        hasSocials: false,
     },
     {
         id: 14,
-        image: "https://aism-edu.sirv.com/Team/default_profile_image.png",
-        hasSocials: false,
         name: "H. B. Giddings",
-        role: "MD Internal Medicine"
+        image: "https://aism-edu.sirv.com/Team/default_profile_image.png",
+        role: "MD. Internal Medicine",
+        hasSocials: false,
     },
     {
         id: 15,
-        image: "https://aism-edu.sirv.com/Team/default_profile_image.png",
-        hasSocials: false,
         name: "R. Howell",
-        role: "MD FACOG Obstetrics and Gynecology"
+        image: "https://aism-edu.sirv.com/Team/default_profile_image.png",
+        role: "MD FACOG Obstetrics and Gynecology",
+        hasSocials: false,
     },
     {
         id: 16,
-        image: "https://aism-edu.sirv.com/Team/default_profile_image.png",
-        hasSocials: false,
         name: "Spence",
-        role: "MD Surgery"
+        image: "https://aism-edu.sirv.com/Team/default_profile_image.png",
+        role: "MD Surgery",
+        hasSocials: false,
     },
     {
         id: 17,
-        image: "https://aism-edu.sirv.com/Team/default_profile_image.png",
-        hasSocials: false,
         name: "W. Richardson",
-        role: "MD Medicine"
+        image: "https://aism-edu.sirv.com/Team/default_profile_image.png",
+        role: "MD Medicine",
+        hasSocials: false,
     },
     {
         id: 18,
-        image: "https://aism-edu.sirv.com/Team/default_profile_image.png",
-        hasSocials: false,
         name: "C. Hixon",
-        role: "MD FACS, Surgery"
+        image: "https://aism-edu.sirv.com/Team/default_profile_image.png",
+        role: "MD FACS, Surgery",
+        hasSocials: false,
     },
     {
         id: 19,
-        image: "https://aism-edu.sirv.com/Team/default_profile_image.png",
-        hasSocials: false,
         name: "C. Medley",
-        role: "MD Orthopedics"
+        image: "https://aism-edu.sirv.com/Team/default_profile_image.png",
+        role: "MD Orthopedics",
+        hasSocials: false,
     },
     {
         id: 20,
-        image: "https://aism-edu.sirv.com/Team/default_profile_image.png",
-        hasSocials: false,
         name: "M. Delerme",
-        role: "MD, MPH, Ophthalmology"
-    }
+        image: "https://aism-edu.sirv.com/Team/default_profile_image.png",
+        role: "MD., MPH. Ophthalmology",
+        hasSocials: false,
+    },
 ];

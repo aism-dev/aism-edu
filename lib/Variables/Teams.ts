@@ -1,4 +1,4 @@
-import { basicScienceFaculty, boardMembers, boardOfDirectors, clinicalSciencesFaculty, deans, officers, Teams } from "./TeamsContent";
+import { basicScienceFaculty, boardMembers, boardOfDirectors, clinicalScienceFaculty, administration, administrationStaff, Teams } from "./TeamsContent";
 
 export const teamsItems: Teams[] = [
     {
@@ -13,13 +13,13 @@ export const teamsItems: Teams[] = [
     },
     {
         id: 3,
-        members: officers,
-        title: "Officers",
+        members: administrationStaff,
+        title: "Administration Staff",
     },
     {
         id: 4,
-        members: deans,
-        title: "Deans",
+        members: administration,
+        title: "Administration, Management and Staff",
     },
     {
         id: 5,
@@ -28,7 +28,7 @@ export const teamsItems: Teams[] = [
     },
     {
         id:  6,
-        members: clinicalSciencesFaculty,
+        members: clinicalScienceFaculty,
         title: "Clinical Sciences Faculty",
     },
 ]

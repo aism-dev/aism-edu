@@ -25,7 +25,7 @@ export default function HeroSection() {
                             transition={{ duration: 1, delay: 1 }}
                             className="absolute bottom-32 md:left-32 pr-5 left-10 text-white z-10 max-w-[40rem]"
                         >
-                            <p className="sm:text-5xl text-3xl leading-[1.15] mb-2">{slideContent.title}</p>
+                            <h2 className="sm:text-5xl text-3xl leading-[1.15] mb-2">{slideContent.title}</h2>
                             <p className="sm:opacity-75 opacity-85">{slideContent.content}</p>
                             <br />
                             <Button colorVariation="dark" sizeVariation="L" href={slideContent.cta}>

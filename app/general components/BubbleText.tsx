@@ -2,7 +2,7 @@ import clsx from "clsx";
 
 const BubbleText = ({ text, formatClass }: {text: string, formatClass?: string}) => {
     return (
-        <h2 className="font-thin">
+        <h1 className="font-thin">
             {text.split("").map((child, idx) => (
                 <span className={clsx(
                     "hoverText",
@@ -11,7 +11,7 @@ const BubbleText = ({ text, formatClass }: {text: string, formatClass?: string})
                     {child}
                 </span>
             ))}
-        </h2>
+        </h1>
     );
 };
 

@@ -1,5 +1,19 @@
 import Top from "../Components/Top";
 import BodySection from "../Components/Body";
+import { aismMetadata } from "@/lib/Metadata";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+    ...aismMetadata,
+    title: "Basic Science Program | AISM Rigorous Medical Curriculum & Clinical Training",
+    description: "Delve into the core scientific principles of medicine with our Basic Science Program, focusing on the foundational knowledge necessary for clinical practice.",
+    openGraph: {
+        ...aismMetadata.openGraph,
+        title: "Basic Science Program | AISM Rigorous Medical Curriculum & Clinical Training",
+        description: "Delve into the core scientific principles of medicine with our Basic Science Program, focusing on the foundational knowledge necessary for clinical practice.",
+        url: aismMetadata.openGraph?.url + "/acedemic-programs/basic-science-program"
+    }
+};
 
 const features = [
     { description: "Comparable to the first two years of a USA medical school program" },

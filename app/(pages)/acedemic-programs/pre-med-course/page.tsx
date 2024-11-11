@@ -1,6 +1,21 @@
 import Top from "../Components/Top";
 import BodySection from "../Components/Body";
 
+import { aismMetadata } from "@/lib/Metadata";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+    ...aismMetadata,
+    title: "Pre-Health (Pre-Medical) Sciences | AISM Rigorous Medical Curriculum & Clinical Training",
+    description: "Prepare for your medical education with our comprehensive Pre-Health Sciences program, designed to build a strong foundation in the essential sciences before advancing to medical studies.",
+    openGraph: {
+        ...aismMetadata.openGraph,
+        title: "APre-Health (Pre-Medical) Sciences | AISM Rigorous Medical Curriculum & Clinical Training",
+        description: "Prepare for your medical education with our comprehensive Pre-Health Sciences program, designed to build a strong foundation in the essential sciences before advancing to medical studies.",
+        url: aismMetadata.openGraph?.url + "/acedemic-programs/pre-med-course"
+    }
+};
+
 const features = [
     { description: "Transition from High School to medical school in a single course" },
     { description: "Small class sizes to support your successful transition" },

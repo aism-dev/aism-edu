@@ -1,6 +1,21 @@
 import Top from "../Components/Top";
 import BodySection from "../Components/Body";
 
+import { aismMetadata } from "@/lib/Metadata";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+    ...aismMetadata,
+    title: "Community Medicine Course | AISM Rigorous Medical Curriculum & Clinical Training",
+    description: "Engage with public health and community-based medical care through our Community Medicine Course, preparing you to address health challenges on a local and global scale.",
+    openGraph: {
+        ...aismMetadata.openGraph,
+        title: "Community Medicine Course | AISM Rigorous Medical Curriculum & Clinical Training",
+        description: "Engage with public health and community-based medical care through our Community Medicine Course, preparing you to address health challenges on a local and global scale.",
+        url: aismMetadata.openGraph?.url + "/acedemic-programs/community-medicine-course"
+    }
+};
+
 const features = [
     { description: "12 weeks of detailed Healthcare information" },
     { description: "10 units program" },

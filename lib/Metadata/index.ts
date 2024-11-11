@@ -2,7 +2,7 @@ import { Metadata } from "next";
 
 export const aismMetadata: Metadata = {
     title: 'American International School of Medicine | A Leading Global Medical Institution',
-    description: "Discover AISM, a top-tier international medical school offering cutting-edge medical education. We prepare the next generation of medical professionals through exceptional academic programs, clinical rotations in the U.S., and global healthcare opportunities. Learn more about admissions, our Guyana campus, and how we shape the future of medicine.",
+    description: "Pursue world-class medical education with U.S. clinical rotations and a supportive community. Start your journey today—apply now!",
     keywords: [
         "medical school",
         "international medical school",
@@ -177,7 +177,7 @@ export const aismMetadata: Metadata = {
     creator: 'Dr. Colin Wilkinson MPH', 
     openGraph: {
         title: 'American International School of Medicine | A Leading Global Medical Institution',
-        description: "AISM offers comprehensive medical education with global clinical rotations. Explore how we prepare medical professionals to excel in healthcare across the world. Admissions are now open for aspiring doctors.",
+        description: "Pursue world-class medical education with U.S. clinical rotations and a supportive community. Start your journey today—apply now!",
         url: 'https://aism.edu/',
         locale: 'en_US',
         images: [
@@ -192,8 +192,8 @@ export const aismMetadata: Metadata = {
     twitter: {
         card: 'summary_large_image',
         title: 'Study Medicine at AISM | Global Medical Training',
-        description: 'Pursue your medical career at AISM with world-class education, clinical rotations in the U.S., and a global medical network. Learn more about our programs and how to apply today!',
-        images: ['https://aism.edu/images/aism-campus-twitter.jpg'],  // Replace with a relevant image
+        description: 'Pursue world-class medical education with U.S. clinical rotations and a supportive community. Start your journey today—apply now!',
+        images: ['https://aism.edu/images/aism-campus-twitter.jpg'],
     },
     icons: {
         icon: 'https://aism-edu.sirv.com/icons/android-icon-192x192.png',

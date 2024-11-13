@@ -35,8 +35,8 @@ export default function Footer() {
                     <AnimatedEntrance className="py-5 max-w-[20rem] pl-2">
                         <h4 className="font-medium text-lg flex items-center gap-2 opacity-70"><FaMapLocation /> Address:</h4>
                         <address className="not-italic ">
-                            1000  Windward Concourse, Ste 110,
-                            Alpharetta GA &mdash; 30005
+                            1755 E. Park Place Blvd,
+                            Stone Mountain, Ga 30087
                         </address>
                     </AnimatedEntrance>
                     <div className="flex items-center gap-2 sm:justify-between max-sm:gap-5 py-4">

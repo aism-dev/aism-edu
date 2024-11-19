@@ -9,10 +9,13 @@ export interface Socials {
 }
 export const socials = {
     github: 'https://github.com/your-github-username',
-    linkedin: 'https://www.linkedin.com/in/your-linkedin-username',
     twitter: 'https://twitter.com/your-twitter-username',
     facebook: 'https://www.facebook.com/your-facebook-username',
-    instagram: 'https://www.instagram.com/your-instagram-username',
     tiktok: 'https://www.tiktok.com/@your-tiktok-username',
-    youtube: 'https://www.youtube.com/your-youtube-username',
+    // Provided
+    reddit: 'https://www.reddit.com/u/AISM_EDU/s/etT3mlayOH',
+    pinterest: 'https://pin.it/6gPAxP6pa',
+    instagram: 'https://www.instagram.com/eduaism',
+    linkedin: 'https://www.linkedin.com/in/aism-aiu-media-5a398a338',
+    youtube: 'https://youtube.com/@aism-aiumedia?si=7w3LXqV2OrYNE_bk',
 }

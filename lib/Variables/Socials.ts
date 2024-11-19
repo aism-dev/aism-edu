@@ -19,3 +19,5 @@ export const socials = {
     linkedin: 'https://www.linkedin.com/in/aism-aiu-media-5a398a338',
     youtube: 'https://youtube.com/@aism-aiumedia?si=7w3LXqV2OrYNE_bk',
 }
+
+export const SocialsMedia = socials

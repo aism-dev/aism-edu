@@ -1,8 +1,9 @@
 import Image from "next/image";
 import Link from "next/link";
 import Button from "./Button";
-import { FaAt, FaFacebook, FaInstagram, FaLinkedin, FaMapLocation, FaPhone, FaTiktok, FaYoutube } from "react-icons/fa6";
+import { FaAt, FaInstagram, FaLinkedin, FaMapLocation, FaPhone, FaPinterest, FaReddit, FaYoutube } from "react-icons/fa6";
 import { AnimatedEntrance } from "./AnimatedEntrance";
+import { SocialsMedia } from "@/lib/Variables/Socials";
 
 export default function Footer() {
     return (
@@ -40,20 +41,20 @@ export default function Footer() {
                         </address>
                     </AnimatedEntrance>
                     <div className="flex items-center gap-2 sm:justify-between max-sm:gap-5 py-4">
-                        <Link href={""} className="alt-link h-10 w-10 rounded-lg grid place-items-center bg-white text-theme">
-                            <FaFacebook className="text-2xl"/>
+                        <Link href={SocialsMedia.reddit} className="alt-link h-10 w-10 rounded-lg grid place-items-center bg-white text-theme">
+                            <FaReddit className="text-2xl"/>
                         </Link>
-                        <Link href={""} className="alt-link h-10 w-10 rounded-lg grid place-items-center bg-white text-theme">
+                        <Link href={SocialsMedia.instagram} className="alt-link h-10 w-10 rounded-lg grid place-items-center bg-white text-theme">
                             <FaInstagram className="text-2xl"/>
                         </Link>
-                        <Link href={""} className="alt-link h-10 w-10 rounded-lg grid place-items-center bg-white text-theme">
+                        <Link href={SocialsMedia.linkedin} className="alt-link h-10 w-10 rounded-lg grid place-items-center bg-white text-theme">
                             <FaLinkedin className="text-2xl"/>
                         </Link>
-                        <Link href={""} className="alt-link h-10 w-10 rounded-lg grid place-items-center bg-white text-theme">
+                        <Link href={SocialsMedia.youtube} className="alt-link h-10 w-10 rounded-lg grid place-items-center bg-white text-theme">
                             <FaYoutube className="text-2xl"/>
                         </Link>
-                        <Link href={""} className="alt-link h-10 w-10 rounded-lg grid place-items-center bg-white text-theme">
-                            <FaTiktok className="text-2xl"/>
+                        <Link href={SocialsMedia.pinterest} className="alt-link h-10 w-10 rounded-lg grid place-items-center bg-white text-theme">
+                            <FaPinterest className="text-2xl"/>
                         </Link>
                     </div>
                 </div>

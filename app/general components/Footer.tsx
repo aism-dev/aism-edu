@@ -41,19 +41,19 @@ export default function Footer() {
                         </address>
                     </AnimatedEntrance>
                     <div className="flex items-center gap-2 sm:justify-between max-sm:gap-5 py-4">
-                        <Link href={SocialsMedia.reddit} className="alt-link h-10 w-10 rounded-lg grid place-items-center bg-white text-theme">
+                        <Link target="_blank" href={SocialsMedia.reddit} className="alt-link h-10 w-10 rounded-lg grid place-items-center bg-white text-theme">
                             <FaReddit className="text-2xl"/>
                         </Link>
-                        <Link href={SocialsMedia.instagram} className="alt-link h-10 w-10 rounded-lg grid place-items-center bg-white text-theme">
+                        <Link target="_blank" href={SocialsMedia.instagram} className="alt-link h-10 w-10 rounded-lg grid place-items-center bg-white text-theme">
                             <FaInstagram className="text-2xl"/>
                         </Link>
-                        <Link href={SocialsMedia.linkedin} className="alt-link h-10 w-10 rounded-lg grid place-items-center bg-white text-theme">
+                        <Link target="_blank" href={SocialsMedia.linkedin} className="alt-link h-10 w-10 rounded-lg grid place-items-center bg-white text-theme">
                             <FaLinkedin className="text-2xl"/>
                         </Link>
-                        <Link href={SocialsMedia.youtube} className="alt-link h-10 w-10 rounded-lg grid place-items-center bg-white text-theme">
+                        <Link target="_blank" href={SocialsMedia.youtube} className="alt-link h-10 w-10 rounded-lg grid place-items-center bg-white text-theme">
                             <FaYoutube className="text-2xl"/>
                         </Link>
-                        <Link href={SocialsMedia.pinterest} className="alt-link h-10 w-10 rounded-lg grid place-items-center bg-white text-theme">
+                        <Link target="_blank" href={SocialsMedia.pinterest} className="alt-link h-10 w-10 rounded-lg grid place-items-center bg-white text-theme">
                             <FaPinterest className="text-2xl"/>
                         </Link>
                     </div>

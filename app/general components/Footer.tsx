@@ -40,6 +40,11 @@ export default function Footer() {
                             Stone Mountain, Ga 30087
                         </address>
                     </AnimatedEntrance>
+                    <AnimatedEntrance>
+                        <address className="not-italic ">
+                            Woolford Avenue, Georgetown, Guyana
+                        </address>
+                    </AnimatedEntrance>
                     <div className="flex items-center gap-2 sm:justify-between max-sm:gap-5 py-4">
                         <Link target="_blank" href={SocialsMedia.reddit} className="alt-link h-10 w-10 rounded-lg grid place-items-center bg-white text-theme">
                             <FaReddit className="text-2xl"/>

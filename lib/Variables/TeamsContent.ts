@@ -182,7 +182,7 @@ export const administrationStaff: (Member | MemberNoSocials)[] = [
     },
     {
         id: 9,
-        name: "Dr. Nancy Akunna",
+        name: "Dr. Diane Roberts",
         image: "https://aism-edu.sirv.com/Team/default_profile_image.png",
         role: "Associate Dean - Student Outcomes",
         hasSocials: false,
@@ -269,7 +269,7 @@ export const officers: (Member | MemberNoSocials)[] = [
         id: 6,
         image: "https://aism-edu.sirv.com/Team/default_profile_image.png",
         hasSocials: false,
-        name: "Dr. Nancy Akunna",
+        name: "Dr. Diane Roberts",
         role: "Vice President"
     },
     {
@@ -351,7 +351,7 @@ export const administration: (Member | MemberNoSocials)[] = [
     },
     {
         id: 9,
-        name: "Dr. Nancy Akunna",
+        name: "Dr. Diane Roberts",
         image: "https://aism-edu.sirv.com/Team/default_profile_image.png",
         role: "Associate Dean - Student Outcomes",
         hasSocials: false,

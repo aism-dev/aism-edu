@@ -70,18 +70,39 @@ export default function Navigation() {
 
     const controls = useAnimation();
 
+    let top_animated_y: number;
+
+    if (ViewPort.width > 2000) {
+        top_animated_y = -141;
+    } else if (ViewPort.width > 700) {
+        top_animated_y = -108;
+    } else {
+        top_animated_y = -90;
+    }
+
+
+    let logo_animated_y: number;
+
+    if (ViewPort.width > 2000) {
+        logo_animated_y = 120;
+    } else if (ViewPort.width > 700) {
+        logo_animated_y = 90;
+    } else {
+        logo_animated_y = 75;
+    }
+
     const topVariants: Variants = {
-        hidden: { y: ViewPort.width > 700 ? -108 : -90 },
+        hidden: { y: top_animated_y},
         visible: { y: 0, transition: { duration: 0.25 } },
     };
 
     const logoPositionVariants: Variants = {
-        hidden: { y: ViewPort.width > 700 ? 90: 75, scale: 0.9 },
+        hidden: { y: logo_animated_y, scale: 0.8 },
         visible: { y: 0, scale: 1, transition: { duration: 0.25 } },
     };
 
     const bottomLinksVariants: Variants = {
-        hidden: { marginLeft: 70, },
+        hidden: { marginLeft: ViewPort.width > 2000 ? 120 : 75 },
         visible: { marginLeft: 0, transition: { duration: 0.25 } },
     };
 

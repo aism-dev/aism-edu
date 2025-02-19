@@ -23,14 +23,15 @@ export default function RootLayout({
 }: Readonly<{
     children: React.ReactNode;
 }>) {
+    
     return (
         <html lang="en">
             <body
                 className={`${geistSans.variable} antialiased overflow-x-hidden`}
             >
-                <AddClassToElements />
-                <ChatBot />
-                <Toaster
+                {/* <AddClassToElements /> */}
+                {/* <ChatBot /> */}
+                {/* <Toaster
                     position="top-center"
                     reverseOrder={false}
                 />
@@ -42,10 +43,10 @@ export default function RootLayout({
                     easing="ease"
                     speed={200}
                     zIndex={1600}
-                />
-                <Navigation />
+                /> */}
+                {/* <Navigation /> */}
                 {children}
-                <Footer />
+                {/* <Footer /> */}
             </body>
         </html>
     );

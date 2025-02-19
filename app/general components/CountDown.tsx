@@ -2,7 +2,7 @@
 import { useAnimate } from "framer-motion";
 import { useEffect, useRef, useState } from "react";
 
-const COUNTDOWN_FROM = "2024-11-01";
+const COUNTDOWN_FROM = "2025-09-01";
 
 const SECOND = 1000;
 const MINUTE = SECOND * 60;
@@ -14,7 +14,7 @@ type Units = "Day" | "Hour" | "Minute" | "Second";
 const ShiftingCountdown = () => {
     return (
         <div className="p-4 w-full">
-            <div className="mx-auto flex w-full max-w-5xl items-center bg-gradient-to-br from-theme to-themeDark">
+            <div className="mx-auto flex w-full flex-wrap max-w-5xl items-center bg-gradient-to-br from-theme to-themeDark">
                 <CountdownItem unit="Day" text="days" />
                 <CountdownItem unit="Hour" text="hours" />
                 <CountdownItem unit="Minute" text="minutes" />
@@ -28,13 +28,13 @@ const CountdownItem = ({ unit, text }: { unit: Units; text: string }) => {
     const { ref, time } = useTimer(unit);
 
     return (
-        <div className="flex h-24 w-1/4 flex-col items-center justify-center gap-1 border-r-[1px] border-slate-200 font-mono md:h-36 md:gap-2">
+        <div className="flex h-24 md:w-1/4 w-1/2 flex-col items-center justify-center gap-1 border-r-[1px] max-md:border-b-[1px] border-slate-200 font-mono md:h-36 md:gap-2">
             <div className="relative w-full overflow-hidden text-center">
                 <span
                     ref={ref}
                     className="block text-2xl font-medium text-white md:text-4xl lg:text-6xl xl:text-7xl"
                 >
-                    {time}
+                    {time > 9 ? time : `0${time}`}
                 </span>
             </div>
             <span className="text-xs font-light text-slate-300 md:text-sm lg:text-base">

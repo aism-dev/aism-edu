@@ -1,5 +1,5 @@
 import Image from "next/image";
-import Button from "./general components/Button";
+// import Button from "./general components/Button";
 import ShiftingCountdown from "./general components/CountDown";
 
 export default function NotFound() {

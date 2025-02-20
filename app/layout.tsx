@@ -3,12 +3,12 @@ import localFont from "next/font/local";
 import "./globals.css";
 // import "./debugger.css";
 import { aismMetadata } from "@/lib/Metadata";
-import Navigation from "./general components/Navigation";
-import Footer from "./general components/Footer";
-import NextTopLoader from "nextjs-toploader";
-import AddClassToElements from "./general components/DetectTextOnDark";
-import { Toaster } from "react-hot-toast";
-import ChatBot from "./general components/ChatBot";
+// import Navigation from "./general components/Navigation";
+// import Footer from "./general components/Footer";
+// import NextTopLoader from "nextjs-toploader";
+// import AddClassToElements from "./general components/DetectTextOnDark";
+// import { Toaster } from "react-hot-toast";
+// import ChatBot from "./general components/ChatBot";
 
 const geistSans = localFont({
     src: "./fonts/Nunito-VariableFont_wght.woff",
